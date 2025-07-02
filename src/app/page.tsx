@@ -1,14 +1,27 @@
 "use client";
+import { useState } from "react";
 import Navigation from "@/components/layout/Navigation";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import ContactSection from "@/components/sections/ContactSection";
 import DotGrid from "@/components/ui/DotGrid";
+import Preloader from "@/components/ui/Preloader";
+import { Linkedin, Instagram, Github, Mail, Heart } from "lucide-react";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handlePreloaderComplete = () => {
+    setIsLoading(false);
+  };
+
+  if (isLoading) {
+    return <Preloader onComplete={handlePreloaderComplete} />;
+  }
+
   return (
-    <main className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-x-hidden w-full">
+    <main className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-x-hidden w-full animate-in fade-in duration-1000">
       {/* Enhanced Interactive Background */}
       <div className="fixed inset-0 z-0 w-full h-full">
         <DotGrid
@@ -77,14 +90,16 @@ export default function Home() {
               <h4 className="text-base sm:text-lg font-semibold text-white mb-3 sm:mb-4">Connect</h4>
               <div className="space-y-2">
                 {[
-                  { name: "GitHub", icon: "🐙" },
-                  { name: "LinkedIn", icon: "💼" },
-                  { name: "Twitter", icon: "🐦" },
-                  { name: "Email", icon: "📧" }
+                  { name: "LinkedIn", icon: <Linkedin className="w-4 h-4" />, url: "https://www.linkedin.com/in/hormazdaruwala/" },
+                  { name: "Instagram", icon: <Instagram className="w-4 h-4" />, url: "https://www.instagram.com/horma_z/" },
+                  { name: "GitHub", icon: <Github className="w-4 h-4" />, url: "https://github.com/coderhormaz" },
+                  { name: "Email", icon: <Mail className="w-4 h-4" />, url: "mailto:hormazdaruwala86@gmail.com" }
                 ].map((social) => (
                   <a 
                     key={social.name}
-                    href="#"
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base"
                   >
                     <span className="mr-2">{social.icon}</span>
@@ -96,8 +111,8 @@ export default function Home() {
           </div>
           
           <div className="text-center pt-6 sm:pt-8 border-t border-white/10">
-            <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
-              © 2024 Hormaz. All rights reserved. Built with ❤️ using Next.js, React Three Fiber, and ShadCN UI.
+            <p className="text-gray-400 text-xs sm:text-sm leading-relaxed flex items-center justify-center gap-1">
+              © 2024 Hormaz. All rights reserved. Built with <Heart className="w-3 h-3 text-red-500 fill-red-500" /> using Next.js, React Three Fiber, and ShadCN UI.
             </p>
           </div>
         </div>

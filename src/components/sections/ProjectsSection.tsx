@@ -5,40 +5,45 @@ import { CardSpotlight } from "@/components/ui/card-spotlight";
 import { Button } from "@/components/ui/button";
 import { useRevealAnimation } from "@/lib/animations";
 import Image from "next/image";
+import { ExternalLink, Github, Palette, Rocket, Globe, Layers, Layout, Paintbrush, LayoutGrid } from "lucide-react";
 
 const projects = [
   {
-    title: "AI-Powered Dashboard",
-    description: "A comprehensive analytics dashboard with real-time data visualization and AI-driven insights.",
-    tech: ["React", "TypeScript", "D3.js", "Node.js"],
-    image: "/api/placeholder/600/400",
-    demoUrl: "#",
-    codeUrl: "#",
+    title: "Token Plus NFT Launcher",
+    description: "A comprehensive platform for creating and deploying both NFTs and tokens on the Base blockchain, featuring a drawing board, customizable token parameters, and Web3 wallet integration.",
+    tech: ["Web3.js", "React", "Solidity", "Base Chain", "MetaMask", "ERC-20/721"],
+    image: "/basenft.mp4",
+    isVideo: true,
+    demoUrl: "https://kingsdontquit.netlify.app/",
+    codeUrl: "https://github.com/coderhormaz/TokenPlusNFTlauncher",
   },
   {
-    title: "3D Product Configurator",
-    description: "Interactive 3D product customization tool with real-time rendering and physics simulation.",
-    tech: ["Three.js", "React", "WebGL", "Blender"],
-    image: "/api/placeholder/600/400",
-    demoUrl: "#",
-    codeUrl: "#",
+    title: "Lightship Clone",
+    description: "A pixel-perfect clone of the Niantic Lightship website with advanced animations, parallax effects, and interactive elements that showcase front-end development expertise.",
+    tech: ["JavaScript", "CSS3", "HTML5", "GSAP", "ScrollTrigger", "Responsive Design"],
+    image: "/Lightship.mp4",
+    isVideo: true,
+    demoUrl: "https://hormaz-lightship.netlify.app/",
+    codeUrl: "https://github.com/coderhormaz/lightship-clone",
   },
   {
-    title: "E-commerce Platform",
-    description: "Modern e-commerce solution with advanced search, recommendations, and payment integration.",
-    tech: ["Next.js", "Stripe", "PostgreSQL", "Redis"],
-    image: "/api/placeholder/600/400",
-    demoUrl: "#",
-    codeUrl: "#",
+    title: "Selemen Clone",
+    description: "A meticulously crafted clone of the Selemen website featuring modern design elements, smooth animations, and fully responsive layout with attention to detail.",
+    tech: ["CSS3", "HTML5", "JavaScript", "Animation", "Flexbox/Grid", "Responsive Design"],
+    image: "/selemen.mp4",
+    isVideo: true,
+    demoUrl: "https://hormaz-selemen.netlify.app/",
+    codeUrl: "https://github.com/coderhormaz/selemen-clone",
   },
   {
-    title: "Creative Portfolio",
-    description: "Award-winning portfolio website featuring advanced animations and interactive elements.",
-    tech: ["React", "GSAP", "Three.js", "Tailwind"],
-    image: "/api/placeholder/600/400",
-    demoUrl: "#",
-    codeUrl: "#",
-  },
+    title: "Moqo Clone",
+    description: "A precise recreation of the Moqo website with clean CSS implementation, responsive design, and interactive elements for an optimal user experience across all devices.",
+    tech: ["CSS3", "HTML5", "JavaScript", "Grid Layout", "Responsive Design", "Animations"],
+    image: "/moqo.mp4",
+    isVideo: true,
+    demoUrl: "https://hormaz-moqo.netlify.app/",
+    codeUrl: "https://github.com/coderhormaz/moqo-clone",
+  }
 ];
 
 const ProjectsSection = () => {
@@ -70,18 +75,80 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <CardSpotlight key={project.title} className="group overflow-hidden">
               <div className="relative">
-                {/* Project Image */}
+                {/* Project Image or Video */}
                 <div className="relative h-48 sm:h-56 md:h-64 mb-4 sm:mb-6 overflow-hidden rounded-lg">
-                  <div className="w-full h-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center">
-                    <div className="text-4xl sm:text-5xl md:text-6xl opacity-50">🚀</div>
-                  </div>
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
-                      <Button size="sm" className="bg-white text-black hover:bg-gray-200 text-xs sm:text-sm px-3 sm:px-4 py-2">
-                        Live Demo
+                  {project.isVideo ? (
+                    <div className="w-full h-full relative group-hover:opacity-90 transition-opacity duration-300">
+                      <video 
+                        src={project.image} 
+                        autoPlay 
+                        loop 
+                        muted 
+                        playsInline
+                        className="object-cover w-full h-full"
+                        ref={(el) => {
+                          if (el && project.image.includes('basenft')) {
+                            el.playbackRate = 2.0;
+                          }
+                        }}
+                        onMouseEnter={(e) => {
+                          const video = e.target as HTMLVideoElement;
+                          if (video.paused) video.play();
+                          if (project.image.includes('basenft')) {
+                            video.playbackRate = 2.0;
+                          }
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute bottom-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full flex items-center">
+                        <span className="w-1.5 h-1.5 bg-red-500 rounded-full mr-1"></span>
+                        Video
+                      </div>
+                    </div>
+                  ) : project.image.startsWith('/') && !project.image.includes('placeholder') ? (
+                    <div className="w-full h-full relative group-hover:opacity-80 transition-opacity duration-300">
+                      <Image 
+                        src={project.image} 
+                        alt={project.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center">
+                      {project.title.includes("NFT") || project.title.includes("Token") ? (
+                        <Palette className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-purple-400 opacity-50" />
+                      ) : project.title.includes("Lightship") ? (
+                        <Layers className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-cyan-400 opacity-50" />
+                      ) : project.title.includes("Selemen") ? (
+                        <Layout className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-pink-400 opacity-50" />
+                      ) : project.title.includes("Moqo") ? (
+                        <LayoutGrid className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-teal-400 opacity-50" />
+                      ) : (
+                        <Rocket className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-blue-400 opacity-50" />
+                      )}
+                    </div>
+                  )}
+                  <div className="absolute inset-0 z-10 flex items-center justify-center">
+                    <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-y-0 translate-y-4">
+                      <Button 
+                        size="sm" 
+                        className="bg-white text-black hover:bg-gray-200 text-xs sm:text-sm px-3 sm:px-4 py-2 shadow-md"
+                        onClick={() => window.open(project.demoUrl, '_blank')}
+                        disabled={project.demoUrl === "#"}
+                      >
+                        <ExternalLink className="w-3 h-3 mr-1" /> Live Demo
                       </Button>
-                      <Button size="sm" variant="outline" className="border-white text-white hover:bg-white/10 text-xs sm:text-sm px-3 sm:px-4 py-2">
-                        View Code
+                      <Button 
+                        size="sm" 
+                        variant="outline" 
+                        className="border-white text-white hover:bg-white/10 text-xs sm:text-sm px-3 sm:px-4 py-2 shadow-md"
+                        onClick={() => window.open(project.codeUrl, '_blank')}
+                        disabled={project.codeUrl === "#"}
+                      >
+                        <Github className="w-3 h-3 mr-1" /> View Code
                       </Button>
                     </div>
                   </div>
@@ -118,9 +185,10 @@ const ProjectsSection = () => {
           <Button 
             size="lg"
             className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-xl transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
+            onClick={() => window.open("https://github.com/coderhormaz", '_blank')}
           >
             View All Projects
-            <span className="ml-2">→</span>
+            <ExternalLink className="ml-2 w-5 h-5" />
           </Button>
         </div>
       </div>

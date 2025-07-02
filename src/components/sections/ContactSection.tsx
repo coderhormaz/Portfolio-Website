@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useRevealAnimation } from "@/lib/animations";
+import { Linkedin, Instagram, Github, Mail, SendHorizonal } from "lucide-react";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -52,35 +53,48 @@ const ContactSection = () => {
             <div>
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Get In Touch</h3>
               <div className="space-y-4 sm:space-y-6">
-                <div className="flex items-center space-x-3 sm:space-x-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-600 rounded-lg flex items-center justify-center text-lg sm:text-xl">
-                    📧
+                <a 
+                  href="mailto:hormazdaruwala86@gmail.com" 
+                  className="flex items-center space-x-3 sm:space-x-4 group transition-transform hover:translate-x-1"
+                >
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-600 rounded-lg flex items-center justify-center group-hover:bg-purple-700 transition-colors">
+                    <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                   <div>
                     <p className="text-gray-400 text-xs sm:text-sm">Email</p>
-                    <p className="text-white text-sm sm:text-base">hormaz@example.com</p>
+                    <p className="text-white text-sm sm:text-base group-hover:text-purple-400 transition-colors">hormazdaruwala86@gmail.com</p>
                   </div>
-                </div>
+                </a>
                 
-                <div className="flex items-center space-x-3 sm:space-x-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-600 rounded-lg flex items-center justify-center text-lg sm:text-xl">
-                    📱
+                <a 
+                  href="https://www.linkedin.com/in/hormazdaruwala/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-3 sm:space-x-4 group transition-transform hover:translate-x-1"
+                >
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-600 rounded-lg flex items-center justify-center group-hover:bg-purple-700 transition-colors">
+                    <Linkedin className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                   <div>
-                    <p className="text-gray-400 text-xs sm:text-sm">Phone</p>
-                    <p className="text-white text-sm sm:text-base">+1 (555) 123-4567</p>
+                    <p className="text-gray-400 text-xs sm:text-sm">LinkedIn</p>
+                    <p className="text-white text-sm sm:text-base group-hover:text-purple-400 transition-colors">hormazdaruwala</p>
                   </div>
-                </div>
+                </a>
                 
-                <div className="flex items-center space-x-3 sm:space-x-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-600 rounded-lg flex items-center justify-center text-lg sm:text-xl">
-                    📍
+                <a 
+                  href="https://www.instagram.com/horma_z/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-3 sm:space-x-4 group transition-transform hover:translate-x-1"
+                >
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-600 rounded-lg flex items-center justify-center group-hover:bg-purple-700 transition-colors">
+                    <Instagram className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                   <div>
-                    <p className="text-gray-400 text-xs sm:text-sm">Location</p>
-                    <p className="text-white text-sm sm:text-base">San Francisco, CA</p>
+                    <p className="text-gray-400 text-xs sm:text-sm">Instagram</p>
+                    <p className="text-white text-sm sm:text-base group-hover:text-purple-400 transition-colors">@horma_z</p>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
 
@@ -89,16 +103,17 @@ const ContactSection = () => {
               <h4 className="text-base sm:text-lg font-semibold text-white mb-3 sm:mb-4">Follow Me</h4>
               <div className="flex flex-wrap gap-3 sm:space-x-4">
                 {[
-                  { name: "GitHub", icon: "🐙" },
-                  { name: "LinkedIn", icon: "💼" },
-                  { name: "Twitter", icon: "🐦" },
-                  { name: "Dribbble", icon: "🏀" },
+                  { name: "LinkedIn", icon: <Linkedin className="w-4 h-4" />, url: "https://www.linkedin.com/in/hormazdaruwala/" },
+                  { name: "Instagram", icon: <Instagram className="w-4 h-4" />, url: "https://www.instagram.com/horma_z/" },
+                  { name: "GitHub", icon: <Github className="w-4 h-4" />, url: "https://github.com/coderhormaz" },
+                  { name: "Email", icon: <Mail className="w-4 h-4" />, url: "mailto:hormazdaruwala86@gmail.com" },
                 ].map((social) => (
                   <Button
                     key={social.name}
                     variant="outline"
                     size="sm"
                     className="border-white/20 text-white hover:bg-white/10 transition-all duration-300 text-xs sm:text-sm px-3 sm:px-4 py-2"
+                    onClick={() => window.open(social.url, '_blank')}
                   >
                     <span className="mr-2">{social.icon}</span>
                     {social.name}
@@ -161,7 +176,7 @@ const ContactSection = () => {
                   className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-4 sm:py-6 text-base sm:text-lg rounded-xl transition-all duration-300 transform hover:scale-105"
                 >
                   Send Message
-                  <span className="ml-2">✈️</span>
+                  <SendHorizonal className="ml-2 w-5 h-5" />
                 </Button>
               </form>
             </CardContent>
