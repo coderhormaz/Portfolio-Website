@@ -1,0 +1,64 @@
+.pixel-card {
+  position: relative;
+  width: 100%;
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              box-shadow 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  isolation: isolate;
+  will-change: transform, opacity;
+}
+
+.pixel-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.pixel-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.pixel-card > *:not(.pixel-canvas) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Focus styles for keyboard navigation */
+.pixel-card:focus-visible {
+  outline: 2px solid rgba(59, 130, 246, 0.6);
+  outline-offset: 2px;
+}
+
+/* Animation for content */
+.pixel-card > *:not(.pixel-canvas) {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pixel-card {
+    transition: none;
+  }
+  
+  .pixel-card:hover {
+    transform: none;
+  }
+  
+  .pixel-card > *:not(.pixel-canvas) {
+    transition: none;
+  }
+}

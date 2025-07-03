@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export const useRevealAnimation = (delay: number = 0) => {
   const ref = useRef<HTMLElement>(null);
@@ -72,4 +72,56 @@ export const animateOnScroll = (selector: string, options: {
     if (options.translateY) element.style.transform = `translateY(${options.translateY[0]}px)`;
     observer.observe(el);
   });
+};
+
+export const useIntersectionObserver = (options = {}) => {
+  const ref = useRef<HTMLElement>(null);
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const [isInMiddle, setIsInMiddle] = useState(false);
+  const [wasIntersected, setWasIntersected] = useState(false);
+
+  useEffect(() => {
+    // This observer will check if element is visible at all
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsIntersecting(entry.isIntersecting);
+      if (entry.isIntersecting) {
+        setWasIntersected(true);
+      }
+    }, {
+      threshold: 0.1,
+      ...options
+    });
+
+    // This observer will check if element is in the middle (center) of viewport
+    const middleObserver = new IntersectionObserver(([entry]) => {
+      const viewportHeight = window.innerHeight;
+      const elementBounds = entry.boundingClientRect;
+      const elementCenter = elementBounds.top + elementBounds.height / 2;
+      const viewportCenter = viewportHeight / 2;
+      
+      // Consider "middle" to be within 30% of the center of the viewport
+      const threshold = viewportHeight * 0.3;
+      const isCenter = Math.abs(elementCenter - viewportCenter) < threshold;
+      
+      setIsInMiddle(entry.isIntersecting && isCenter);
+    }, {
+      threshold: [0, 0.25, 0.5, 0.75, 1],
+      rootMargin: "-20% 0px -20% 0px" // Further restrict "middle" to central 60% of viewport
+    });
+
+    const currentRef = ref.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+      middleObserver.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+        middleObserver.unobserve(currentRef);
+      }
+    };
+  }, [options]);
+
+  return { ref, isIntersecting, isInMiddle, wasIntersected };
 };

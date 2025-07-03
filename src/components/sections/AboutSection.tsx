@@ -1,50 +1,67 @@
 "use client";
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { CardSpotlight } from "@/components/ui/card-spotlight";
-import { useRevealAnimation } from "@/lib/animations";
+import MobileCenterPixelCard from "@/components/ui/MobileCenterPixelCard";
+import { useRevealAnimation, useIntersectionObserver } from "@/lib/animations";
 import { Code, Server, CircuitBoard, Paintbrush, PaintBucket, Wrench, LockKeyhole, Globe } from "lucide-react";
 
-const skills = [
+type SkillVariant = "default" | "blue" | "yellow" | "pink" | "purple" | "cyan" | "emerald" | "amber";
+
+interface Skill {
+	title: string;
+	description: string;
+	icon: React.ReactNode;
+	variant: SkillVariant;
+}
+
+const skills: Skill[] = [
 	{
 		title: "Frontend Development",
 		description: "HTML5, CSS3, JavaScript, React, Vue, Angular",
 		icon: <Code className="w-8 h-8 text-purple-400" />,
+		variant: "purple",
 	},
 	{
 		title: "Backend & Languages",
 		description: "Python, Java, Node.js, Firebase",
 		icon: <Server className="w-8 h-8 text-blue-400" />,
+		variant: "blue",
 	},
 	{
 		title: "Blockchain & Web3",
 		description: "Solidity, Smart Contracts, DApps, Ethereum, Solana",
 		icon: <CircuitBoard className="w-8 h-8 text-green-400" />,
+		variant: "emerald",
 	},
 	{
 		title: "Frameworks & Libraries",
 		description: "Bootstrap, Tailwind CSS, jQuery, Sass",
 		icon: <Paintbrush className="w-8 h-8 text-orange-400" />,
+		variant: "amber",
 	},
 	{
 		title: "Design & Tools",
 		description: "Figma, Framer, Webflow",
 		icon: <PaintBucket className="w-8 h-8 text-pink-400" />,
+		variant: "pink",
 	},
 	{
 		title: "Development Tools",
 		description: "Git, GitHub, VS Code, Webpack, NPM",
 		icon: <Wrench className="w-8 h-8 text-yellow-400" />,
+		variant: "yellow",
 	},
 	{
 		title: "Web Technologies",
 		description: "Ajax, Three.js, GSAP, Framer Motion",
 		icon: <Globe className="w-8 h-8 text-teal-400" />,
+		variant: "cyan",
 	},
 	{
 		title: "Security & Testing",
 		description: "Ethical Hacking, Cybersecurity, Penetration Testing",
 		icon: <LockKeyhole className="w-8 h-8 text-red-400" />,
+		variant: "default",
 	},
 ];
 
@@ -75,19 +92,23 @@ const AboutSection = () => {
 				</div>
 
 				{/* Skills Grid */}
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mb-16">
 					{skills.map((skill, index) => (
-						<CardSpotlight key={skill.title} className="h-full">
-							<div className="flex flex-col items-center text-center space-y-3 sm:space-y-4 p-4 sm:p-6">
+						<MobileCenterPixelCard 
+							key={skill.title}
+							variant={skill.variant}
+							className="h-full min-h-[300px]"
+						>
+							<div className="flex flex-col items-center text-center space-y-3 sm:space-y-4 p-4 sm:p-6 h-full justify-center">
 								<div className="mb-2">{skill.icon}</div>
 								<h3 className="text-lg sm:text-xl font-semibold text-white">
 									{skill.title}
 								</h3>
-								<p className="text-gray-400 text-sm leading-relaxed">
+								<p className="text-white-400 text-sm leading-relaxed">
 									{skill.description}
 								</p>
 							</div>
-						</CardSpotlight>
+						</MobileCenterPixelCard>
 					))}
 				</div>
 
@@ -99,51 +120,50 @@ const AboutSection = () => {
 
 					<div className="max-w-4xl mx-auto">
 						<div className="space-y-6 sm:space-y-8">
-							{
-								[
-									{
-										year: "2024-Present",
-										title: "Full-Stack Developer",
-										company: "Freelance & Projects",
-										description:
-											"Building modern web applications with React, Next.js, and advanced animations. Specializing in responsive design and user experience.",
-									},
-									{
-										year: "2023-2024",
-										title: "Frontend Developer",
-										company: "Digital Projects",
-										description:
-											"Created interactive websites using HTML5, CSS3, JavaScript, and modern frameworks like React and Vue.js.",
-									},
-									{
-										year: "2022-2023",
-										title: "Web Developer & Designer",
-										company: "Creative Solutions",
-										description:
-											"Developed websites with focus on UI/UX design using Figma, Photoshop, and modern web technologies.",
-									},
-								].map((item, index) => (
-									<Card key={index} className="glass-card border-white/10">
-										<CardContent className="p-4 sm:p-6">
-											<div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
-												<div className="sm:w-32 text-purple-400 font-semibold text-sm sm:text-base">
-													{item.year}
-												</div>
-												<div className="flex-1">
-													<h4 className="text-lg sm:text-xl font-semibold text-white mb-1">
-														{item.title}
-													</h4>
-													<p className="text-purple-300 mb-2 text-sm sm:text-base">
-														{item.company}
-													</p>
-													<p className="text-gray-400 text-sm sm:text-base leading-relaxed">
-														{item.description}
-													</p>
-												</div>
+							{[
+								{
+									year: "2024-Present",
+									title: "Full-Stack Developer",
+									company: "Freelance & Projects",
+									description:
+										"Building modern web applications with React, Next.js, and advanced animations. Specializing in responsive design and user experience.",
+								},
+								{
+									year: "2023-2024",
+									title: "Frontend Developer",
+									company: "Digital Projects",
+									description:
+										"Created interactive websites using HTML5, CSS3, JavaScript, and modern frameworks like React and Vue.js.",
+								},
+								{
+									year: "2022-2023",
+									title: "Web Developer & Designer",
+									company: "Creative Solutions",
+									description:
+										"Developed websites with focus on UI/UX design using Figma, Photoshop, and modern web technologies.",
+								},
+							].map((experience, index) => (
+								<Card key={index} className="glass-card border-white/10">
+									<CardContent className="p-4 sm:p-6">
+										<div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+											<div className="sm:w-32 text-purple-400 font-semibold text-sm sm:text-base">
+												{experience.year}
 											</div>
-										</CardContent>
-									</Card>
-								))}
+											<div className="flex-1">
+												<h4 className="text-lg sm:text-xl font-semibold text-white mb-1">
+													{experience.title}
+												</h4>
+												<p className="text-purple-300 mb-2 text-sm sm:text-base">
+													{experience.company}
+												</p>
+												<p className="text-gray-400 text-sm sm:text-base leading-relaxed">
+													{experience.description}
+												</p>
+											</div>
+										</div>
+									</CardContent>
+								</Card>
+							))}
 						</div>
 					</div>
 				</div>
