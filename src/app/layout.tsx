@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: "https://hormaz.dev",
     title: "Hormaz | Full-Stack Developer & UI/UX Designer",
     description: "Premium portfolio showcasing modern web development expertise",
-    siteName: "Hormaz Portfolio",
+    siteName: "Hormaz ",
   },
   twitter: {
     card: "summary_large_image",

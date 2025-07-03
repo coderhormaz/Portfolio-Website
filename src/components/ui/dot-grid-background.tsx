@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface DotGridBackgroundProps {
@@ -9,7 +9,8 @@ interface DotGridBackgroundProps {
   spacing?: number;
 }
 
-export const DotGridBackground = ({
+// Inner component that uses hooks
+const DotGridBackgroundInner = ({
   className,
   dotSize = 1,
   dotColor = "rgba(255, 255, 255, 0.1)",
@@ -18,6 +19,9 @@ export const DotGridBackground = ({
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
+    // Make sure we're running on the client
+    if (typeof window === 'undefined') return;
+    
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -60,4 +64,19 @@ export const DotGridBackground = ({
       )}
     />
   );
+};
+
+// Client-only wrapper component
+export const DotGridBackground = (props: DotGridBackgroundProps) => {
+  const [isMounted, setIsMounted] = useState(false);
+  
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+  
+  if (!isMounted) {
+    return <div className={cn("fixed inset-0 z-0", props.className)} />;
+  }
+  
+  return <DotGridBackgroundInner {...props} />;
 };

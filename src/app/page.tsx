@@ -5,9 +5,10 @@ import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import ContactSection from "@/components/sections/ContactSection";
-import DotGrid from "@/components/ui/DotGrid";
+import ClientOnlyDotGrid from "@/components/ui/ClientOnlyDotGrid";
 import Preloader from "@/components/ui/Preloader";
 import { Linkedin, Instagram, Github, Mail, Heart } from "lucide-react";
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,8 +24,9 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-x-hidden w-full animate-in fade-in duration-1000">
       {/* Enhanced Interactive Background */}
+      <SmoothCursor />
       <div className="fixed inset-0 z-0 w-full h-full">
-        <DotGrid
+        <ClientOnlyDotGrid
           dotSize={5}
           gap={20}
           baseColor="#ffffff"
