@@ -1,0 +1,42 @@
+# Robots.txt for Hormaz Daruwala Portfolio
+# Optimized for maximum crawlability and SEO
+
+User-agent: *
+Allow: /
+
+# Specific directives for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+# Prevent crawling of admin/sensitive areas (if any in future)
+Disallow: /api/private/
+Disallow: /_next/static/chunks/
+Disallow: /admin/
+
+# Sitemap location for search engines
+Sitemap: https://hormaz.dev/sitemap.xml
+Sitemap: https://coderhormaz.dev/sitemap.xml
+
+# Additional metadata for rich snippets
+# This robots.txt is optimized for: hormaz, hormaz daruwala, hormaz coder, coder hormaz, coderhormaz, developer hormaz, hormaz developer, hormaz full stack developer, hormaz frontend developer

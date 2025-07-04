@@ -5,7 +5,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useRevealAnimation } from "@/lib/animations";
-import { Linkedin, Instagram, Github, Mail, SendHorizonal } from "lucide-react";
+import { Linkedin, Instagram, Github, Mail, SendHorizonal, CheckCircle, AlertCircle } from "lucide-react";
+import { toast } from "sonner";
+
+// Form validation utilities
+const validateEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -13,14 +20,90 @@ const ContactSection = () => {
     email: "",
     message: "",
   });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const titleRef = useRevealAnimation(200);
   const formRef = useRevealAnimation(400);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validateForm = (data: typeof formData): string[] => {
+    const errors: string[] = [];
+    
+    if (!data.name.trim() || data.name.trim().length < 2) {
+      errors.push('Name must be at least 2 characters long');
+    }
+    
+    if (!data.email.trim() || !validateEmail(data.email)) {
+      errors.push('Please enter a valid email address');
+    }
+    
+    if (!data.message.trim() || data.message.trim().length < 10) {
+      errors.push('Message must be at least 10 characters long');
+    }
+    
+    return errors;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    // Validate form data
+    const validationErrors = validateForm(formData);
+    if (validationErrors.length > 0) {
+      setIsSubmitting(false);
+      setSubmitStatus('error');
+      toast.error(validationErrors.join(' '), {
+        duration: 5000,
+        description: "Please correct the errors and try again.",
+      });
+      return;
+    }
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || '33ab3791-cf6f-4323-a696-248ff05e7c08',
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `New Contact Form Submission from ${formData.name}`,
+          from_name: 'Hormaz Portfolio Contact Form',
+          to_name: 'Hormaz Daruwala',
+          // Additional metadata for better email organization
+          _replyto: formData.email,
+          _template: 'table',
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        toast.success("Message sent successfully! I'll get back to you soon.", {
+          duration: 5000,
+          description: "Thank you for reaching out. Your message has been delivered.",
+        });
+      } else {
+        throw new Error(result.message || 'Failed to send message');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+      toast.error("Failed to send message. Please try again.", {
+        duration: 5000,
+        description: "There was an error sending your message. You can also email me directly.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -130,54 +213,102 @@ const ContactSection = () => {
           >
             <CardContent className="p-4 sm:p-6 lg:p-8">
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                {/* Success/Error Messages */}
+                {submitStatus === 'success' && (
+                  <div className="flex items-center p-4 bg-green-900/20 border border-green-500/30 rounded-lg text-green-400">
+                    <CheckCircle className="w-5 h-5 mr-3 flex-shrink-0" />
+                    <span className="text-sm">Message sent successfully! I'll get back to you soon.</span>
+                  </div>
+                )}
+                
+                {submitStatus === 'error' && (
+                  <div className="flex items-center p-4 bg-red-900/20 border border-red-500/30 rounded-lg text-red-400">
+                    <AlertCircle className="w-5 h-5 mr-3 flex-shrink-0" />
+                    <span className="text-sm">Failed to send message. Please try again or email me directly.</span>
+                  </div>
+                )}
+
                 <div>
-                  <Label htmlFor="name" className="text-white text-sm sm:text-base">Name</Label>
+                  <Label htmlFor="name" className="text-white text-sm sm:text-base">Name *</Label>
                   <Input
                     id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="mt-1 sm:mt-2 bg-white/5 border-white/20 text-white placeholder:text-gray-400 text-sm sm:text-base h-10 sm:h-12"
+                    className="mt-1 sm:mt-2 bg-white/5 border-white/20 text-white placeholder:text-gray-400 text-sm sm:text-base h-10 sm:h-12 focus:border-purple-500 focus:ring-purple-500/20"
                     placeholder="Your full name"
                     required
+                    disabled={isSubmitting}
+                    minLength={2}
+                    maxLength={100}
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="email" className="text-white text-sm sm:text-base">Email</Label>
+                  <Label htmlFor="email" className="text-white text-sm sm:text-base">Email *</Label>
                   <Input
                     id="email"
                     name="email"
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="mt-1 sm:mt-2 bg-white/5 border-white/20 text-white placeholder:text-gray-400 text-sm sm:text-base h-10 sm:h-12"
+                    className="mt-1 sm:mt-2 bg-white/5 border-white/20 text-white placeholder:text-gray-400 text-sm sm:text-base h-10 sm:h-12 focus:border-purple-500 focus:ring-purple-500/20"
                     placeholder="your.email@example.com"
                     required
+                    disabled={isSubmitting}
+                    maxLength={255}
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="message" className="text-white text-sm sm:text-base">Message</Label>
+                  <Label htmlFor="message" className="text-white text-sm sm:text-base">Message *</Label>
                   <textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
-                    className="mt-1 sm:mt-2 w-full px-3 py-2 bg-white/5 border border-white/20 rounded-md text-white placeholder:text-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm sm:text-base"
-                    placeholder="Tell me about your project..."
+                    className="mt-1 sm:mt-2 w-full px-3 py-2 bg-white/5 border border-white/20 rounded-md text-white placeholder:text-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm sm:text-base focus:border-purple-500"
+                    placeholder="Tell me about your project, timeline, budget, or any questions you have..."
                     required
+                    disabled={isSubmitting}
+                    minLength={10}
+                    maxLength={1000}
                   />
+                  <p className="text-xs text-gray-400 mt-1">
+                    {formData.message.length}/1000 characters
+                  </p>
                 </div>
+
+                {/* Honeypot field for spam protection */}
+                <input 
+                  type="checkbox" 
+                  name="botcheck" 
+                  className="hidden" 
+                  style={{ display: 'none' }}
+                />
 
                 <Button 
                   type="submit"
-                  className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-4 sm:py-6 text-base sm:text-lg rounded-xl transition-all duration-300 transform hover:scale-105"
+                  disabled={isSubmitting || !formData.name.trim() || !formData.email.trim() || !formData.message.trim()}
+                  className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-4 sm:py-6 text-base sm:text-lg rounded-xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                 >
-                  Send Message
-                  <SendHorizonal className="ml-2 w-5 h-5" />
+                  {isSubmitting ? (
+                    <>
+                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <SendHorizonal className="ml-2 w-5 h-5" />
+                    </>
+                  )}
                 </Button>
+                
+                <p className="text-xs text-gray-400 text-center">
+                  Your information is secure and will only be used to contact you about your inquiry.
+                </p>
               </form>
             </CardContent>
           </Card>

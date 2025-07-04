@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Head from "next/head";
 import Navigation from "@/components/layout/Navigation";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
@@ -10,6 +11,7 @@ import Preloader from "@/components/ui/Preloader";
 import { Linkedin, Instagram, Github, Mail, Heart } from "lucide-react";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
+// SEO-optimized page for Hormaz Daruwala portfolio
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -22,43 +24,113 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-x-hidden w-full animate-in fade-in duration-1000">
-      {/* Enhanced Interactive Background */}
-      <SmoothCursor />
-      <div className="fixed inset-0 z-0 w-full h-full">
-        <ClientOnlyDotGrid
-          dotSize={5}
-          gap={20}
-          baseColor="#ffffff"
-          activeColor="#00008B"
-          proximity={120}
-          shockRadius={250}
-          shockStrength={5}
-          resistance={750}
-          returnDuration={1.5}
-          className="opacity-50 w-full h-full"
-        />
-      </div>
+    <>
+      <Head>
+        {/* Additional page-specific meta tags */}
+        <meta name="keywords" content="Hormaz, Hormaz Daruwala, Hormaz Coder, coder hormaz, coderhormaz, Developer Hormaz, Hormaz Developer, Hormaz Full Stack Developer, Hormaz Frontend Developer, React Developer, Next.js Expert, TypeScript Specialist" />
+        <meta name="description" content="Hormaz Daruwala (coderhormaz) - Professional Full-Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies. Expert Frontend & Backend Developer creating exceptional digital experiences." />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Hormaz Daruwala | Full-Stack Developer & UI/UX Designer | coderhormaz" />
+        <meta property="og:description" content="Hormaz Daruwala (coderhormaz) - Professional Full-Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies." />
+        <meta property="og:url" content="https://hormaz.dev" />
+        <meta property="og:image" content="https://hormaz.dev/og-image.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Hormaz Daruwala | Full-Stack Developer & UI/UX Designer | coderhormaz" />
+        <meta name="twitter:description" content="Hormaz Daruwala (coderhormaz) - Professional Full-Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies." />
+        <meta name="twitter:image" content="https://hormaz.dev/og-image.jpg" />
+        <link rel="canonical" href="https://hormaz.dev" />
+      </Head>
       
-      {/* Navigation */}
-      <Navigation />
-      
-      {/* Sections */}
-      <section id="home" className="relative z-10">
-        <HeroSection />
-      </section>
-      
-      <section id="about" className="relative z-10">
-        <AboutSection />
-      </section>
-      
-      <section id="projects" className="relative z-10">
-        <ProjectsSection />
-      </section>
-      
-      <section id="contact" className="relative z-10">
-        <ContactSection />
-      </section>
+      <main 
+        className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-x-hidden w-full animate-in fade-in duration-1000"
+        itemScope 
+        itemType="https://schema.org/WebPage"
+      >
+        {/* Schema.org structured data */}
+        <meta itemProp="name" content="Hormaz Daruwala Portfolio" />
+        <meta itemProp="description" content="Professional portfolio of Hormaz Daruwala, expert full-stack developer specializing in React, Next.js, TypeScript, and modern web technologies." />
+        <meta itemProp="url" content="https://hormaz.dev" />
+        <meta itemProp="author" content="Hormaz Daruwala" />
+        <meta itemProp="keywords" content="Hormaz, Hormaz Daruwala, Hormaz Coder, coder hormaz, coderhormaz, Developer Hormaz, Hormaz Developer, Hormaz Full Stack Developer, Hormaz Frontend Developer" />
+        
+        {/* Enhanced Interactive Background */}
+        <SmoothCursor />
+        <div className="fixed inset-0 z-0 w-full h-full" aria-hidden="true">
+          <ClientOnlyDotGrid
+            dotSize={5}
+            gap={20}
+            baseColor="#ffffff"
+            activeColor="#00008B"
+            proximity={120}
+            shockRadius={250}
+            shockStrength={5}
+            resistance={750}
+            returnDuration={1.5}
+            className="opacity-50 w-full h-full"
+          />
+        </div>
+        
+        {/* Skip to main content for accessibility */}
+        <a 
+          href="#main-content" 
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded z-50"
+        >
+          Skip to main content
+        </a>
+        
+        {/* Navigation */}
+        <Navigation />
+        
+        {/* Main Content */}
+        <div id="main-content">
+          {/* Hero Section - Primary keyword focus */}
+          <section 
+            id="home" 
+            className="relative z-10"
+            itemScope 
+            itemType="https://schema.org/Person"
+            aria-label="Hormaz Daruwala - Full Stack Developer Introduction"
+          >
+            <meta itemProp="name" content="Hormaz Daruwala" />
+            <meta itemProp="alternateName" content="coderhormaz" />
+            <meta itemProp="jobTitle" content="Full-Stack Developer" />
+            <meta itemProp="description" content="Professional Full-Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies." />
+            <meta itemProp="url" content="https://hormaz.dev" />
+            <HeroSection />
+          </section>
+          {/* About Section */}
+          <section 
+            id="about" 
+            className="relative z-10"
+            itemScope 
+            itemType="https://schema.org/AboutPage"
+            aria-label="About Hormaz Daruwala - Full Stack Developer"
+          >
+            <AboutSection />
+          </section>
+          
+          {/* Projects Section */}
+          <section 
+            id="projects" 
+            className="relative z-10"
+            itemScope 
+            itemType="https://schema.org/CreativeWork"
+            aria-label="Hormaz Daruwala's Development Projects Portfolio"
+          >
+            <ProjectsSection />
+          </section>
+          
+          {/* Contact Section */}
+          <section 
+            id="contact" 
+            className="relative z-10"
+            itemScope 
+            itemType="https://schema.org/ContactPage"
+            aria-label="Contact Hormaz Daruwala - Full Stack Developer"
+          >
+            <ContactSection />
+          </section>
+        </div>
       
       {/* Footer */}
       <footer className="py-8 sm:py-12 px-4 sm:px-6 border-t border-white/10 relative z-10 bg-black/50 backdrop-blur-sm">
@@ -119,6 +191,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </main>
+      </main>
+    </>
   );
 }
