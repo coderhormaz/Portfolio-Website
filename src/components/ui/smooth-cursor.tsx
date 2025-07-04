@@ -90,6 +90,7 @@ export function SmoothCursor({
   },
 }: SmoothCursorProps) {
   const [isMoving, setIsMoving] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
   const lastMousePos = useRef<Position>({ x: 0, y: 0 });
   const velocity = useRef<Position>({ x: 0, y: 0 });
   const lastUpdateTime = useRef(Date.now());
@@ -108,8 +109,40 @@ export function SmoothCursor({
     stiffness: 500,
     damping: 35,
   });
+  
+  // Early return optimization - prevent unnecessary computations on mobile
+  const isTouchDevice = () => {
+    return (('ontouchstart' in window) ||
+      (navigator.maxTouchPoints > 0) ||
+      (navigator as any).msMaxTouchPoints > 0);
+  };
+
+  // Check if the device is desktop (not mobile)
+  useEffect(() => {
+    // Function to check if the screen is desktop size AND not a touch device
+    const checkIfDesktop = () => {
+      const isLargeScreen = window.innerWidth >= 1024;
+      const isNotTouch = !isTouchDevice();
+      
+      // Only show cursor on large screens that aren't touch devices
+      setIsDesktop(isLargeScreen && isNotTouch);
+    };
+
+    // Check on mount
+    checkIfDesktop();
+
+    // Listen for resize events
+    window.addEventListener('resize', checkIfDesktop);
+    
+    return () => {
+      window.removeEventListener('resize', checkIfDesktop);
+    };
+  }, []);
 
   useEffect(() => {
+    // Only apply cursor effects on desktop devices
+    if (!isDesktop) return;
+    
     const updateVelocity = (currentPos: Position) => {
       const currentTime = Date.now();
       const deltaTime = currentTime - lastUpdateTime.current;
@@ -178,8 +211,11 @@ export function SmoothCursor({
       document.body.style.cursor = "auto";
       if (rafId) cancelAnimationFrame(rafId);
     };
-  }, [cursorX, cursorY, rotation, scale]);
+  }, [cursorX, cursorY, rotation, scale, isDesktop]);
 
+  // Only render the cursor on desktop devices
+  if (!isDesktop) return null;
+  
   return (
     <motion.div
       style={{

@@ -4,6 +4,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import MobileCenterPixelCard from "@/components/ui/MobileCenterPixelCard";
 import { useRevealAnimation, useIntersectionObserver } from "@/lib/animations";
 import { Code, Server, CircuitBoard, Paintbrush, PaintBucket, Wrench, LockKeyhole, Globe } from "lucide-react";
+import { ShineBorder } from "../magicui/shine-border";
+
+
+
 
 type SkillVariant = "default" | "blue" | "yellow" | "pink" | "purple" | "cyan" | "emerald" | "amber";
 
@@ -119,7 +123,9 @@ const AboutSection = () => {
 					</h3>
 
 					<div className="max-w-4xl mx-auto">
+						
 						<div className="space-y-6 sm:space-y-8">
+							
 							{[
 								{
 									year: "2024-Present",
@@ -149,7 +155,7 @@ const AboutSection = () => {
 											<div className="sm:w-32 text-purple-400 font-semibold text-sm sm:text-base">
 												{experience.year}
 											</div>
-											<div className="flex-1">
+											<div className="flex-1"> <ShineBorder shineColor={["#A07CFE", "#FE8FB5", "#FFBE7B"]} />
 												<h4 className="text-lg sm:text-xl font-semibold text-white mb-1">
 													{experience.title}
 												</h4>
