@@ -14,6 +14,7 @@ export default function SEOStructuredData() {
       <Script
         id="person-schema"
         type="application/ld+json"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(personSchema)
         }}
@@ -23,6 +24,7 @@ export default function SEOStructuredData() {
       <Script
         id="website-schema"
         type="application/ld+json"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(websiteSchema)
         }}
@@ -32,6 +34,7 @@ export default function SEOStructuredData() {
       <Script
         id="professional-service-schema"
         type="application/ld+json"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(professionalServiceSchema)
         }}

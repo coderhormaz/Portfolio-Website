@@ -22,23 +22,67 @@ export default function Home() {
   // Set up scroll tracking for analytics
   useScrollTracking();
 
-  if (isLoading) {
-    return <Preloader onComplete={handlePreloaderComplete} />;
-  }
-
   return (
     <>      
+      {/* SEO Content - Always visible to crawlers */}
+      <div className="sr-only">
+        <h1>Hormaz Daruwala - Full Stack Developer</h1>
+        <p>Professional portfolio of Hormaz Daruwala (coderhormaz), expert full-stack developer specializing in React, Next.js, TypeScript, Node.js, and modern web technologies. Experienced in frontend development, backend engineering, UI/UX design, and creating exceptional digital experiences.</p>
+        <h2>Skills & Expertise</h2>
+        <p>React, Next.js, TypeScript, JavaScript, Node.js, Python, HTML5, CSS3, Tailwind CSS, Three.js, React Three Fiber, MongoDB, PostgreSQL, REST APIs, GraphQL, Git, Docker, AWS, Vercel</p>
+        <h2>Contact Information</h2>
+        <p>Email: hormazdaruwala86@gmail.com</p>
+        <p>LinkedIn: https://www.linkedin.com/in/hormazdaruwala/</p>
+        <p>GitHub: https://github.com/coderhormaz</p>
+      </div>
+
+      {/* NoScript fallback for crawlers */}
+      <noscript>
+        <div className="min-h-screen bg-black text-white p-8">
+          <header className="text-center mb-8">
+            <h1 className="text-4xl font-bold mb-4">Hormaz Daruwala</h1>
+            <p className="text-xl text-gray-300">Full Stack Developer & UI/UX Designer</p>
+          </header>
+          
+          <main className="max-w-4xl mx-auto">
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold mb-4">About</h2>
+              <p className="text-gray-300 leading-relaxed">
+                Professional Full-Stack Developer (coderhormaz) specializing in React, Next.js, TypeScript, and modern web technologies. 
+                Expert in creating exceptional digital experiences with cutting-edge solutions.
+              </p>
+            </section>
+            
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold mb-4">Skills</h2>
+              <p className="text-gray-300">
+                React, Next.js, TypeScript, JavaScript, Node.js, Python, HTML5, CSS3, Tailwind CSS, 
+                Three.js, React Three Fiber, MongoDB, PostgreSQL, REST APIs, GraphQL, Git, Docker, AWS, Vercel
+              </p>
+            </section>
+            
+            <section>
+              <h2 className="text-2xl font-bold mb-4">Contact</h2>
+              <div className="text-gray-300">
+                <p>Email: hormazdaruwala86@gmail.com</p>
+                <p>LinkedIn: https://www.linkedin.com/in/hormazdaruwala/</p>
+                <p>GitHub: https://github.com/coderhormaz</p>
+                <p>Instagram: https://www.instagram.com/horma_z/</p>
+              </div>
+            </section>
+          </main>
+        </div>
+      </noscript>
+
+      {/* Preloader - Only shown to users */}
+      {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
+      
       <main 
         className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-x-hidden w-full animate-in fade-in duration-1000"
+        style={{ display: isLoading ? 'none' : 'block' }}
         itemScope 
         itemType="https://schema.org/WebPage"
       >
-        {/* Schema.org structured data */}
-        <meta itemProp="name" content="Hormaz Daruwala Portfolio" />
-        <meta itemProp="description" content="Professional portfolio of Hormaz Daruwala, expert full-stack developer specializing in React, Next.js, TypeScript, and modern web technologies." />
-        <meta itemProp="url" content="https://hormaz.tech" />
-        <meta itemProp="author" content="Hormaz Daruwala" />
-        <meta itemProp="keywords" content="Hormaz, Hormaz Daruwala, Hormaz Coder, coder hormaz, coderhormaz, Developer Hormaz, Hormaz Developer, Hormaz Full Stack Developer, Hormaz Frontend Developer" />
         
         {/* Enhanced Interactive Background */}
         <SmoothCursor />

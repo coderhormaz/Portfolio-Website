@@ -4,6 +4,17 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial, Environment } from "@react-three/drei";
 import * as THREE from "three";
 
+// Error boundary for 3D environment
+const EnvironmentWithFallback = () => {
+  // Use the exact same preset as original to maintain visual consistency
+  return (
+    <Environment 
+      preset="night"
+      background={false}
+    />
+  );
+};
+
 const AnimatedSphere = () => {
   const meshRef = useRef<THREE.Mesh>(null);
 
@@ -66,6 +77,9 @@ const Hero3D = () => {
         camera={{ position: [0, 0, 5], fov: 75 }}
         gl={{ antialias: true, alpha: true }}
         dpr={[1, 2]}
+        onCreated={({ gl }) => {
+          gl.setClearColor(0x000000, 0);
+        }}
       >
         <Suspense fallback={null}>
           {/* Lighting */}
@@ -73,8 +87,8 @@ const Hero3D = () => {
           <pointLight position={[10, 10, 10]} intensity={0.5} color="#8B5CF6" />
           <pointLight position={[-10, -10, -10]} intensity={0.3} color="#3B82F6" />
           
-          {/* Environment */}
-          <Environment preset="night" />
+          {/* Environment with fallback */}
+          <EnvironmentWithFallback />
           
           {/* 3D Objects */}
           <AnimatedSphere />

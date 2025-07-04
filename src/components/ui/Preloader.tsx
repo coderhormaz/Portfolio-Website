@@ -10,10 +10,11 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
+    // Reduced preloader time for better SEO
     const timer = setTimeout(() => {
       setIsVisible(false);
-      setTimeout(onComplete, 500); // Wait for exit animation
-    }, 3000);
+      setTimeout(onComplete, 300); // Reduced exit animation time
+    }, 1500); // Reduced from 3000ms to 1500ms
 
     return () => clearTimeout(timer);
   }, [onComplete]);
