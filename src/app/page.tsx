@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import Head from "next/head";
 import Navigation from "@/components/layout/Navigation";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
@@ -10,6 +9,7 @@ import ClientOnlyDotGrid from "@/components/ui/ClientOnlyDotGrid";
 import Preloader from "@/components/ui/Preloader";
 import { Linkedin, Instagram, Github, Mail, Heart } from "lucide-react";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
+import { portfolioAnalytics, useScrollTracking } from "@/lib/analytics";
 
 // SEO-optimized page for Hormaz Daruwala portfolio
 export default function Home() {
@@ -19,28 +19,15 @@ export default function Home() {
     setIsLoading(false);
   };
 
+  // Set up scroll tracking for analytics
+  useScrollTracking();
+
   if (isLoading) {
     return <Preloader onComplete={handlePreloaderComplete} />;
   }
 
   return (
-    <>
-      <Head>
-        {/* Additional page-specific meta tags */}
-        <meta name="keywords" content="Hormaz, Hormaz Daruwala, Hormaz Coder, coder hormaz, coderhormaz, Developer Hormaz, Hormaz Developer, Hormaz Full Stack Developer, Hormaz Frontend Developer, React Developer, Next.js Expert, TypeScript Specialist" />
-        <meta name="description" content="Hormaz Daruwala (coderhormaz) - Professional Full-Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies. Expert Frontend & Backend Developer creating exceptional digital experiences." />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Hormaz Daruwala | Full-Stack Developer & UI/UX Designer | coderhormaz" />
-        <meta property="og:description" content="Hormaz Daruwala (coderhormaz) - Professional Full-Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies." />
-        <meta property="og:url" content="https://hormaz.dev" />
-        <meta property="og:image" content="https://hormaz.dev/og-image.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Hormaz Daruwala | Full-Stack Developer & UI/UX Designer | coderhormaz" />
-        <meta name="twitter:description" content="Hormaz Daruwala (coderhormaz) - Professional Full-Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies." />
-        <meta name="twitter:image" content="https://hormaz.dev/og-image.jpg" />
-        <link rel="canonical" href="https://hormaz.dev" />
-      </Head>
-      
+    <>      
       <main 
         className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-x-hidden w-full animate-in fade-in duration-1000"
         itemScope 
@@ -175,6 +162,7 @@ export default function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base"
+                    onClick={() => portfolioAnalytics.trackSocialClick(social.name)}
                   >
                     <span className="mr-2">{social.icon}</span>
                     {social.name}

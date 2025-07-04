@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -35,23 +36,23 @@ export default function ThankYouPage() {
           </h1>
           
           <p className="text-gray-300 mb-6 leading-relaxed">
-            Thank you for reaching out! I've received your message and will get back to you as soon as possible, usually within 24 hours.
+            Thank you for reaching out! I&apos;ve received your message and will get back to you as soon as possible, usually within 24 hours.
           </p>
           
           <div className="space-y-3 text-sm text-gray-400">
             <p>✅ Your message has been delivered</p>
             <p>✅ You should receive a confirmation email shortly</p>
-            <p>✅ I'll respond to your inquiry soon</p>
+            <p>✅ I&apos;ll respond to your inquiry soon</p>
           </div>
         </div>
         
         <div className="space-y-4">
-          <a 
+          <Link 
             href="/"
             className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
           >
             Back to Portfolio
-          </a>
+          </Link>
           
           <p className="text-xs text-gray-500">
             You can also reach me directly at{' '}

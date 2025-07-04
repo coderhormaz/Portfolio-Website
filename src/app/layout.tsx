@@ -4,6 +4,8 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import SEOStructuredData from "@/components/SEOStructuredData";
 import PerformanceMonitoring from "@/components/PerformanceMonitoring";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -142,6 +144,8 @@ export default function RootLayout({
         <PerformanceMonitoring />
         {children}
         <Toaster />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

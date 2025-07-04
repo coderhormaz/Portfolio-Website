@@ -8,11 +8,12 @@ import Image from "next/image";
 import { ShineBorder } from "@/components/magicui/shine-border";
 import { ShineOverlay } from "@/components/ui/shine-overlay";
 import { ExternalLink, Github, Palette, Rocket, Layers, Layout, LayoutGrid } from "lucide-react";
+import { portfolioAnalytics } from "@/lib/analytics";
 
 const projects = [
   {
     title: "Token Plus NFT Launcher",
-    description: "A comprehensive platform for creating and deploying both NFTs and tokens on the Base blockchain, featuring a drawing board, customizable token parameters, and Web3 wallet integration.",
+    description: "A comprehensive for creating and deploying both NFTs and tokens on the Base blockchain, featuring a drawing board, customizable token parameters, and Web3 wallet integration.",
     tech: ["Web3.js", "React", "Solidity", "Base Chain", "MetaMask", "ERC-20/721"],
     image: "/basenft.mp4",
     isVideo: true,
@@ -186,7 +187,10 @@ const ProjectsSection = () => {
                       <Button 
                         size="sm" 
                         className="bg-white text-black hover:bg-gray-200 text-xs sm:text-sm px-3 sm:px-4 py-2 shadow-md"
-                        onClick={() => window.open(project.demoUrl, '_blank')}
+                        onClick={() => {
+                          portfolioAnalytics.trackProjectView(project.title, 'demo');
+                          window.open(project.demoUrl, '_blank');
+                        }}
                         disabled={project.demoUrl === "#"}
                       >
                         <ExternalLink className="w-3 h-3 mr-1" /> Live Demo
@@ -195,7 +199,10 @@ const ProjectsSection = () => {
                         size="sm" 
                         variant="outline" 
                         className="border-white text-white hover:bg-white/10 text-xs sm:text-sm px-3 sm:px-4 py-2 shadow-md"
-                        onClick={() => window.open(project.codeUrl, '_blank')}
+                        onClick={() => {
+                          portfolioAnalytics.trackProjectView(project.title, 'code');
+                          window.open(project.codeUrl, '_blank');
+                        }}
                         disabled={project.codeUrl === "#"}
                       >
                         <Github className="w-3 h-3 mr-1" /> View Code
@@ -235,7 +242,10 @@ const ProjectsSection = () => {
           <Button 
             size="lg"
             className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-xl transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
-            onClick={() => window.open("https://github.com/coderhormaz", '_blank')}
+            onClick={() => {
+              portfolioAnalytics.trackSocialClick('GitHub');
+              window.open("https://github.com/coderhormaz", '_blank');
+            }}
           >
             View All Projects
             <ExternalLink className="ml-2 w-5 h-5" />

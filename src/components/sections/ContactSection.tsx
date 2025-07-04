@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { useRevealAnimation } from "@/lib/animations";
 import { Linkedin, Instagram, Github, Mail, SendHorizonal, CheckCircle, AlertCircle } from "lucide-react";
 import { toast } from "sonner";
+import { portfolioAnalytics } from "@/lib/analytics";
 
 // Form validation utilities
 const validateEmail = (email: string): boolean => {
@@ -50,11 +51,15 @@ const ContactSection = () => {
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
+    // Track form start
+    portfolioAnalytics.trackContactAction('form_started');
+
     // Validate form data
     const validationErrors = validateForm(formData);
     if (validationErrors.length > 0) {
       setIsSubmitting(false);
       setSubmitStatus('error');
+      portfolioAnalytics.trackContactAction('form_error');
       toast.error(validationErrors.join(' '), {
         duration: 5000,
         description: "Please correct the errors and try again.",
@@ -87,7 +92,8 @@ const ContactSection = () => {
       if (result.success) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', message: '' });
-        toast.success("Message sent successfully! I'll get back to you soon.", {
+        portfolioAnalytics.trackContactAction('form_submitted');
+        toast.success("Message sent successfully! I&apos;ll get back to you soon.", {
           duration: 5000,
           description: "Thank you for reaching out. Your message has been delivered.",
         });
@@ -97,6 +103,7 @@ const ContactSection = () => {
     } catch (error) {
       console.error('Form submission error:', error);
       setSubmitStatus('error');
+      portfolioAnalytics.trackContactAction('form_error');
       toast.error("Failed to send message. Please try again.", {
         duration: 5000,
         description: "There was an error sending your message. You can also email me directly.",
@@ -196,7 +203,10 @@ const ContactSection = () => {
                     variant="outline"
                     size="sm"
                     className="border-white/20 text-white hover:bg-white/10 transition-all duration-300 text-xs sm:text-sm px-3 sm:px-4 py-2"
-                    onClick={() => window.open(social.url, '_blank')}
+                    onClick={() => {
+                      portfolioAnalytics.trackSocialClick(social.name);
+                      window.open(social.url, '_blank');
+                    }}
                   >
                     <span className="mr-2">{social.icon}</span>
                     {social.name}
@@ -217,7 +227,7 @@ const ContactSection = () => {
                 {submitStatus === 'success' && (
                   <div className="flex items-center p-4 bg-green-900/20 border border-green-500/30 rounded-lg text-green-400">
                     <CheckCircle className="w-5 h-5 mr-3 flex-shrink-0" />
-                    <span className="text-sm">Message sent successfully! I'll get back to you soon.</span>
+                    <span className="text-sm">Message sent successfully! I&apos;ll get back to you soon.</span>
                   </div>
                 )}
                 
