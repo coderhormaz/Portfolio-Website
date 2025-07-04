@@ -85,12 +85,29 @@ const config: Config = {
             backgroundPosition: "-200% 0",
           },
         },
+        shine: {
+          "0%": {
+            backgroundPosition: "0% 0%",
+          },
+          "50%": {
+            backgroundPosition: "100% 100%",
+          },
+          "100%": {
+            backgroundPosition: "0% 0%",
+          },
+        },
+        "shine-overlay": {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         spotlight: "spotlight 2s ease .75s 1 forwards",
         shimmer: "shimmer 2s linear infinite",
+        shine: "shine var(--duration, 14s) infinite linear",
+        "shine-overlay": "shine-overlay var(--duration, 5s) ease-in-out infinite",
       },
     },
   },

@@ -20,6 +20,11 @@ interface ShineBorderProps extends React.HTMLAttributes<HTMLDivElement> {
    * @default "#000000"
    */
   shineColor?: string | string[];
+  /**
+   * Add a shadow to make the border stand out
+   * @default false
+   */
+  hasShadow?: boolean;
 }
 
 /**
@@ -31,6 +36,7 @@ export function ShineBorder({
   borderWidth = 1,
   duration = 14,
   shineColor = "#000000",
+  hasShadow = false,
   className,
   style,
   ...props
@@ -55,6 +61,7 @@ export function ShineBorder({
       }
       className={cn(
         "pointer-events-none absolute inset-0 size-full rounded-[inherit] will-change-[background-position] motion-safe:animate-shine",
+        hasShadow && "shadow-lg",
         className,
       )}
       {...props}

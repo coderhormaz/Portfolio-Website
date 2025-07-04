@@ -5,6 +5,8 @@ import { CardSpotlight } from "@/components/ui/card-spotlight";
 import { Button } from "@/components/ui/button";
 import { useRevealAnimation } from "@/lib/animations";
 import Image from "next/image";
+import { ShineBorder } from "@/components/magicui/shine-border";
+import { ShineOverlay } from "@/components/ui/shine-overlay";
 import { ExternalLink, Github, Palette, Rocket, Globe, Layers, Layout, Paintbrush, LayoutGrid } from "lucide-react";
 
 const projects = [
@@ -71,14 +73,62 @@ const ProjectsSection = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10">
           {projects.map((project, index) => (
-            <CardSpotlight key={project.title} className="group overflow-hidden">
-              <div className="relative">
+            <div key={project.title} className="relative group">
+              {/* Outer shine border */}
+              <ShineBorder 
+                borderWidth={2} 
+                duration={index % 2 === 0 ? 8 : 10} // Alternate durations for variety
+                shineColor={
+                  project.title.includes("NFT") || project.title.includes("Token") 
+                    ? ["#8B5CF6", "#6366F1", "#4F46E5"] 
+                    : project.title.includes("Lightship") 
+                    ? ["#22D3EE", "#2563EB", "#0EA5E9"] 
+                    : project.title.includes("Selemen") 
+                    ? ["#EC4899", "#8B5CF6", "#D946EF"] 
+                    : ["#10B981", "#3B82F6", "#14B8A6"]
+                } 
+                className="opacity-80 transition-all duration-500 ease-out rounded-xl absolute inset-0 z-10"
+                style={{ filter: "blur(1px)" }}
+              />
+              <CardSpotlight className="relative overflow-hidden rounded-xl backdrop-blur-sm bg-black/50 hover:bg-black/60 transition-colors duration-500 z-0">
+                {/* Inner shine border with different animation timing */}
+                <ShineBorder 
+                  borderWidth={1} 
+                  duration={index % 2 === 0 ? 10 : 8} // Opposite timing of outer border
+                  shineColor={
+                    project.title.includes("NFT") || project.title.includes("Token") 
+                      ? ["#8B5CF6", "#6366F1", "#4F46E5"] 
+                      : project.title.includes("Lightship") 
+                      ? ["#22D3EE", "#0EA5E9", "#2563EB"] 
+                      : project.title.includes("Selemen") 
+                      ? ["#EC4899", "#D946EF", "#8B5CF6"] 
+                      : ["#10B981", "#14B8A6", "#3B82F6"]
+                  } 
+                  style={{ filter: "drop-shadow(0 0 8px rgba(139, 92, 246, 0.5))" }}
+                  className="opacity-70 transition-all duration-500 ease-out rounded-lg absolute inset-0 z-50"
+                />
+                
+                {/* Additional shine overlay for enhanced effect */}
+                <ShineOverlay 
+                  thickness={2}
+                  duration={index % 2 === 0 ? 8 : 6} 
+                  color={
+                    project.title.includes("NFT") || project.title.includes("Token") 
+                      ? "rgba(139, 92, 246, 0.2)" 
+                      : project.title.includes("Lightship") 
+                      ? "rgba(34, 211, 238, 0.2)" 
+                      : project.title.includes("Selemen") 
+                      ? "rgba(236, 72, 153, 0.2)" 
+                      : "rgba(16, 185, 129, 0.2)"
+                  }
+                  className="z-45"
+                />
                 {/* Project Image or Video */}
-                <div className="relative h-48 sm:h-56 md:h-64 mb-4 sm:mb-6 overflow-hidden rounded-lg">
+                <div className="relative h-48 sm:h-56 md:h-64 mb-4 sm:mb-6 overflow-hidden rounded-lg z-10 border border-white/5 mx-2 my-2">
                   {project.isVideo ? (
-                    <div className="w-full h-full relative group-hover:opacity-90 transition-opacity duration-300">
+                    <div className="w-full h-full relative group-hover:opacity-90 transition-opacity duration-300 border border-white/10 shadow-inner shadow-black/50">
                       <video 
                         src={project.image} 
                         autoPlay 
@@ -131,7 +181,7 @@ const ProjectsSection = () => {
                       )}
                     </div>
                   )}
-                  <div className="absolute inset-0 z-10 flex items-center justify-center">
+                  <div className="absolute inset-0 z-40 flex items-center justify-center">
                     <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-y-0 translate-y-4">
                       <Button 
                         size="sm" 
@@ -155,7 +205,7 @@ const ProjectsSection = () => {
                 </div>
 
                 {/* Project Content */}
-                <div className="space-y-3 sm:space-y-4 p-4 sm:p-6">
+                <div className="space-y-3 sm:space-y-4 p-5 sm:p-7 relative z-20">
                   <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-purple-300 transition-colors">
                     {project.title}
                   </h3>
@@ -175,8 +225,8 @@ const ProjectsSection = () => {
                     ))}
                   </div>
                 </div>
-              </div>
-            </CardSpotlight>
+              </CardSpotlight>
+            </div>
           ))}
         </div>
 
