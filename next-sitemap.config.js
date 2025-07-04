@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://hormaz.dev',
+  siteUrl: process.env.SITE_URL || 'https://hormaz.tech',
   generateRobotsTxt: false, // We have a custom robots.txt
   sitemapSize: 7000,
   changefreq: 'weekly',

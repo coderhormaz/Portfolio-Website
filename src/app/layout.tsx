@@ -10,7 +10,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://hormaz.dev'),
+  metadataBase: new URL('https://hormaz.tech'),
   title: {
     default: "Hormaz Daruwala | Full-Stack Developer & UI/UX Designer | coderhormaz",
     template: "%s | Hormaz Daruwala - Full Stack Developer"
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     "Responsive Design",
     "Performance Optimization"
   ],
-  authors: [{ name: "Hormaz Daruwala", url: "https://hormaz.dev" }],
+  authors: [{ name: "Hormaz Daruwala", url: "https://hormaz.tech" }],
   creator: "Hormaz Daruwala",
   publisher: "Hormaz Daruwala",
   category: "Technology",
@@ -57,13 +57,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://hormaz.dev",
+    url: "https://hormaz.tech",
     title: "Hormaz Daruwala | Full-Stack Developer & UI/UX Designer | coderhormaz",
     description: "Hormaz Daruwala (coderhormaz) - Professional Full-Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies. Expert Frontend & Backend Developer creating exceptional digital experiences.",
     siteName: "Hormaz Daruwala Portfolio",
     images: [
       {
-        url: "https://hormaz.dev/og-image.jpg",
+        url: "https://hormaz.tech/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Hormaz Daruwala - Full Stack Developer Portfolio",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     description: "Hormaz Daruwala (coderhormaz) - Professional Full-Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies.",
     creator: "@hormaz_dev",
     site: "@hormaz_dev",
-    images: ["https://hormaz.dev/og-image.jpg"]
+    images: ["https://hormaz.tech/og-image.jpg"]
   },
   robots: {
     index: true,
@@ -100,10 +100,10 @@ export const metadata: Metadata = {
     }
   },
   alternates: {
-    canonical: "https://hormaz.dev",
+    canonical: "https://hormaz.tech",
     languages: {
-      'en-US': 'https://hormaz.dev',
-      'en': 'https://hormaz.dev'
+      'en-US': 'https://hormaz.tech',
+      'en': 'https://hormaz.tech'
     }
   },
   other: {
@@ -132,7 +132,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         
         {/* Canonical URL */}
-        <link rel="canonical" href="https://hormaz.dev" />
+        <link rel="canonical" href="https://hormaz.tech" />
         
         {/* Favicon and Icons */}
         <link rel="icon" href="/favicon.ico" sizes="32x32" />

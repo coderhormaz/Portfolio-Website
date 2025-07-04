@@ -6,14 +6,14 @@ export const createPersonSchema = (): WithContext<Person> => ({
   name: "Hormaz Daruwala",
   alternateName: ["Hormaz", "coderhormaz", "Hormaz Coder", "coder hormaz", "Developer Hormaz"],
   description: "Professional Full-Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies. Expert Frontend & Backend Developer creating exceptional digital experiences.",
-  url: "https://hormaz.dev",
-  image: "https://hormaz.dev/hormaz-profile.jpg",
+  url: "https://hormaz.tech",
+  image: "https://hormaz.tech/hormaz-profile.jpg",
   sameAs: [
     "https://github.com/coderhormaz",
     "https://linkedin.com/in/hormaz-daruwala",
     "https://twitter.com/hormaz_dev",
     "https://instagram.com/hormaz_dev",
-    "https://coderhormaz.dev"
+    "https://coderhormaz.tech"
   ],
   jobTitle: "Full-Stack Developer",
   worksFor: {
@@ -57,7 +57,7 @@ export const createPersonSchema = (): WithContext<Person> => ({
     "@type": "PostalAddress",
     addressCountry: "IN"
   },
-  email: "contact@hormaz.dev",
+  email: "contact@hormaz.tech",
   telephone: "+91-XXXXXXXXXX"
 });
 
@@ -66,7 +66,7 @@ export const createWebsiteSchema = () => ({
   "@type": "WebSite",
   name: "Hormaz Daruwala Portfolio",
   alternateName: "coderhormaz Portfolio",
-  url: "https://hormaz.dev",
+  url: "https://hormaz.tech",
   description: "Professional portfolio of Hormaz Daruwala, expert full-stack developer specializing in React, Next.js, TypeScript, and modern web technologies.",
   author: {
     "@type": "Person",
@@ -74,7 +74,7 @@ export const createWebsiteSchema = () => ({
   },
   potentialAction: {
     "@type": "SearchAction",
-    target: "https://hormaz.dev/search?q={search_term_string}",
+    target: "https://hormaz.tech/search?q={search_term_string}",
     "query-input": "required name=search_term_string"
   },
   publisher: {
@@ -102,7 +102,7 @@ export const createProfessionalServiceSchema = () => ({
     "Performance Optimization",
     "Technical Consulting"
   ],
-  url: "https://hormaz.dev",
+  url: "https://hormaz.tech",
   telephone: "+91-XXXXXXXXXX",
-  email: "contact@hormaz.dev"
+  email: "contact@hormaz.tech"
 });

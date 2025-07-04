@@ -46,7 +46,7 @@ export const SECONDARY_KEYWORDS = [
 
 export const SITE_CONFIG = {
   name: 'Hormaz Daruwala Portfolio',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://hormaz.dev',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://hormaz.tech',
   description: 'Hormaz Daruwala (coderhormaz) - Professional Full-Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies. Expert Frontend & Backend Developer creating exceptional digital experiences.',
   author: 'Hormaz Daruwala',
   creator: 'Hormaz Daruwala',
@@ -179,7 +179,7 @@ export function generateFAQSchema() {
         name: 'How can I contact Hormaz for development projects?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'You can contact Hormaz Daruwala through his portfolio website at https://hormaz.dev, via email at hormazdaruwala86@gmail.com, or through his social media profiles on LinkedIn, GitHub, and Instagram.'
+          text: 'You can contact Hormaz Daruwala through his portfolio website at https://hormaz.tech, via email at hormazdaruwala86@gmail.com, or through his social media profiles on LinkedIn, GitHub, and Instagram.'
         }
       }
     ]

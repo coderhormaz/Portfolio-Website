@@ -35,7 +35,7 @@ Disallow: /_next/static/chunks/
 Disallow: /admin/
 
 # Sitemap location for search engines
-Sitemap: https://hormaz.dev/sitemap.xml
+Sitemap: https://hormaz.tech/sitemap.xml
 
 # Additional metadata for rich snippets
 # This robots.txt is optimized for: hormaz, hormaz daruwala, hormaz coder, coder hormaz, coderhormaz, developer hormaz, hormaz developer, hormaz full stack developer, hormaz frontend developer
