@@ -88,10 +88,9 @@ const AboutSection = () => {
 						ref={descriptionRef as React.RefObject<HTMLParagraphElement>}
 						className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4"
 					>
-						I&apos;m a passionate developer who loves creating immersive digital
-						experiences that blend cutting-edge technology with beautiful design.
-						My focus is on building performant, accessible, and visually stunning
-						web applications.
+						I&apos;m a passionate Information Technology student and aspiring developer currently pursuing my diploma at Vidyalankar Polytechnic. 
+						As a cybersecurity intern at Secure Cyber Future and team leader of Code Snipers (selected for Smart India Hackathon 2024), 
+						I love creating innovative digital solutions that blend cutting-edge technology with practical applications.
 					</p>
 				</div>
 
@@ -128,25 +127,32 @@ const AboutSection = () => {
 							
 							{[
 								{
-									year: "2024-Present",
-									title: "Full-Stack Developer",
-									company: "Freelance & Projects",
+									year: "June 2024 - Present",
+									title: "Cyber Security Intern",
+									company: "Secure Cyber Future",
 									description:
-										"Building modern web applications with React, Next.js, and advanced animations. Specializing in responsive design and user experience.",
+										"Currently pursuing a 3-month cybersecurity internship, gaining hands-on experience in security protocols, threat analysis, and protection strategies.",
 								},
 								{
-									year: "2023-2024",
-									title: "Frontend Developer",
-									company: "Digital Projects",
+									year: "November 2024",
+									title: "Team Leader - Code Snipers",
+									company: "Smart India Hackathon (SIH)",
 									description:
-										"Created interactive websites using HTML5, CSS3, JavaScript, and modern frameworks like React and Vue.js.",
+										"Led the 'Code Snipers' team and successfully got selected for the prestigious Smart India Hackathon 2024, demonstrating leadership and innovative problem-solving skills.",
 								},
 								{
-									year: "2022-2023",
-									title: "Web Developer & Designer",
-									company: "Creative Solutions",
+									year: "July 2023 - Present",
+									title: "Diploma in Information Technology",
+									company: "Vidyalankar Polytechnic",
 									description:
-										"Developed websites with focus on UI/UX design using Figma, Photoshop, and modern web technologies.",
+										"Pursuing a 3-year diploma in Information Technology, focusing on modern programming languages, web development, and emerging technologies.",
+								},
+								{
+									year: "May 2023",
+									title: "SSC (Secondary School Certificate)",
+									company: "Sharda Mandir",
+									description:
+										"Completed secondary education from Maharashtra State Board with 76% marks, building a strong foundation in academics and technical subjects.",
 								},
 							].map((experience, index) => (
 								<Card key={index} className="glass-card border-white/10">
