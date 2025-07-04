@@ -73,7 +73,7 @@ const Projects = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <CardSpotlight 
               key={project.id} 
               className={`group cursor-pointer transition-all duration-500 hover:scale-[1.02] ${

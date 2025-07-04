@@ -67,9 +67,9 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Methods */}
           <div className="space-y-8">
-            <h3 className="text-3xl font-bold text-white mb-8">Let's Connect</h3>
+            <h3 className="text-3xl font-bold text-white mb-8">Let&apos;s Connect</h3>
             
-            {contactMethods.map((method, index) => {
+            {contactMethods.map((method) => {
               const IconComponent = method.icon;
               return (
                 <CardSpotlight key={method.title} className="p-6 cursor-pointer hover:scale-105 transition-transform duration-300">

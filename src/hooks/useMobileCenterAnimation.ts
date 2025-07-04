@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 
 interface UseMobileCenterAnimationProps {
   enabled?: boolean;
@@ -40,7 +40,7 @@ export const useMobileCenterAnimation = ({
     }
   };
 
-  const handleElementTransition = (newElement: HTMLElement | null) => {
+  const handleElementTransition = useCallback((newElement: HTMLElement | null) => {
     if (newElement === activeElement) return;
 
     // Clear any existing transition timeout
@@ -56,9 +56,9 @@ export const useMobileCenterAnimation = ({
       setActiveElement(newElement);
       setPreviousElement(null);
     }, 200); // 200ms delay for smooth transition
-  };
+  }, [activeElement]);
 
-  const findClosestToCenter = () => {
+  const findClosestToCenter = useCallback(() => {
     if (!enabled || !isMobile || elementsRef.current.size === 0) return null;
 
     const viewportHeight = window.innerHeight;
@@ -82,7 +82,7 @@ export const useMobileCenterAnimation = ({
     });
 
     return closestElement;
-  };
+  }, [enabled, isMobile, threshold]);
 
   useEffect(() => {
     if (!enabled || !isMobile) return;
@@ -123,7 +123,7 @@ export const useMobileCenterAnimation = ({
         clearTimeout(transitionTimeoutRef.current);
       }
     };
-  }, [enabled, activeElement, isMobile]);
+  }, [enabled, activeElement, isMobile, findClosestToCenter, handleElementTransition]);
 
   return {
     registerElement,

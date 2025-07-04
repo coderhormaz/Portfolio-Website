@@ -63,7 +63,7 @@ const Navigation = () => {
               onClick={() => scrollToSection("#contact")}
               className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg transition-all duration-300 px-4 xl:px-6 py-2 text-sm xl:text-base"
             >
-              Let's Talk
+              Let&apos;s Talk
             </Button>
           </div>
 
@@ -107,7 +107,7 @@ const Navigation = () => {
               onClick={() => scrollToSection("#contact")}
               className="w-full mt-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg transition-all duration-300 py-3"
             >
-              Let's Talk
+              Let&apos;s Talk
             </Button>
           </div>
         </div>

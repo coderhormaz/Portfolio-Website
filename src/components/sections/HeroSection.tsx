@@ -42,6 +42,10 @@ const HeroSection = () => {
             <Button 
               size="lg" 
               className="group bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-xl transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
+              onClick={() => {
+                const projectsSection = document.getElementById('projects');
+                projectsSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               View My Work
               <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -51,6 +55,10 @@ const HeroSection = () => {
               variant="outline" 
               size="lg"
               className="border-white/20 text-white hover:bg-white/10 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-xl transition-all duration-300 w-full sm:w-auto"
+              onClick={() => {
+                const contactSection = document.getElementById('contact');
+                contactSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               Get In Touch
             </Button>
@@ -68,8 +76,14 @@ const HeroSection = () => {
       </div>
       
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full p-1">
+      <div 
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
+        onClick={() => {
+          const aboutSection = document.getElementById('about');
+          aboutSection?.scrollIntoView({ behavior: 'smooth' });
+        }}
+      >
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full p-1 hover:border-white/50 transition-colors duration-300">
           <div className="w-1 h-2 bg-white/50 rounded-full mx-auto animate-bounce"></div>
         </div>
       </div>

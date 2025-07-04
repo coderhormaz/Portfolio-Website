@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
+// Removed unused imports
 import { CardSpotlight } from "@/components/ui/card-spotlight";
 import { Button } from "@/components/ui/button";
 import { useRevealAnimation } from "@/lib/animations";
 import Image from "next/image";
 import { ShineBorder } from "@/components/magicui/shine-border";
 import { ShineOverlay } from "@/components/ui/shine-overlay";
-import { ExternalLink, Github, Palette, Rocket, Globe, Layers, Layout, Paintbrush, LayoutGrid } from "lucide-react";
+import { ExternalLink, Github, Palette, Rocket, Layers, Layout, LayoutGrid } from "lucide-react";
 
 const projects = [
   {

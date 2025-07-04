@@ -89,7 +89,8 @@ export function SmoothCursor({
     restDelta: 0.001,
   },
 }: SmoothCursorProps) {
-  const [isMoving, setIsMoving] = useState(false);
+  // State to track cursor movement status (not currently used but might be needed for future features)
+  const [, setIsMoving] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
   const lastMousePos = useRef<Position>({ x: 0, y: 0 });
   const velocity = useRef<Position>({ x: 0, y: 0 });
@@ -114,6 +115,7 @@ export function SmoothCursor({
   const isTouchDevice = () => {
     return (('ontouchstart' in window) ||
       (navigator.maxTouchPoints > 0) ||
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (navigator as any).msMaxTouchPoints > 0);
   };
 

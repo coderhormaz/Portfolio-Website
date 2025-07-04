@@ -36,6 +36,7 @@ export default function useDeviceDetection(): DeviceInfo {
         const isTouch = 
           'ontouchstart' in window || 
           (navigator && navigator.maxTouchPoints > 0) ||
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           (navigator && (navigator as any).msMaxTouchPoints > 0);
         
         setDeviceInfo({

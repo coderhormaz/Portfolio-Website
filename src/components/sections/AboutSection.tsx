@@ -2,7 +2,7 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import MobileCenterPixelCard from "@/components/ui/MobileCenterPixelCard";
-import { useRevealAnimation, useIntersectionObserver } from "@/lib/animations";
+import { useRevealAnimation } from "@/lib/animations";
 import { Code, Server, CircuitBoard, Paintbrush, PaintBucket, Wrench, LockKeyhole, Globe } from "lucide-react";
 import { ShineBorder } from "../magicui/shine-border";
 
@@ -88,7 +88,7 @@ const AboutSection = () => {
 						ref={descriptionRef as React.RefObject<HTMLParagraphElement>}
 						className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4"
 					>
-						I'm a passionate developer who loves creating immersive digital
+						I&apos;m a passionate developer who loves creating immersive digital
 						experiences that blend cutting-edge technology with beautiful design.
 						My focus is on building performant, accessible, and visually stunning
 						web applications.
@@ -97,7 +97,7 @@ const AboutSection = () => {
 
 				{/* Skills Grid */}
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mb-16">
-					{skills.map((skill, index) => (
+					{skills.map((skill) => (
 						<MobileCenterPixelCard 
 							key={skill.title}
 							variant={skill.variant}

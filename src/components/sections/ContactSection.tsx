@@ -39,10 +39,10 @@ const ContactSection = () => {
             ref={titleRef as React.RefObject<HTMLHeadingElement>}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
           >
-            Let's Connect
+            Let&apos;s Connect
           </h2>
           <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed px-4">
-            Ready to bring your ideas to life? Let's discuss your next project 
+            Ready to bring your ideas to life? Let&apos;s discuss your next project 
             and create something amazing together.
           </p>
         </div>
