@@ -19,16 +19,7 @@ module.exports = {
       changefreq: 'daily',
       priority: 1.0,
       lastmod: new Date().toISOString(),
-      alternateRefs: [
-        {
-          href: 'https://hormaz.dev',
-          hreflang: 'en',
-        },
-        {
-          href: 'https://coderhormaz.dev',
-          hreflang: 'en',
-        }
-      ]
+      
     },
     {
       loc: '/#about',
@@ -50,10 +41,10 @@ module.exports = {
     }
   ],
   robotsTxtOptions: {
-    additionalSitemaps: [
-      'https://hormaz.dev/sitemap.xml',
-      'https://coderhormaz.dev/sitemap.xml'
-    ],
+      additionalSitemaps: [
+        'https://hormaz.tech/sitemap.xml',
+       
+      ],
   },
   transform: async (config, path) => {
     // Custom transform for better SEO
@@ -64,7 +55,7 @@ module.exports = {
       lastmod: new Date().toISOString(),
       images: [
         {
-          loc: 'https://hormaz.dev/og-image.jpg',
+          loc: 'https://hormaz.tech/og-image.jpg',
           title: 'Hormaz Daruwala - Full Stack Developer Portfolio',
           caption: 'Professional portfolio of Hormaz Daruwala, expert full-stack developer specializing in React, Next.js, and modern web technologies'
         }

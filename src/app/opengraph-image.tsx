@@ -119,7 +119,7 @@ export default async function Image() {
             fontWeight: '500',
           }}
         >
-          hormaz.dev
+          hormaz.tech
         </div>
       </div>
     ),

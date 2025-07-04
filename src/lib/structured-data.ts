@@ -13,7 +13,7 @@ export const createPersonSchema = (): WithContext<Person> => ({
     "https://linkedin.com/in/hormaz-daruwala",
     "https://twitter.com/hormaz_dev",
     "https://instagram.com/hormaz_dev",
-    "https://coderhormaz.tech"
+    
   ],
   jobTitle: "Full-Stack Developer",
   worksFor: {

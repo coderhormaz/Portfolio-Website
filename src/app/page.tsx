@@ -36,7 +36,7 @@ export default function Home() {
         {/* Schema.org structured data */}
         <meta itemProp="name" content="Hormaz Daruwala Portfolio" />
         <meta itemProp="description" content="Professional portfolio of Hormaz Daruwala, expert full-stack developer specializing in React, Next.js, TypeScript, and modern web technologies." />
-        <meta itemProp="url" content="https://hormaz.dev" />
+        <meta itemProp="url" content="https://hormaz.tech" />
         <meta itemProp="author" content="Hormaz Daruwala" />
         <meta itemProp="keywords" content="Hormaz, Hormaz Daruwala, Hormaz Coder, coder hormaz, coderhormaz, Developer Hormaz, Hormaz Developer, Hormaz Full Stack Developer, Hormaz Frontend Developer" />
         
@@ -82,7 +82,7 @@ export default function Home() {
             <meta itemProp="alternateName" content="coderhormaz" />
             <meta itemProp="jobTitle" content="Full-Stack Developer" />
             <meta itemProp="description" content="Professional Full-Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies." />
-            <meta itemProp="url" content="https://hormaz.dev" />
+            <meta itemProp="url" content="https://hormaz.tech" />
             <HeroSection />
           </section>
           {/* About Section */}

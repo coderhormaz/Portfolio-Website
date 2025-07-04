@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
   
   // Image optimization
   images: {
-    domains: ['hormaz.dev', 'localhost'],
+    domains: ['hormaz.tech', 'localhost'],
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 86400, // 24 hours
   },

@@ -127,7 +127,7 @@ const AboutSection = () => {
 							
 							{[
 								{
-									year: "June 2024 - Present",
+									year: "June 2025 - Present",
 									title: "Cyber Security Intern",
 									company: "Secure Cyber Future",
 									description:
