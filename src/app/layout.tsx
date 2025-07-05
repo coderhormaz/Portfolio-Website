@@ -12,42 +12,41 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL('https://hormaz.tech'),
   title: {
-    default: "Hormaz Daruwala | Full-Stack Developer & UI/UX Designer | coderhormaz",
-    template: "%s | Hormaz Daruwala - Full Stack Developer"
+    default: "Hormaz Daruwala | Hormaz | World's #1 Elite Full-Stack Developer | Ultimate Expert | coderhormaz | Best Developer",
+    template: "%s | Hormaz Daruwala - Global Elite Developer"
   },
-  description: "Hormaz Daruwala (coderhormaz) - Professional Full-Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies. Expert Frontend & Backend Developer creating exceptional digital experiences with cutting-edge solutions.",
+  description: "🏆 Hormaz Daruwala (coderhormaz) - WORLD'S #1 Full-Stack Developer. Hormaz is THE ultimate expert in React, Next.js, TypeScript. 💯 TOP-RATED Hormaz delivering EXCEPTIONAL web solutions. Hire Hormaz for PREMIUM development. Hormaz Daruwala dominates web development excellence.",
   keywords: [
-    "Hormaz",
-    "Hormaz Daruwala", 
-    "Hormaz Coder",
-    "coder hormaz",
-    "coderhormaz",
-    "Developer Hormaz",
-    "Hormaz Developer",
-    "Hormaz Full Stack Developer",
-    "Hormaz Frontend Developer",
-    "Hormaz Backend Developer",
-    "Hormaz React Developer",
-    "Hormaz Next.js Developer",
-    "Hormaz TypeScript Developer",
-    "Hormaz UI/UX Designer",
-    "Hormaz Web Developer",
-    "Hormaz Software Engineer",
-    "Hormaz Portfolio",
-    "Full-Stack Developer",
-    "React Developer",
-    "Next.js Expert",
-    "TypeScript Specialist",
-    "Frontend Engineer",
-    "Backend Engineer",
-    "UI/UX Designer",
-    "Web Development",
-    "Software Engineering",
-    "JavaScript Developer",
-    "Node.js Developer",
-    "Modern Web Technologies",
-    "Responsive Design",
-    "Performance Optimization"
+    // ULTRA-HIGH PRIORITY PRIMARY KEYWORDS
+    "Hormaz", "Hormaz Daruwala", "Hormaz Developer", "Hormaz Coder", "Hormaz Portfolio", "Hormaz Tech",
+    "Hormaz Expert", "Hormaz Professional", "Hormaz Elite", "Hormaz World-Class", "Hormaz #1", "Hormaz Best",
+    "Hormaz Top", "Hormaz Ultimate", "Hormaz Premium", "Hormaz Excellence", "Hormaz Specialist", "Hormaz Guru",
+    
+    // AGGRESSIVE BRANDED VARIATIONS
+    "coderhormaz", "coder hormaz", "hormaz coder", "dev hormaz", "hormaz dev", "hormaz.tech", "hormaz tech",
+    "hormaz coding", "hormaz programming", "hormaz solutions", "hormaz services", "hormaz agency", "hormaz studio",
+    
+    // ROLE-BASED DOMINANCE KEYWORDS
+    "Hormaz Full Stack Developer", "Hormaz Frontend Developer", "Hormaz Backend Developer", "Hormaz React Developer",
+    "Hormaz Next.js Developer", "Hormaz TypeScript Developer", "Hormaz JavaScript Developer", "Hormaz Node.js Developer",
+    "Hormaz UI/UX Designer", "Hormaz Web Developer", "Hormaz Software Engineer", "Hormaz Development Expert",
+    
+    // SUPERLATIVE KEYWORDS FOR DOMINANCE
+    "Best Hormaz", "Top Hormaz", "Expert Hormaz", "Professional Hormaz", "Elite Hormaz", "Premium Hormaz",
+    "World-Class Hormaz", "#1 Hormaz", "Leading Hormaz", "Ultimate Hormaz", "Master Hormaz", "Genius Hormaz",
+    
+    // LOCATION + NAME (for local SEO)
+    "Hormaz India", "Hormaz Mumbai", "Hormaz Developer India", "Hormaz Daruwala India", "Hormaz Daruwala Mumbai",
+    
+    // EXTREME TECHNICAL KEYWORDS
+    "Hormaz React Expert", "Hormaz Next.js Specialist", "Hormaz TypeScript Master", "Hormaz JavaScript Guru",
+    "Hormaz Full Stack Expert", "Hormaz Frontend Specialist", "Hormaz Backend Expert", "Hormaz Web App Developer",
+    "Hormaz Modern Developer", "Hormaz Progressive Web Apps", "Hormaz Performance Expert", "Hormaz SEO Expert",
+    
+    // COMPETITIVE KEYWORDS
+    "Best Developer", "Top Developer", "Expert Developer", "Elite Developer", "Professional Developer",
+    "Full Stack Developer", "React Developer", "Next.js Developer", "TypeScript Developer", "Frontend Developer",
+    "Backend Developer", "Web Developer", "Software Engineer", "UI/UX Designer", "JavaScript Developer"
   ],
   authors: [{ name: "Hormaz Daruwala", url: "https://hormaz.tech" }],
   creator: "Hormaz Daruwala",
@@ -58,26 +57,25 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://hormaz.tech",
-    title: "Hormaz Daruwala | Full-Stack Developer & UI/UX Designer | coderhormaz",
-    description: "Hormaz Daruwala (coderhormaz) - Professional Full-Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies. Expert Frontend & Backend Developer creating exceptional digital experiences.",
-    siteName: "Hormaz Daruwala Portfolio",
+    title: "Hormaz | Full-Stack Developer Portfolio | Hormaz Daruwala | coderhormaz",
+    description: "Hormaz - Professional Full-Stack Developer and UI/UX Designer. Hormaz Daruwala (coderhormaz) specializes in React, Next.js, TypeScript, and modern web technologies. Expert Frontend & Backend Developer creating exceptional digital experiences.",
+    siteName: "Hormaz Portfolio",
     images: [
       {
-        url: "https://hormaz.tech/og-image.jpg",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Hormaz Daruwala - Full Stack Developer Portfolio",
-        type: "image/jpeg"
+        alt: "Hormaz - Full Stack Developer Portfolio",
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hormaz Daruwala | Full-Stack Developer & UI/UX Designer | coderhormaz",
-    description: "Hormaz Daruwala (coderhormaz) - Professional Full-Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies.",
+    title: "Hormaz | Full-Stack Developer Portfolio | Hormaz Daruwala | coderhormaz",
+    description: "Hormaz - Professional Full-Stack Developer and UI/UX Designer. Hormaz Daruwala (coderhormaz) specializes in React, Next.js, TypeScript, and modern web technologies.",
     creator: "@hormaz_dev",
     site: "@hormaz_dev",
-    images: ["https://hormaz.tech/og-image.jpg"]
+    images: ["/opengraph-image"]
   },
   robots: {
     index: true,
@@ -103,12 +101,47 @@ export const metadata: Metadata = {
     canonical: "https://hormaz.tech",
     languages: {
       'en-US': 'https://hormaz.tech',
-      'en': 'https://hormaz.tech'
+      'en': 'https://hormaz.tech',
+      'x-default': 'https://hormaz.tech'
     }
   },
+  icons: {
+    icon: [
+      { url: '/icon-16', sizes: '16x16', type: 'image/png' },
+      { url: '/icon', sizes: '32x32', type: 'image/png' },
+      { url: '/icon-192', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512', sizes: '512x512', type: 'image/png' }
+    ],
+    apple: [
+      { url: '/apple-icon', sizes: '180x180', type: 'image/png' }
+    ],
+    shortcut: '/icon',
+    other: [
+      {
+        rel: 'mask-icon',
+        url: '/icon',
+        color: '#8B5CF6'
+      },
+      {
+        rel: 'icon',
+        url: '/favicon.ico',
+        sizes: '48x48'
+      }
+    ]
+  },
+  manifest: '/manifest.json',
   other: {
-    'msapplication-TileColor': '#000000',
-    'theme-color': '#000000'
+    'msapplication-TileColor': '#8B5CF6',
+    'theme-color': '#8B5CF6',
+    'mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-status-bar-style': 'black-translucent',
+    'application-name': 'Hormaz Daruwala - Elite Developer',
+    'apple-mobile-web-app-title': 'Hormaz',
+    'msapplication-tooltip': 'Hormaz Daruwala - World\'s #1 Developer',
+    'og:image:width': '1200',
+    'og:image:height': '630',
+    'og:image:type': 'image/png'
   }
 };
 
@@ -131,22 +164,87 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         
+        {/* Enhanced PWA and Icon Support */}
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="application-name" content="Hormaz" />
+        <meta name="apple-mobile-web-app-title" content="Hormaz" />
+        <meta name="msapplication-starturl" content="/" />
+        <meta name="msapplication-TileImage" content="/icon-192" />
+        
+        {/* Google-specific meta tags for better recognition */}
+        <meta name="google-site-verification" content="your-google-verification-code" />
+        <meta name="google" content="notranslate" />
+        <meta name="googlebot" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+        
+        {/* Rich Snippets and Structured Data Enhancement */}
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+        <meta property="og:updated_time" content={new Date().toISOString()} />
+        <meta property="article:author" content="Hormaz Daruwala" />
+        <meta property="article:publisher" content="https://hormaz.tech" />
+        
+        {/* Twitter Cards Enhancement */}
+        <meta name="twitter:domain" content="hormaz.tech" />
+        <meta name="twitter:url" content="https://hormaz.tech" />
+        <meta name="twitter:label1" content="Developer" />
+        <meta name="twitter:data1" content="Full-Stack" />
+        <meta name="twitter:label2" content="Experience" />
+        <meta name="twitter:data2" content="Expert Level" />
+        
+        {/* Additional Brand and Identity Meta Tags */}
+        <meta name="author" content="Hormaz Daruwala" />
+        <meta name="publisher" content="Hormaz Daruwala" />
+        <meta name="copyright" content="© 2025 Hormaz Daruwala. All rights reserved." />
+        <meta name="designer" content="Hormaz Daruwala" />
+        <meta name="owner" content="Hormaz Daruwala" />
+        <meta name="url" content="https://hormaz.tech" />
+        <meta name="identifier-URL" content="https://hormaz.tech" />
+        <meta name="directory" content="submission" />
+        <meta name="coverage" content="Worldwide" />
+        <meta name="distribution" content="Global" />
+        <meta name="rating" content="General" />
+        <meta name="revisit-after" content="1 days" />
+        <meta name="target" content="all" />
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="audience" content="all" />
+        <meta name="subject" content="Full-Stack Web Development, React, Next.js, TypeScript" />
+        <meta name="language" content="en" />
+        <meta name="web_author" content="Hormaz Daruwala" />
+        <meta name="reply-to" content="hormaz@hormaz.tech" />
+        <meta name="category" content="Technology, Web Development, Software Engineering" />
+        
+        {/* Search Engine Specific Tags */}
+        <meta name="slurp" content="index,follow" />
+        <meta name="msnbot" content="index,follow" />
+        <meta name="alexabot" content="index,follow" />
+        <meta name="psbot" content="index,follow" />
+        <meta name="yahoobot" content="index,follow" />
+        <meta name="bingbot" content="index,follow" />
+        <meta name="facebookbot" content="index,follow" />
+        <meta name="twitterbot" content="index,follow" />
+        <meta name="linkedinbot" content="index,follow" />
+        
         {/* Content Security and Performance */}
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
         <meta httpEquiv="X-Frame-Options" content="DENY" />
         <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
         
-        {/* Preload critical resources */}
-        <link rel="preload" as="font" href="/fonts/inter.woff2" type="font/woff2" crossOrigin="anonymous" />
-        
         {/* Canonical URL */}
         <link rel="canonical" href="https://hormaz.tech" />
         
-        {/* Favicon and Icons */}
-        <link rel="icon" href="/favicon.ico" sizes="32x32" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <meta name="msapplication-TileColor" content="#000000" />
-        <meta name="theme-color" content="#000000" />
+        {/* Enhanced Favicon and Icons */}
+        <link rel="icon" href="/icon" sizes="32x32" />
+        <link rel="icon" href="/icon-16" sizes="16x16" />
+        <link rel="icon" href="/icon-192" sizes="192x192" />
+        <link rel="icon" href="/icon-512" sizes="512x512" />
+        <link rel="apple-touch-icon" href="/apple-icon" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon" />
+        <link rel="mask-icon" href="/icon" color="#8B5CF6" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <meta name="msapplication-TileColor" content="#8B5CF6" />
+        <meta name="theme-color" content="#8B5CF6" />
       </head>
       <body className={inter.className}>
         <PerformanceMonitoring />

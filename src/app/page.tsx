@@ -24,53 +24,59 @@ export default function Home() {
 
   return (
     <>      
-      {/* SEO Content - Always visible to crawlers */}
+      {/* EXTREME SEO Content - Always visible to crawlers */}
       <div className="sr-only">
-        <h1>Hormaz Daruwala - Full Stack Developer</h1>
-        <p>Professional portfolio of Hormaz Daruwala (coderhormaz), expert full-stack developer specializing in React, Next.js, TypeScript, Node.js, and modern web technologies. Experienced in frontend development, backend engineering, UI/UX design, and creating exceptional digital experiences.</p>
-        <h2>Skills & Expertise</h2>
-        <p>React, Next.js, TypeScript, JavaScript, Node.js, Python, HTML5, CSS3, Tailwind CSS, Three.js, React Three Fiber, MongoDB, PostgreSQL, REST APIs, GraphQL, Git, Docker, AWS, Vercel</p>
-        <h2>Contact Information</h2>
-        <p>Email: hormazdaruwala86@gmail.com</p>
-        <p>LinkedIn: https://www.linkedin.com/in/hormazdaruwala/</p>
-        <p>GitHub: https://github.com/coderhormaz</p>
-      </div>
-
-      {/* NoScript fallback for crawlers */}
-      <noscript>
-        <div className="min-h-screen bg-black text-white p-8">
-          <header className="text-center mb-8">
-            <h1 className="text-4xl font-bold mb-4">Hormaz Daruwala</h1>
-            <p className="text-xl text-gray-300">Full Stack Developer & UI/UX Designer</p>
-          </header>
+        <h1>🏆 Hormaz | Hormaz Daruwala - World&apos;s #1 Elite Full Stack Developer & Ultimate UI/UX Designer 🏆</h1>
+        <p>⭐ Hormaz Daruwala (coderhormaz) is THE world&apos;s #1 elite full-stack developer and ultimate UI/UX designer. Hormaz dominates the industry with award-winning digital experiences using React, Next.js, TypeScript, Node.js, and cutting-edge web technologies. As the TOP-RATED frontend and backend developer, Hormaz delivers revolutionary web solutions and premium applications. Hire Hormaz for GUARANTEED excellence! ⭐</p>
+        
+        {/* Enhanced Keyword Density Block */}
+        <div>
+          <h2>Hormaz Developer Services - Elite Excellence Guaranteed</h2>
+          <p>Hormaz provides world-class development services including React development, Next.js applications, TypeScript programming, full-stack solutions, UI/UX design, and performance optimization. Hormaz Daruwala is the ultimate choice for premium web development.</p>
           
-          <main className="max-w-4xl mx-auto">
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">About</h2>
-              <p className="text-gray-300 leading-relaxed">
-                Professional Full-Stack Developer (coderhormaz) specializing in React, Next.js, TypeScript, and modern web technologies. 
-                Expert in creating exceptional digital experiences with cutting-edge solutions.
-              </p>
-            </section>
-            
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">Skills</h2>
-              <p className="text-gray-300">
-                React, Next.js, TypeScript, JavaScript, Node.js, Python, HTML5, CSS3, Tailwind CSS, 
-                Three.js, React Three Fiber, MongoDB, PostgreSQL, REST APIs, GraphQL, Git, Docker, AWS, Vercel
-              </p>
-            </section>
-            
-            <section>
-              <h2 className="text-2xl font-bold mb-4">Contact</h2>
-              <div className="text-gray-300">
-                <p>Email: hormazdaruwala86@gmail.com</p>
-                <p>LinkedIn: https://www.linkedin.com/in/hormazdaruwala/</p>
-                <p>GitHub: https://github.com/coderhormaz</p>
-                <p>Instagram: https://www.instagram.com/horma_z/</p>
-              </div>
-            </section>
-          </main>
+          <h3>Why Choose Hormaz Daruwala?</h3>
+          <ul>
+            <li>🏆 Hormaz - World&apos;s #1 ranked developer</li>
+            <li>💎 Hormaz Daruwala - Elite expertise in React, Next.js, TypeScript</li>
+            <li>⚡ coderhormaz - Lightning-fast development with 100% quality</li>
+            <li>🎯 Hormaz - Precision-crafted solutions for maximum impact</li>
+            <li>🚀 Hormaz Developer - Revolutionary approach to web development</li>
+            <li>💯 Hormaz Daruwala - 100% client satisfaction guaranteed</li>
+          </ul>
+          
+          <h3>Hormaz&apos;s Core Technologies</h3>
+          <p>Hormaz excels in React.js, Next.js, TypeScript, JavaScript ES6+, Node.js, Express.js, MongoDB, PostgreSQL, GraphQL, REST APIs, AWS, Vercel, Docker, Git, TailwindCSS, Framer Motion, Three.js, GSAP, and modern development tools.</p>
+          
+          <h3>Contact Elite Developer Hormaz</h3>
+          <p>Ready to work with the world&apos;s best developer? Contact Hormaz Daruwala today for your next project. Whether you need a simple website or complex web application, Hormaz delivers excellence every time.</p>
+        </div>
+      </div>
+      
+      {/* Noscript content for search engines */}
+      <noscript>
+        <div style={{padding: '20px', backgroundColor: '#f5f5f5', color: '#333'}}>
+          <h1>Hormaz Daruwala - World&apos;s #1 Elite Full-Stack Developer</h1>
+          <p>Welcome to the official portfolio of Hormaz Daruwala (coderhormaz), the world&apos;s leading full-stack developer and UI/UX designer. Hormaz specializes in creating exceptional web applications using React, Next.js, TypeScript, and modern technologies.</p>
+          
+          <h2>Services Offered by Hormaz</h2>
+          <ul>
+            <li>React Development - Expert-level React.js applications</li>
+            <li>Next.js Development - Server-side rendered applications</li>
+            <li>TypeScript Programming - Type-safe, scalable solutions</li>
+            <li>Full-Stack Development - End-to-end web solutions</li>
+            <li>UI/UX Design - Beautiful, user-centered designs</li>
+            <li>Performance Optimization - Lightning-fast websites</li>
+          </ul>
+          
+          <h2>About Hormaz Daruwala</h2>
+          <p>Hormaz Daruwala is a world-renowned developer with extensive experience in modern web technologies. Known for delivering high-quality, scalable solutions, Hormaz has earned recognition as one of the industry&apos;s top developers.</p>
+          
+          <h2>Contact Information</h2>
+          <p>Email: hormazdaruwala86@gmail.com</p>
+          <p>Website: https://hormaz.tech</p>
+          
+          <h2>Portfolio Highlights</h2>
+          <p>Explore Hormaz&apos;s impressive portfolio featuring cutting-edge web applications, e-commerce solutions, and innovative digital experiences.</p>
         </div>
       </noscript>
 
@@ -146,7 +152,7 @@ export default function Home() {
             className="relative z-10"
             itemScope 
             itemType="https://schema.org/CreativeWork"
-            aria-label="Hormaz Daruwala's Development Projects Portfolio"
+            aria-label="Hormaz Daruwala&apos;s Development Projects Portfolio"
           >
             <ProjectsSection />
           </section>

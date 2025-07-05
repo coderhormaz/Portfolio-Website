@@ -17,16 +17,22 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "#home", type: "scroll" },
+    { name: "About", href: "/about", type: "link" },
+    { name: "Services", href: "/services", type: "link" },
+    { name: "Portfolio", href: "/portfolio", type: "link" },
+    { name: "Blog", href: "/blog", type: "link" },
+    { name: "Contact", href: "#contact", type: "scroll" },
   ];
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+  const handleNavigation = (item: { name?: string; href: string; type: string }) => {
+    if (item.type === "scroll") {
+      const element = document.querySelector(item.href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      window.location.href = item.href;
     }
     setIsMobileMenuOpen(false);
   };
@@ -48,7 +54,7 @@ const Navigation = () => {
             {navItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => handleNavigation(item)}
                 className="text-gray-300 hover:text-white transition-colors duration-300 relative group text-sm xl:text-base"
               >
                 {item.name}
@@ -60,7 +66,7 @@ const Navigation = () => {
           {/* Desktop CTA */}
           <div className="hidden lg:block">
             <Button 
-              onClick={() => scrollToSection("#contact")}
+              onClick={() => handleNavigation({ href: "#contact", type: "scroll" })}
               className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg transition-all duration-300 px-4 xl:px-6 py-2 text-sm xl:text-base"
             >
               Let&apos;s Talk
@@ -97,14 +103,14 @@ const Navigation = () => {
             {navItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => handleNavigation(item)}
                 className="block w-full text-left text-gray-300 hover:text-white transition-colors duration-300 py-3 px-4 rounded-lg hover:bg-white/5"
               >
                 {item.name}
               </button>
             ))}
             <Button 
-              onClick={() => scrollToSection("#contact")}
+              onClick={() => handleNavigation({ href: "#contact", type: "scroll" })}
               className="w-full mt-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg transition-all duration-300 py-3"
             >
               Let&apos;s Talk

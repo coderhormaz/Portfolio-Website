@@ -12,11 +12,23 @@ export const useMobileCenterAnimation = ({
 }: UseMobileCenterAnimationProps = {}) => {
   const [activeElement, setActiveElement] = useState<HTMLElement | null>(null);
   const [previousElement, setPreviousElement] = useState<HTMLElement | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
   const elementsRef = useRef<Set<HTMLElement>>(new Set());
   const transitionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   
-  // Synchronous mobile detection
-  const isMobile = useRef(typeof window !== 'undefined' && window.innerWidth <= 768).current;
+  // Client-side mobile detection to prevent hydration mismatch
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, []);
 
   const registerElement = (element: HTMLElement) => {
     if (!enabled || !isMobile) return;

@@ -225,12 +225,16 @@ const PixelCard = forwardRef<PixelCardRef, PixelCardProps>(({
   );
   const timePreviousRef = useRef(performance.now());
   const hasInitializedRef = useRef(false);
-  const reducedMotion = useRef(
-    typeof window !== 'undefined' && window.matchMedia("(prefers-reduced-motion: reduce)").matches
-  ).current;
-  const isMobileRef = useRef(
-    typeof window !== 'undefined' && window.innerWidth <= 768
-  ).current;
+  const reducedMotion = useRef(false);
+  const isMobileRef = useRef(false);
+
+  // Initialize client-side values after mount
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      reducedMotion.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      isMobileRef.current = window.innerWidth <= 768;
+    }
+  }, []);
 
   const variantCfg: VariantConfig = VARIANTS[variant] || VARIANTS.default;
   const finalGap = gap ?? variantCfg.gap;
@@ -278,7 +282,7 @@ const PixelCard = forwardRef<PixelCardRef, PixelCardProps>(({
             x,
             y,
             color,
-            getEffectiveSpeed(finalSpeed, reducedMotion),
+            getEffectiveSpeed(finalSpeed, reducedMotion.current),
             delay
           )
         );

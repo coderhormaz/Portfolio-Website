@@ -1,42 +1,58 @@
 'use client';
 
 import Script from 'next/script';
-import { createPersonSchema, createWebsiteSchema, createProfessionalServiceSchema } from '@/lib/structured-data';
+import { 
+  createKnowledgeGraphSchema,
+  createFAQSchema,
+  createServiceSchema,
+  createCreativeWorkSchema
+} from '@/lib/structured-data';
 
 export default function SEOStructuredData() {
-  const personSchema = createPersonSchema();
-  const websiteSchema = createWebsiteSchema();
-  const professionalServiceSchema = createProfessionalServiceSchema();
+  const knowledgeGraphSchema = createKnowledgeGraphSchema();
+  const faqSchema = createFAQSchema();
+  const serviceSchema = createServiceSchema();
+  const creativeWorkSchema = createCreativeWorkSchema();
 
   return (
     <>
-      {/* Person Schema */}
+      {/* Knowledge Graph Schema - Main comprehensive schema */}
       <Script
-        id="person-schema"
+        id="knowledge-graph-schema"
         type="application/ld+json"
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(personSchema)
+          __html: JSON.stringify(knowledgeGraphSchema)
         }}
       />
       
-      {/* Website Schema */}
+      {/* FAQ Schema for rich snippets */}
       <Script
-        id="website-schema"
+        id="faq-schema"
         type="application/ld+json"
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(websiteSchema)
+          __html: JSON.stringify(faqSchema)
         }}
       />
       
-      {/* Professional Service Schema */}
+      {/* Service Schema */}
       <Script
-        id="professional-service-schema"
+        id="service-schema"
         type="application/ld+json"
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(professionalServiceSchema)
+          __html: JSON.stringify(serviceSchema)
+        }}
+      />
+      
+      {/* Creative Work Schema */}
+      <Script
+        id="creative-work-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(creativeWorkSchema)
         }}
       />
     </>

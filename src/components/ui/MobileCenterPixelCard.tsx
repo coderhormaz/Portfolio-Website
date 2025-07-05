@@ -2,6 +2,7 @@
 import { useEffect, useRef } from 'react';
 import { useMobileCenterAnimation } from '@/hooks/useMobileCenterAnimation';
 import PixelCard, { PixelCardRef } from './PixelCard';
+import ClientOnly from './ClientOnly';
 
 interface MobileCenterPixelCardProps {
   variant?: "default" | "blue" | "yellow" | "pink" | "purple" | "cyan" | "emerald" | "amber";
@@ -97,36 +98,40 @@ const MobileCenterPixelCard: React.FC<MobileCenterPixelCardProps> = ({
   // On desktop, use normal hover behavior
   if (!isMobile) {
     return (
-      <PixelCard
-        variant={variant}
-        gap={gap}
-        speed={speed}
-        colors={colors}
-        noFocus={noFocus}
-        className={className}
-        autoTrigger={true}
-      >
-        {children}
-      </PixelCard>
+      <ClientOnly fallback={<div className={`pixel-card h-full min-h-[300px] ${className}`}>{children}</div>}>
+        <PixelCard
+          variant={variant}
+          gap={gap}
+          speed={speed}
+          colors={colors}
+          noFocus={noFocus}
+          className={className}
+          autoTrigger={true}
+        >
+          {children}
+        </PixelCard>
+      </ClientOnly>
     );
   }
 
   // On mobile, use center detection
   return (
-    <div ref={containerRef} className="relative">
-      <PixelCard
-        ref={pixelCardRef}
-        variant={variant}
-        gap={gap}
-        speed={speed}
-        colors={colors}
-        noFocus={noFocus}
-        className={className}
-        autoTrigger={false} // Disable auto trigger on mobile
-      >
-        {children}
-      </PixelCard>
-    </div>
+    <ClientOnly fallback={<div className={`relative ${className}`}>{children}</div>}>
+      <div ref={containerRef} className="relative">
+        <PixelCard
+          ref={pixelCardRef}
+          variant={variant}
+          gap={gap}
+          speed={speed}
+          colors={colors}
+          noFocus={noFocus}
+          className={className}
+          autoTrigger={false} // Disable auto trigger on mobile
+        >
+          {children}
+        </PixelCard>
+      </div>
+    </ClientOnly>
   );
 };
 
