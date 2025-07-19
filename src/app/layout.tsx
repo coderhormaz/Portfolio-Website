@@ -12,10 +12,10 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL('https://hormaz.tech'),
   title: {
-    default: "Hormaz Daruwala | Hormaz | World's #1 Elite Full-Stack Developer | Ultimate Expert | coderhormaz | Best Developer",
+    default: "Hormaz | Full-Stack Developer Portfolio | Hormaz Daruwala | coderhormaz",
     template: "%s | Hormaz Daruwala - Global Elite Developer"
   },
-  description: "🏆 Hormaz Daruwala (coderhormaz) - WORLD'S #1 Full-Stack Developer. Hormaz is THE ultimate expert in React, Next.js, TypeScript. 💯 TOP-RATED Hormaz delivering EXCEPTIONAL web solutions. Hire Hormaz for PREMIUM development. Hormaz Daruwala dominates web development excellence.",
+  description: "Hormaz - Professional Full-Stack Developer and UI/UX Designer. Hormaz Daruwala (coderhormaz) specializes in React, Next.js, TypeScript, and modern web technologies.",
   keywords: [
     // ULTRA-HIGH PRIORITY PRIMARY KEYWORDS
     "Hormaz", "Hormaz Daruwala", "Hormaz Developer", "Hormaz Coder", "Hormaz Portfolio", "Hormaz Tech",
