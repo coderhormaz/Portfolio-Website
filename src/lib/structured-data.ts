@@ -134,8 +134,8 @@ export const createOrganizationSchema = () => ({
     "Elite Developer Hormaz", "Premium Developer Services", "Hormaz Agency"
   ],
   url: "https://hormaz.tech",
-  logo: "https://hormaz.tech/opengraph-image",
-  image: "https://hormaz.tech/opengraph-image",
+  logo: "https://hormaz.tech/logo.png",
+  image: "https://hormaz.tech/logo.png",
   description: "🏆 Hormaz Daruwala's Elite Development Services - World's #1 Full-Stack Developer providing premium React, Next.js, TypeScript solutions. Ultimate expert in modern web development.",
   founder: {
     "@type": "Person",

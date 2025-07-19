@@ -107,25 +107,22 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/icon-16', sizes: '16x16', type: 'image/png' },
-      { url: '/icon', sizes: '32x32', type: 'image/png' },
-      { url: '/icon-192', sizes: '192x192', type: 'image/png' },
-      { url: '/icon-512', sizes: '512x512', type: 'image/png' }
+      { url: '/favicon.ico', sizes: '16x16', type: 'image/x-icon' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
+      { url: '/logo.png', sizes: '512x512', type: 'image/png' }
     ],
     apple: [
-      { url: '/apple-icon', sizes: '180x180', type: 'image/png' }
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
     ],
-    shortcut: '/icon',
+    shortcut: '/favicon.ico',
     other: [
       {
         rel: 'mask-icon',
-        url: '/icon',
+        url: '/logo.png',
         color: '#8B5CF6'
-      },
-      {
-        rel: 'icon',
-        url: '/favicon.ico',
-        sizes: '48x48'
       }
     ]
   },
@@ -235,13 +232,14 @@ export default function RootLayout({
         <link rel="canonical" href="https://hormaz.tech" />
         
         {/* Enhanced Favicon and Icons */}
-        <link rel="icon" href="/icon" sizes="32x32" />
-        <link rel="icon" href="/icon-16" sizes="16x16" />
-        <link rel="icon" href="/icon-192" sizes="192x192" />
-        <link rel="icon" href="/icon-512" sizes="512x512" />
-        <link rel="apple-touch-icon" href="/apple-icon" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon" />
-        <link rel="mask-icon" href="/icon" color="#8B5CF6" />
+        <link rel="icon" href="/favicon.ico" sizes="16x16" />
+        <link rel="icon" href="/favicon-16x16.png" sizes="16x16" />
+        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" href="/android-chrome-192x192.png" sizes="192x192" />
+        <link rel="icon" href="/android-chrome-512x512.png" sizes="512x512" />
+        <link rel="icon" href="/logo.png" sizes="512x512" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+        <link rel="mask-icon" href="/logo.png" color="#8B5CF6" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <meta name="msapplication-TileColor" content="#8B5CF6" />
         <meta name="theme-color" content="#8B5CF6" />
