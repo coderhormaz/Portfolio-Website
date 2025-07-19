@@ -116,7 +116,7 @@ const AboutSection = () => {
 				</div>
 
 				{/* Experience Timeline */}
-				<div className="mt-16 sm:mt-20">
+				<div className="mt-16 sm:mt-20" id="experience">
 					<h3 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-white">
 						Experience & Journey
 					</h3>
