@@ -12,6 +12,25 @@ import { portfolioAnalytics } from "@/lib/analytics";
 
 const projects = [
   {
+    title: "opBNB AI Assistant",
+    description: "A premium AI-powered assistant built on opBNB with ultra-low gas fees and 4,000+ TPS. Features secure authentication, auto wallet generation, and intelligent blockchain query assistance with glassmorphic UI.",
+    tech: ["TypeScript", "React", "opBNB", "Supabase", "ethers.js", "Framer Motion", "Zustand"],
+    image: "/bnbai.mp4", // You can replace this with a specific video/image for the opBNB project
+    isVideo: true,
+    demoUrl: "https://bnb-hackathon-bombay.vercel.app/",
+    codeUrl: "https://github.com/coderhormaz/BNB_Hackathon",
+  },  
+  {
+    title: "Avalanche AI Blockchain Assistant",
+    description: "A powerful AI-powered blockchain assistant for the Avalanche network. Chat with AI to send AVAX, create tokens, mint NFTs, and perform blockchain operations using natural language commands.",
+    tech: ["TypeScript", "React", "Avalanche", "AI Integration", "IPFS", "Web3", "TailwindCSS"],
+    image: "/avaxai.mp4", // You can replace this with a specific video/image for the Avalanche project
+    isVideo: true,
+    demoUrl: "https://avax-ai.vercel.app/",
+    codeUrl: "https://github.com/coderhormaz/AVAX_Team1_hackathon",
+  },
+  
+  {
     title: "Token Plus NFT Launcher",
     description: "A comprehensive for creating and deploying both NFTs and tokens on the Base blockchain, featuring a drawing board, customizable token parameters, and Web3 wallet integration.",
     tech: ["Web3.js", "React", "Solidity", "Base Chain", "MetaMask", "ERC-20/721"],
