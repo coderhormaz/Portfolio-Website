@@ -58,7 +58,7 @@ const skills: Skill[] = [
 	},
 	{
 		title: "Web Technologies",
-		description: "Ajax, Three.js, GSAP, Framer Motion",
+		description: "Three.js, GSAP, Framer Motion",
 		icon: <Globe className="w-8 h-8 text-teal-400" />,
 		variant: "cyan",
 	},
