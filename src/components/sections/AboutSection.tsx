@@ -128,6 +128,20 @@ const AboutSection = () => {
 							
 							{[
 								{
+									year: "August 22-23, 2025",
+									title: "BNB Hack Bombay Participant",
+									company: "BNB Chain Hackathon",
+									description:
+										"Selected participant in BNB Hack Bombay, a prestigious Web3 hackathon focused on AI, DeSoc, DeSci, and DePIN technologies. Collaborated with industry leaders to build innovative decentralized solutions on BNB Chain.",
+								},
+								{
+									year: "August 16-17, 2025",
+									title: "Avalanche Hackathon Participant",
+									company: "Avalanche Mumbai Hackathon",
+									description:
+										"Selected for the prestigious Avalanche hackathon in Mumbai, working with cutting-edge blockchain technology including Avalanche Interchain Messaging (ICM) and Encrypted EVM Runtime Compiler (EERC). Built innovative Web3 solutions with industry experts.",
+								},
+								{
 									year: "June 2025 - Present",
 									title: "Cyber Security Intern",
 									company: "Secure Cyber Future",
