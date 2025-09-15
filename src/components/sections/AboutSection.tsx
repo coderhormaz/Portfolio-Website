@@ -22,13 +22,13 @@ interface Skill {
 const skills: Skill[] = [
 	{
 		title: "Frontend Development",
-		description: "HTML5, CSS3, JavaScript, React, Vue, Angular",
+		description: " React, Next.js, HTML5, CSS3, JavaScript",
 		icon: <Code className="w-8 h-8 text-purple-400" />,
 		variant: "purple",
 	},
 	{
 		title: "Backend & Languages",
-		description: "Python, Java, Node.js, Firebase",
+		description: "Node.js, Java, Python, Firebase",
 		icon: <Server className="w-8 h-8 text-blue-400" />,
 		variant: "blue",
 	},
@@ -142,7 +142,7 @@ const AboutSection = () => {
 										"Selected for the prestigious Avalanche hackathon in Mumbai, working with cutting-edge blockchain technology including Avalanche Interchain Messaging (ICM) and Encrypted EVM Runtime Compiler (EERC). Built innovative Web3 solutions with industry experts.",
 								},
 								{
-									year: "June 2025 - Present",
+									year: "June 2025 - August 2025",
 									title: "Cyber Security Intern",
 									company: "Secure Cyber Future",
 									description:
@@ -163,7 +163,7 @@ const AboutSection = () => {
 										"Pursuing a 3-year diploma in Information Technology, focusing on modern programming languages, web development, and emerging technologies.",
 								},
 								{
-									year: "May 2023",
+									year: "2017 - 2023",
 									title: "SSC (Secondary School Certificate)",
 									company: "Sharda Mandir",
 									description:
