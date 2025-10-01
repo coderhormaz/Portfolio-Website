@@ -12,6 +12,15 @@ import { portfolioAnalytics } from "@/lib/analytics";
 
 const projects = [
   {
+    title: "AI DeFi Trading Assistant",
+    description: "An intelligent blockchain trading agent leveraging Gemini AI for natural language command processing on Polygon network. Provides automated token swaps, wallet generation, real-time price feeds, and seamless Uniswap V3 integration with premium user experience.",
+    tech: ["TypeScript", "React", "Polygon", "Gemini AI", "Uniswap V3", "Supabase", "ethers.js"],
+    image: "/ai-trading-agent.png",
+    isVideo: false,
+    demoUrl: "https://eth-global-2025-beige.vercel.app/dashboard", // Add your demo URL here
+    codeUrl: "https://github.com/coderhormaz/ETHGlobal_2025", // Add your GitHub repo URL here
+  },
+  {
     title: "opBNB AI Assistant",
     description: "A premium AI-powered assistant built on opBNB with ultra-low gas fees and 4,000+ TPS. Features secure authentication, auto wallet generation, and intelligent blockchain query assistance with glassmorphic UI.",
     tech: ["TypeScript", "React", "opBNB", "Supabase", "ethers.js", "Framer Motion", "Zustand"],

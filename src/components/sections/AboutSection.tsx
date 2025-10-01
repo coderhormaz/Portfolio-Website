@@ -128,6 +128,13 @@ const AboutSection = () => {
 							
 							{[
 								{
+									year: "September 26-28, 2025",
+									title: "ETHGlobal New Delhi Participant",
+									company: "ETHGlobal Hackathon",
+									description:
+										"Selected as a participant in ETHGlobal New Delhi, the world's most prestigious Blockchain hackathons. Collaborated with top developers, founders, and ecosystem leaders to design and build innovative decentralized applications, pushing the boundaries of scalability, security, and real-world adoption in the Ethereum ecosystem.",
+								},
+								{
 									year: "August 22-23, 2025",
 									title: "BNB Hack Bombay Participant",
 									company: "BNB Chain Hackathon",
