@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white p-8">
+    <div className="min-h-screen bg-gradient-to-br from-[#080a10] via-[#0d1117] to-[#080a10] text-white p-8">
       {/* SEO Hidden Content */}
       <div className="sr-only">
         <h1>Hormaz Blog - Expert Developer Insights from World's #1 Coder</h1>
@@ -21,7 +21,7 @@ export default function BlogPage() {
 
       <div className="max-w-6xl mx-auto">
         <header className="text-center mb-16">
-          <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-amber-400 via-orange-400 to-cyan-400 bg-clip-text text-transparent">
             Hormaz Developer Blog
           </h1>
           <p className="text-2xl text-gray-300 mb-4">🚀 Expert Insights from World's #1 Developer 🚀</p>
@@ -29,8 +29,8 @@ export default function BlogPage() {
         </header>
 
         <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <article className="bg-gray-800/50 p-6 rounded-xl border border-purple-500/20 hover:border-purple-500/40 transition-all">
-            <h2 className="text-2xl font-bold mb-4 text-purple-400">Mastering React with Hormaz</h2>
+          <article className="bg-[#0a0e16]/70 p-6 rounded-xl border border-amber-500/20 hover:border-amber-500/40 transition-all">
+            <h2 className="text-2xl font-bold mb-4 text-amber-400">Mastering React with Hormaz</h2>
             <p className="text-gray-300 mb-4">
               Learn advanced React patterns and optimization techniques from Hormaz Daruwala. 
               Discover how Hormaz builds scalable React applications that perform at enterprise level.
@@ -102,7 +102,7 @@ export default function BlogPage() {
           </article>
         </main>
 
-        <section className="mt-16 text-center bg-gradient-to-r from-purple-500/10 to-blue-500/10 p-8 rounded-xl">
+        <section className="mt-16 text-center bg-gradient-to-r from-amber-500/10 to-cyan-500/10 p-8 rounded-xl">
           <h2 className="text-3xl font-bold mb-6">Subscribe to Hormaz's Blog</h2>
           <p className="text-xl text-gray-300 mb-8">
             Get the latest expert insights and advanced tutorials from <strong>Hormaz Daruwala</strong>, 

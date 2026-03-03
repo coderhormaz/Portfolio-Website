@@ -7,7 +7,7 @@ import ProjectsSection from "@/components/sections/ProjectsSection";
 import ContactSection from "@/components/sections/ContactSection";
 import ClientOnlyDotGrid from "@/components/ui/ClientOnlyDotGrid";
 import Preloader from "@/components/ui/Preloader";
-import { Linkedin, Instagram, Github, Mail, Heart } from "lucide-react";
+import { Linkedin, Instagram, Github, Mail } from "lucide-react";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
 import { portfolioAnalytics, useScrollTracking } from "@/lib/analytics";
 
@@ -84,7 +84,7 @@ export default function Home() {
       {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
       
       <main 
-        className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-x-hidden w-full animate-in fade-in duration-1000"
+        className="min-h-screen bg-gradient-to-br from-[#080a10] via-[#0d1117] to-[#080a10] text-white relative overflow-x-hidden w-full animate-in fade-in duration-1000"
         style={{ display: isLoading ? 'none' : 'block' }}
         itemScope 
         itemType="https://schema.org/WebPage"
@@ -97,13 +97,13 @@ export default function Home() {
             dotSize={5}
             gap={20}
             baseColor="#ffffff"
-            activeColor="#00008B"
+            activeColor="#F59E0B"
             proximity={120}
             shockRadius={250}
             shockStrength={5}
             resistance={750}
             returnDuration={1.5}
-            className="opacity-50 w-full h-full"
+            className="opacity-40 w-full h-full"
           />
         </div>
         
@@ -135,6 +135,9 @@ export default function Home() {
             <meta itemProp="url" content="https://hormaz.tech" />
             <HeroSection />
           </section>
+
+          <div className="section-divider" />
+
           {/* About Section */}
           <section 
             id="about" 
@@ -145,6 +148,8 @@ export default function Home() {
           >
             <AboutSection />
           </section>
+
+          <div className="section-divider" />
           
           {/* Projects Section */}
           <section 
@@ -156,6 +161,8 @@ export default function Home() {
           >
             <ProjectsSection />
           </section>
+
+          <div className="section-divider" />
           
           {/* Contact Section */}
           <section 
@@ -170,61 +177,55 @@ export default function Home() {
         </div>
       
       {/* Footer */}
-      <footer className="py-8 sm:py-12 px-4 sm:px-6 border-t border-white/10 relative z-10 bg-black/50 backdrop-blur-sm">
+      <footer className="py-8 sm:py-10 px-4 sm:px-6 border-t border-white/[0.06] relative z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
-            <div>
-              <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-3 sm:mb-4">
-                Hormaz
-              </h3>
-              <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
-                Creating exceptional digital experiences with modern technology and innovative design.
-              </p>
-            </div>
-            
-            <div>
-              <h4 className="text-base sm:text-lg font-semibold text-white mb-3 sm:mb-4">Quick Links</h4>
-              <div className="space-y-2">
-                {["Home", "About", "Projects", "Contact"].map((link) => (
-                  <a 
-                    key={link}
-                    href={`#${link.toLowerCase()}`}
-                    className="block text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base"
-                  >
-                    {link}
-                  </a>
-                ))}
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="text-base sm:text-lg font-semibold text-white mb-3 sm:mb-4">Connect</h4>
-              <div className="space-y-2">
-                {[
-                  { name: "LinkedIn", icon: <Linkedin className="w-4 h-4" />, url: "https://www.linkedin.com/in/hormazdaruwala/" },
-                  { name: "Instagram", icon: <Instagram className="w-4 h-4" />, url: "https://www.instagram.com/horma_z/" },
-                  { name: "GitHub", icon: <Github className="w-4 h-4" />, url: "https://github.com/coderhormaz" },
-                  { name: "Email", icon: <Mail className="w-4 h-4" />, url: "mailto:hormazdaruwala86@gmail.com" }
-                ].map((social) => (
-                  <a 
-                    key={social.name}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base"
-                    onClick={() => portfolioAnalytics.trackSocialClick(social.name)}
-                  >
-                    <span className="mr-2">{social.icon}</span>
-                    {social.name}
-                  </a>
-                ))}
-              </div>
+          {/* Top row: Brand | Links | Socials */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-4 mb-6 sm:mb-8">
+            {/* Brand */}
+            <span className="text-lg font-bold bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+              Hormaz
+            </span>
+
+            {/* Nav links */}
+            <nav className="flex items-center gap-6">
+              {["Home", "About", "Projects", "Contact"].map((link) => (
+                <a
+                  key={link}
+                  href={`#${link.toLowerCase()}`}
+                  className="text-sm text-slate-500 hover:text-white transition-colors duration-300"
+                >
+                  {link}
+                </a>
+              ))}
+            </nav>
+
+            {/* Social icons */}
+            <div className="flex items-center gap-3">
+              {[
+                { name: "LinkedIn", icon: <Linkedin className="w-4 h-4" />, url: "https://www.linkedin.com/in/hormazdaruwala/" },
+                { name: "Instagram", icon: <Instagram className="w-4 h-4" />, url: "https://www.instagram.com/horma_z/" },
+                { name: "GitHub", icon: <Github className="w-4 h-4" />, url: "https://github.com/coderhormaz" },
+                { name: "Email", icon: <Mail className="w-4 h-4" />, url: "mailto:hormazdaruwala86@gmail.com" }
+              ].map((social) => (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.name}
+                  className="p-2 rounded-lg text-slate-500 hover:text-white hover:bg-white/[0.04] transition-all duration-300"
+                  onClick={() => portfolioAnalytics.trackSocialClick(social.name)}
+                >
+                  {social.icon}
+                </a>
+              ))}
             </div>
           </div>
-          
-          <div className="text-center pt-6 sm:pt-8 border-t border-white/10">
-            <p className="text-gray-400 text-xs sm:text-sm leading-relaxed flex items-center justify-center gap-1">
-              © 2024 Hormaz. All rights reserved. Built with <Heart className="w-3 h-3 text-red-500 fill-red-500" /> using Next.js, React Three Fiber, and ShadCN UI.
+
+          {/* Divider + copyright */}
+          <div className="pt-6 border-t border-white/[0.04] text-center">
+            <p className="text-slate-600 text-xs">
+              © {new Date().getFullYear()} Hormaz Daruwala. Built with Next.js &amp; React Three Fiber.
             </p>
           </div>
         </div>

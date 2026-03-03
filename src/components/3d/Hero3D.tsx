@@ -29,13 +29,13 @@ const AnimatedSphere = () => {
   return (
     <Sphere ref={meshRef} args={[1, 64, 64]} scale={1.5}>
       <MeshDistortMaterial
-        color="#8B5CF6"
+        color="#F59E0B"
         attach="material"
         distort={0.4}
         speed={1.2}
         roughness={0.2}
         metalness={0.8}
-        emissive="#4C1D95"
+        emissive="#92400E"
         emissiveIntensity={0.2}
       />
     </Sphere>
@@ -63,7 +63,7 @@ const FloatingParticles = () => {
           ]}
         >
           <sphereGeometry args={[0.02, 8, 8]} />
-          <meshBasicMaterial color="#8B5CF6" />
+          <meshBasicMaterial color="#F59E0B" />
         </mesh>
       ))}
     </group>
@@ -84,7 +84,7 @@ const Hero3D = () => {
         <Suspense fallback={null}>
           {/* Lighting */}
           <ambientLight intensity={0.3} />
-          <pointLight position={[10, 10, 10]} intensity={0.5} color="#8B5CF6" />
+          <pointLight position={[10, 10, 10]} intensity={0.5} color="#F59E0B" />
           <pointLight position={[-10, -10, -10]} intensity={0.3} color="#3B82F6" />
           
           {/* Environment with fallback */}

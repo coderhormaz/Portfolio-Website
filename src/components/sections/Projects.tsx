@@ -81,7 +81,7 @@ const Projects = () => {
               }`}
             >
               <div className="relative overflow-hidden rounded-lg mb-6">
-                <div className="w-full h-48 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-lg flex items-center justify-center">
+                <div className="w-full h-48 bg-gradient-to-br from-amber-500/20 to-cyan-500/20 rounded-lg flex items-center justify-center">
                   <span className="text-white/60 text-sm">Project Image Placeholder</span>
                 </div>
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
@@ -121,7 +121,7 @@ const Projects = () => {
         <div className="text-center">
           <Button 
             size="lg"
-            className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-6 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
+            className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white px-8 py-6 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
           >
             View All Projects
           </Button>

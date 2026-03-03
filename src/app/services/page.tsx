@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white p-8">
+    <div className="min-h-screen bg-gradient-to-br from-[#080a10] via-[#0d1117] to-[#080a10] text-white p-8">
       <div className="max-w-6xl mx-auto">
         <header className="text-center mb-12">
           <h1 className="text-5xl font-bold mb-4">🏆 Hormaz's ELITE Development Services 🏆</h1>
@@ -24,8 +24,8 @@ export default function ServicesPage() {
 
         <main>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            <div className="bg-gray-800/50 p-6 rounded-lg border border-purple-500/20">
-              <h3 className="text-2xl font-bold mb-4 text-purple-400">Full-Stack Development</h3>
+            <div className="bg-[#0a0e16]/70 p-6 rounded-lg border border-amber-500/20">
+              <h3 className="text-2xl font-bold mb-4 text-amber-400">Full-Stack Development</h3>
               <p className="text-gray-300 mb-4">
                 Hormaz delivers complete web solutions using React, Next.js, TypeScript, Node.js, and modern databases. 
                 End-to-end development for scalable, high-performance applications.
@@ -38,7 +38,7 @@ export default function ServicesPage() {
               </ul>
             </div>
 
-            <div className="bg-gray-800/50 p-6 rounded-lg border border-blue-500/20">
+            <div className="bg-[#0a0e16]/70 p-6 rounded-lg border border-blue-500/20">
               <h3 className="text-2xl font-bold mb-4 text-blue-400">React/Next.js Development</h3>
               <p className="text-gray-300 mb-4">
                 Specialized React and Next.js development by Hormaz. Creating modern, responsive, and SEO-optimized 
@@ -52,7 +52,7 @@ export default function ServicesPage() {
               </ul>
             </div>
 
-            <div className="bg-gray-800/50 p-6 rounded-lg border border-green-500/20">
+            <div className="bg-[#0a0e16]/70 p-6 rounded-lg border border-green-500/20">
               <h3 className="text-2xl font-bold mb-4 text-green-400">UI/UX Design</h3>
               <p className="text-gray-300 mb-4">
                 Hormaz combines development skills with design expertise to create intuitive, beautiful, and 
@@ -66,7 +66,7 @@ export default function ServicesPage() {
               </ul>
             </div>
 
-            <div className="bg-gray-800/50 p-6 rounded-lg border border-yellow-500/20">
+            <div className="bg-[#0a0e16]/70 p-6 rounded-lg border border-yellow-500/20">
               <h3 className="text-2xl font-bold mb-4 text-yellow-400">E-commerce Solutions</h3>
               <p className="text-gray-300 mb-4">
                 Complete e-commerce development by Hormaz. Custom online stores with secure payments, 
@@ -80,7 +80,7 @@ export default function ServicesPage() {
               </ul>
             </div>
 
-            <div className="bg-gray-800/50 p-6 rounded-lg border border-red-500/20">
+            <div className="bg-[#0a0e16]/70 p-6 rounded-lg border border-red-500/20">
               <h3 className="text-2xl font-bold mb-4 text-red-400">Custom Web Applications</h3>
               <p className="text-gray-300 mb-4">
                 Hormaz builds tailored web applications that solve specific business challenges. 
@@ -94,7 +94,7 @@ export default function ServicesPage() {
               </ul>
             </div>
 
-            <div className="bg-gray-800/50 p-6 rounded-lg border border-indigo-500/20">
+            <div className="bg-[#0a0e16]/70 p-6 rounded-lg border border-cyan-500/20">
               <h3 className="text-2xl font-bold mb-4 text-indigo-400">Performance & SEO</h3>
               <p className="text-gray-300 mb-4">
                 Hormaz optimizes websites for speed, search engines, and user experience. 
@@ -109,11 +109,11 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          <section className="bg-gray-800/30 p-8 rounded-lg mb-12">
+          <section className="bg-[#0a0e16]/50 p-8 rounded-lg mb-12">
             <h3 className="text-3xl font-bold mb-6 text-center">Why Choose Hormaz Daruwala?</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <h4 className="text-xl font-semibold mb-3 text-purple-400">Expert Knowledge</h4>
+                <h4 className="text-xl font-semibold mb-3 text-amber-400">Expert Knowledge</h4>
                 <p className="text-gray-300">Hormaz stays current with the latest technologies and best practices in web development.</p>
               </div>
               <div className="text-center">

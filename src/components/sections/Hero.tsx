@@ -7,7 +7,7 @@ import dynamic from "next/dynamic";
 
 const Hero3D = dynamic(() => import("@/components/3d/Hero3D"), {
   ssr: false,
-  loading: () => <div className="h-full w-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-xl animate-pulse" />
+  loading: () => <div className="h-full w-full bg-gradient-to-br from-amber-500/20 to-cyan-500/20 rounded-xl animate-pulse" />
 });
 
 const Hero = () => {
@@ -19,7 +19,7 @@ const Hero = () => {
       
       {/* 3D Model Container */}
       <div className="absolute right-0 top-0 h-full w-1/2 hidden lg:block">
-        <Suspense fallback={<div className="h-full w-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-xl animate-pulse" />}>
+        <Suspense fallback={<div className="h-full w-full bg-gradient-to-br from-amber-500/20 to-cyan-500/20 rounded-xl animate-pulse" />}>
           <Hero3D />
         </Suspense>
       </div>
@@ -32,7 +32,7 @@ const Hero = () => {
               <AnimatedText text="Hormaz" className="block" />
               <AnimatedText 
                 text="Portfolio" 
-                className="block bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent" 
+                className="block bg-gradient-to-r from-amber-400 via-orange-500 to-cyan-400 bg-clip-text text-transparent" 
                 delay={600} 
               />
             </h1>
@@ -47,7 +47,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
               size="lg"
-              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-6 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
+              className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white px-8 py-6 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
             >
               View My Work
             </Button>

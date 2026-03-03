@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function HormazDeveloperPage() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-[#080a10] text-white">
       <div className="container mx-auto px-4 py-20">
         {/* Hidden SEO Content */}
         <div className="sr-only">
@@ -38,7 +38,7 @@ export default function HormazDeveloperPage() {
         </div>
 
         <div className="text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-blue-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
             Hormaz Developer
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-300">
@@ -51,15 +51,15 @@ export default function HormazDeveloperPage() {
           </p>
           
           <div className="grid md:grid-cols-3 gap-8 mt-16">
-            <div className="bg-gray-900 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-4 text-purple-400">Elite Expertise</h3>
+            <div className="bg-[#0a0e16] p-6 rounded-lg">
+              <h3 className="text-xl font-bold mb-4 text-amber-400">Elite Expertise</h3>
               <p>Hormaz developer with unmatched skills in modern web technologies</p>
             </div>
-            <div className="bg-gray-900 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-4 text-blue-400">Premium Solutions</h3>
+            <div className="bg-[#0a0e16] p-6 rounded-lg">
+              <h3 className="text-xl font-bold mb-4 text-cyan-400">Premium Solutions</h3>
               <p>Professional Hormaz developer delivering world-class results</p>
             </div>
-            <div className="bg-gray-900 p-6 rounded-lg">
+            <div className="bg-[#0a0e16] p-6 rounded-lg">
               <h3 className="text-xl font-bold mb-4 text-green-400">Global Recognition</h3>
               <p>Best Hormaz developer recognized worldwide for excellence</p>
             </div>

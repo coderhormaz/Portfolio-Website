@@ -1,28 +1,41 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { motion, AnimatePresence } from "framer-motion";
+
+const navItems = [
+  { name: "Home", href: "#home", type: "scroll" },
+  { name: "About", href: "#about", type: "scroll" },
+  { name: "Experience", href: "#experience", type: "scroll" },
+  { name: "Projects", href: "#projects", type: "scroll" },
+  { name: "Contact", href: "#contact", type: "scroll" },
+];
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+  const handleScrollSpy = useCallback(() => {
+    setIsScrolled(window.scrollY > 50);
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const sections = navItems.map(item => item.href.replace("#", ""));
+    const scrollPos = window.scrollY + 120;
+
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const el = document.getElementById(sections[i]);
+      if (el && el.offsetTop <= scrollPos) {
+        setActiveSection(sections[i]);
+        break;
+      }
+    }
   }, []);
 
-  const navItems = [
-    { name: "Home", href: "#home", type: "scroll" },
-    { name: "About Me", href: "#about", type: "scroll" },
-    { name: "Experience", href: "#experience", type: "scroll" },
-    { name: "Projects", href: "#projects", type: "scroll" },
-    { name: "Contact", href: "#contact", type: "scroll" },
-  ];
+  useEffect(() => {
+    window.addEventListener("scroll", handleScrollSpy, { passive: true });
+    return () => window.removeEventListener("scroll", handleScrollSpy);
+  }, [handleScrollSpy]);
 
   const handleNavigation = (item: { name?: string; href: string; type: string }) => {
     if (item.type === "scroll") {
@@ -37,36 +50,58 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full",
-      isScrolled ? "bg-black/80 backdrop-blur-xl border-b border-white/10" : "bg-transparent"
-    )}>
+    <motion.nav
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 w-full",
+        isScrolled
+          ? "bg-[#080a10]/85 backdrop-blur-2xl border-b border-white/[0.06] shadow-[0_1px_20px_rgba(0,0,0,0.3)]"
+          : "bg-transparent"
+      )}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
-          <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+          <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
             Hormaz
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => handleNavigation(item)}
-                className="text-gray-300 hover:text-white transition-colors duration-300 relative group text-sm xl:text-base"
-              >
-                {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 group-hover:w-full transition-all duration-300" />
-              </button>
-            ))}
+          <div className="hidden lg:flex items-center space-x-1 xl:space-x-2">
+            {navItems.map((item) => {
+              const sectionId = item.href.replace("#", "");
+              const isActive = activeSection === sectionId;
+              return (
+                <button
+                  key={item.name}
+                  onClick={() => handleNavigation(item)}
+                  className={cn(
+                    "relative px-3 py-1.5 rounded-lg text-sm xl:text-base transition-colors duration-300",
+                    isActive
+                      ? "text-white"
+                      : "text-slate-400 hover:text-white"
+                  )}
+                >
+                  {isActive && (
+                    <motion.div
+                      layoutId="nav-pill"
+                      className="absolute inset-0 bg-white/[0.08] rounded-lg"
+                      transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
+                    />
+                  )}
+                  <span className="relative z-10">{item.name}</span>
+                </button>
+              );
+            })}
           </div>
 
           {/* Desktop CTA */}
           <div className="hidden lg:block">
             <Button 
               onClick={() => handleNavigation({ href: "#contact", type: "scroll" })}
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg transition-all duration-300 px-4 xl:px-6 py-2 text-sm xl:text-base"
+              className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white rounded-lg transition-all duration-300 px-4 xl:px-6 py-2 text-sm xl:text-base shadow-[0_2px_12px_rgba(245,158,11,0.2)] hover:shadow-[0_4px_20px_rgba(245,158,11,0.3)]"
             >
               Let&apos;s Talk
             </Button>
@@ -94,30 +129,40 @@ const Navigation = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div className={cn(
-          "lg:hidden transition-all duration-300 overflow-hidden w-full",
-          isMobileMenuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
-        )}>
-          <div className="py-4 space-y-3 px-2">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => handleNavigation(item)}
-                className="block w-full text-left text-gray-300 hover:text-white transition-colors duration-300 py-3 px-4 rounded-lg hover:bg-white/5"
-              >
-                {item.name}
-              </button>
-            ))}
-            <Button 
-              onClick={() => handleNavigation({ href: "#contact", type: "scroll" })}
-              className="w-full mt-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg transition-all duration-300 py-3"
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="lg:hidden overflow-hidden w-full"
             >
-              Let&apos;s Talk
-            </Button>
-          </div>
-        </div>
+              <div className="py-4 space-y-3 px-2">
+                {navItems.map((item, i) => (
+                  <motion.button
+                    key={item.name}
+                    initial={{ x: -20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: i * 0.05, duration: 0.3 }}
+                    onClick={() => handleNavigation(item)}
+                    className="block w-full text-left text-slate-400 hover:text-white transition-colors duration-300 py-3 px-4 rounded-lg hover:bg-white/5"
+                  >
+                    {item.name}
+                  </motion.button>
+                ))}
+                <Button 
+                  onClick={() => handleNavigation({ href: "#contact", type: "scroll" })}
+                  className="w-full mt-4 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white rounded-lg transition-all duration-300 py-3"
+                >
+                  Let&apos;s Talk
+                </Button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

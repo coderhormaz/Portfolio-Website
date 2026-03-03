@@ -1,12 +1,9 @@
 "use client";
 import React from "react";
-// Removed unused imports
 import { CardSpotlight } from "@/components/ui/card-spotlight";
 import { Button } from "@/components/ui/button";
-import { useRevealAnimation } from "@/lib/animations";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
 import Image from "next/image";
-import { ShineBorder } from "@/components/magicui/shine-border";
-import { ShineOverlay } from "@/components/ui/shine-overlay";
 import { ExternalLink, Github, Palette, Rocket, Layers, Layout, LayoutGrid } from "lucide-react";
 import { portfolioAnalytics } from "@/lib/analytics";
 
@@ -78,84 +75,40 @@ const projects = [
 ];
 
 const ProjectsSection = () => {
-  const titleRef = useRevealAnimation(200);
-  const descriptionRef = useRevealAnimation(400);
-
   return (
     <section className="py-16 sm:py-20 relative w-full overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <h2 
-            ref={titleRef as React.RefObject<HTMLHeadingElement>}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
-          >
-            Featured Projects
-          </h2>
-          <p 
-            ref={descriptionRef as React.RefObject<HTMLParagraphElement>}
-            className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4"
-          >
+          <ScrollReveal>
+            <div className="flex items-center gap-3 justify-center mb-4">
+              <span className="h-px w-8 bg-gradient-to-r from-transparent to-amber-400/60" />
+              <span className="text-xs font-medium tracking-[0.2em] uppercase text-amber-400/70">Portfolio</span>
+              <span className="h-px w-8 bg-gradient-to-l from-transparent to-amber-400/60" />
+            </div>
+            <h2 
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-white"
+            >
+              Featured Projects
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.15}>
+            <p 
+              className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed px-4"
+            >
             A showcase of my recent work, featuring innovative solutions and 
             cutting-edge technologies that push the boundaries of web development.
           </p>
+          </ScrollReveal>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10">
-          {projects.map((project, index) => (
-            <div key={project.title} className="relative group">
-              {/* Outer shine border */}
-              <ShineBorder 
-                borderWidth={2} 
-                duration={index % 2 === 0 ? 8 : 10} // Alternate durations for variety
-                shineColor={
-                  project.title.includes("NFT") || project.title.includes("Token") 
-                    ? ["#8B5CF6", "#6366F1", "#4F46E5"] 
-                    : project.title.includes("Lightship") 
-                    ? ["#22D3EE", "#2563EB", "#0EA5E9"] 
-                    : project.title.includes("Selemen") 
-                    ? ["#EC4899", "#8B5CF6", "#D946EF"] 
-                    : ["#10B981", "#3B82F6", "#14B8A6"]
-                } 
-                className="opacity-80 transition-all duration-500 ease-out rounded-xl absolute inset-0 z-10"
-                style={{ filter: "blur(1px)" }}
-              />
-              <CardSpotlight className="relative overflow-hidden rounded-xl backdrop-blur-sm bg-black/50 hover:bg-black/60 transition-colors duration-500 z-0">
-                {/* Inner shine border with different animation timing */}
-                <ShineBorder 
-                  borderWidth={1} 
-                  duration={index % 2 === 0 ? 10 : 8} // Opposite timing of outer border
-                  shineColor={
-                    project.title.includes("NFT") || project.title.includes("Token") 
-                      ? ["#8B5CF6", "#6366F1", "#4F46E5"] 
-                      : project.title.includes("Lightship") 
-                      ? ["#22D3EE", "#0EA5E9", "#2563EB"] 
-                      : project.title.includes("Selemen") 
-                      ? ["#EC4899", "#D946EF", "#8B5CF6"] 
-                      : ["#10B981", "#14B8A6", "#3B82F6"]
-                  } 
-                  style={{ filter: "drop-shadow(0 0 8px rgba(139, 92, 246, 0.5))" }}
-                  className="opacity-70 transition-all duration-500 ease-out rounded-lg absolute inset-0 z-50"
-                />
-                
-                {/* Additional shine overlay for enhanced effect */}
-                <ShineOverlay 
-                  thickness={2}
-                  duration={index % 2 === 0 ? 8 : 6} 
-                  color={
-                    project.title.includes("NFT") || project.title.includes("Token") 
-                      ? "rgba(139, 92, 246, 0.2)" 
-                      : project.title.includes("Lightship") 
-                      ? "rgba(34, 211, 238, 0.2)" 
-                      : project.title.includes("Selemen") 
-                      ? "rgba(236, 72, 153, 0.2)" 
-                      : "rgba(16, 185, 129, 0.2)"
-                  }
-                  className="z-45"
-                />
+        <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10" staggerDelay={0.12}>
+          {projects.map((project) => (
+            <StaggerItem key={project.title} className="relative group">
+              <CardSpotlight className="relative overflow-hidden rounded-xl border border-white/[0.06] hover:border-white/[0.1] bg-[#0a0e16]/60 hover:bg-[#0a0e16]/80 transition-all duration-500 z-0">
                 {/* Project Image or Video */}
-                <div className="relative h-48 sm:h-56 md:h-64 mb-4 sm:mb-6 overflow-hidden rounded-lg z-10 border border-white/5 mx-2 my-2">
+                <div className="relative h-48 sm:h-56 md:h-64 mb-4 sm:mb-6 overflow-hidden rounded-lg z-10 border border-white/[0.04] mx-2 my-2">
                   {project.isVideo ? (
                     <div className="w-full h-full relative group-hover:opacity-90 transition-opacity duration-300 border border-white/10 shadow-inner shadow-black/50">
                       <video 
@@ -196,9 +149,9 @@ const ProjectsSection = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                   ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center">
+                    <div className="w-full h-full bg-gradient-to-br from-amber-500/20 to-cyan-500/20 flex items-center justify-center">
                       {project.title.includes("NFT") || project.title.includes("Token") ? (
-                        <Palette className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-purple-400 opacity-50" />
+                        <Palette className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-amber-400 opacity-50" />
                       ) : project.title.includes("Lightship") ? (
                         <Layers className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-cyan-400 opacity-50" />
                       ) : project.title.includes("Selemen") ? (
@@ -241,11 +194,11 @@ const ProjectsSection = () => {
 
                 {/* Project Content */}
                 <div className="space-y-3 sm:space-y-4 p-5 sm:p-7 relative z-20">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-purple-300 transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-amber-300 transition-colors duration-300">
                     {project.title}
                   </h3>
                   
-                  <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
+                  <p className="text-slate-400 leading-relaxed text-sm sm:text-base">
                     {project.description}
                   </p>
                   
@@ -253,7 +206,7 @@ const ProjectsSection = () => {
                     {project.tech.map((tech) => (
                       <span 
                         key={tech}
-                        className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-purple-500/20 text-purple-300 rounded-full border border-purple-500/30"
+                        className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-cyan-500/10 text-cyan-300 rounded-full border border-cyan-500/20"
                       >
                         {tech}
                       </span>
@@ -261,15 +214,15 @@ const ProjectsSection = () => {
                   </div>
                 </div>
               </CardSpotlight>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
         {/* View All Projects Button */}
-        <div className="text-center mt-8 sm:mt-12">
+        <ScrollReveal className="text-center mt-8 sm:mt-12">
           <Button 
             size="lg"
-            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-xl transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
+            className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-xl transition-all duration-300 transform hover:scale-[1.03] hover:-translate-y-0.5 w-full sm:w-auto shadow-[0_4px_20px_rgba(245,158,11,0.2)] hover:shadow-[0_6px_30px_rgba(245,158,11,0.3)]"
             onClick={() => {
               portfolioAnalytics.trackSocialClick('GitHub');
               window.open("https://github.com/coderhormaz", '_blank');
@@ -278,7 +231,7 @@ const ProjectsSection = () => {
             View All Projects
             <ExternalLink className="ml-2 w-5 h-5" />
           </Button>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

@@ -74,7 +74,7 @@ const Contact = () => {
               return (
                 <CardSpotlight key={method.title} className="p-6 cursor-pointer hover:scale-105 transition-transform duration-300">
                   <div className="flex items-center space-x-4">
-                    <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full">
+                    <div className="p-3 bg-gradient-to-r from-amber-500 to-orange-600 rounded-full">
                       <IconComponent className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -99,7 +99,7 @@ const Contact = () => {
                   100% client satisfaction rate
                 </li>
                 <li className="flex items-center">
-                  <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                  <span className="w-2 h-2 bg-amber-500 rounded-full mr-3"></span>
                   Fast turnaround times
                 </li>
                 <li className="flex items-center">
@@ -163,7 +163,7 @@ const Contact = () => {
               <Button 
                 type="submit"
                 size="lg"
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white py-6 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
+                className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white py-6 text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
               >
                 <Send className="w-5 h-5 mr-2" />
                 Send Message

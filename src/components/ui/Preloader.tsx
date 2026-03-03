@@ -11,14 +11,16 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // Reduced preloader time for better SEO
     const timer = setTimeout(() => {
       setIsVisible(false);
-      setTimeout(onComplete, 300); // Reduced exit animation time
-    }, 1500); // Reduced from 3000ms to 1500ms
+      setTimeout(onComplete, 500);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, [onComplete]);
+
+  const firstName = "Hormaz";
+  const lastName = "Daruwala";
 
   return (
     <ClientOnly>
@@ -27,28 +29,71 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
           <motion.div
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="fixed inset-0 z-50 bg-black flex items-center justify-center"
+            transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="fixed inset-0 z-50 bg-[#080a10] flex flex-col items-center justify-center gap-3"
           >
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ 
-              duration: 1, 
-              delay: 0.5,
-              ease: "easeOut"
-            }}
-            className="text-4xl md:text-6xl lg:text-7xl font-light text-white tracking-wider"
-            style={{ 
-              fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-              letterSpacing: '0.05em'
-            }}
-          >
-            Hormaz Daruwala
-          </motion.h1>
-        </motion.div>
-      )}
-    </AnimatePresence>
+            {/* Accent line above name */}
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="w-12 h-px bg-gradient-to-r from-transparent via-amber-400 to-transparent origin-center"
+            />
+
+            {/* First name — character stagger */}
+            <div className="overflow-hidden">
+              <div className="flex">
+                {firstName.split("").map((char, i) => (
+                  <motion.span
+                    key={`first-${i}`}
+                    initial={{ y: 60, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{
+                      duration: 0.6,
+                      delay: 0.3 + i * 0.06,
+                      ease: [0.25, 0.46, 0.45, 0.94],
+                    }}
+                    className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight"
+                    style={{ fontFamily: 'Outfit, sans-serif' }}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </div>
+            </div>
+
+            {/* Last name — lighter weight, slight delay */}
+            <div className="overflow-hidden -mt-1">
+              <div className="flex">
+                {lastName.split("").map((char, i) => (
+                  <motion.span
+                    key={`last-${i}`}
+                    initial={{ y: 50, opacity: 0 }}
+                    animate={{ y: 0, opacity: 0.5 }}
+                    transition={{
+                      duration: 0.6,
+                      delay: 0.6 + i * 0.05,
+                      ease: [0.25, 0.46, 0.45, 0.94],
+                    }}
+                    className="text-2xl md:text-3xl lg:text-4xl font-light text-white/50 tracking-[0.2em] uppercase"
+                    style={{ fontFamily: 'Outfit, sans-serif' }}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
+              </div>
+            </div>
+
+            {/* Accent line below */}
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.8, delay: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="w-12 h-px bg-gradient-to-r from-transparent via-amber-400/60 to-transparent origin-center mt-1"
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </ClientOnly>
   );
 };

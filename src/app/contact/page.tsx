@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
+    <div className="min-h-screen bg-gradient-to-br from-[#080a10] via-[#0d1117] to-[#080a10] text-white">
       {/* SEO Hidden Content */}
       <div className="sr-only">
         <h1>Contact Hormaz - Hire World's #1 Elite Developer</h1>
@@ -24,7 +24,7 @@ export default function ContactPage() {
 
       <div className="max-w-6xl mx-auto px-6 py-20">
         <header className="text-center mb-16">
-          <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-amber-400 via-orange-400 to-cyan-400 bg-clip-text text-transparent">
             🏆 Contact Hormaz Daruwala 🏆
           </h1>
           <p className="text-2xl text-gray-300 mb-4">💯 Hire the World's #1 Elite Developer 💯</p>
@@ -37,17 +37,17 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
-            <div className="bg-gray-800/50 p-8 rounded-xl border border-purple-500/20">
-              <h2 className="text-3xl font-bold mb-6 text-purple-400">Get in Touch with Hormaz</h2>
+            <div className="bg-[#0a0e16]/70 p-8 rounded-xl border border-amber-500/20">
+              <h2 className="text-3xl font-bold mb-6 text-amber-400">Get in Touch with Hormaz</h2>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center">
                     <span className="text-2xl">📧</span>
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold mb-2">Email Hormaz Directly</h3>
                     <p className="text-gray-300 mb-2">Get premium consultation from the world's #1 developer</p>
-                    <a href="mailto:hormazdaruwala86@gmail.com" className="text-purple-400 hover:text-purple-300 transition-colors">
+                    <a href="mailto:hormazdaruwala86@gmail.com" className="text-amber-400 hover:text-amber-300 transition-colors">
                       hormazdaruwala86@gmail.com
                     </a>
                   </div>
@@ -94,7 +94,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="bg-gray-800/50 p-8 rounded-xl border border-green-500/20">
+            <div className="bg-[#0a0e16]/70 p-8 rounded-xl border border-green-500/20">
               <h3 className="text-2xl font-bold mb-4 text-green-400">Why Hire Hormaz?</h3>
               <ul className="space-y-3 text-gray-300">
                 <li className="flex items-center space-x-3">
@@ -122,7 +122,7 @@ export default function ContactPage() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-gray-800/50 p-8 rounded-xl border border-blue-500/20">
+          <div className="bg-[#0a0e16]/70 p-8 rounded-xl border border-cyan-500/20">
             <h2 className="text-3xl font-bold mb-6 text-blue-400">Start Your Premium Project with Hormaz</h2>
             <form className="space-y-6" action="mailto:hormazdaruwala86@gmail.com" method="post" encType="text/plain">
               <div>
@@ -209,7 +209,7 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 🚀 Hire Hormaz - Start Elite Project
               </button>
@@ -217,7 +217,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="mt-16 text-center bg-gradient-to-r from-purple-500/10 to-blue-500/10 p-8 rounded-xl">
+        <div className="mt-16 text-center bg-gradient-to-r from-amber-500/10 to-cyan-500/10 p-8 rounded-xl">
           <h2 className="text-3xl font-bold mb-6">Ready to Experience Elite Development?</h2>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
             Don't settle for ordinary developers. <strong>Hire Hormaz Daruwala</strong> - the world's #1 elite developer 
@@ -225,7 +225,7 @@ export default function ContactPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div>
-              <h3 className="text-2xl font-bold text-purple-400 mb-2">24/7</h3>
+              <h3 className="text-2xl font-bold text-amber-400 mb-2">24/7</h3>
               <p className="text-gray-300">Premium Support by Hormaz</p>
             </div>
             <div>

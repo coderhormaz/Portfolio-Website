@@ -55,7 +55,7 @@ const About = () => {
                 Full-Stack Web Development
               </li>
               <li className="flex items-center">
-                <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                <span className="w-2 h-2 bg-amber-500 rounded-full mr-3"></span>
                 UI/UX Design & Prototyping
               </li>
               <li className="flex items-center">
@@ -81,7 +81,7 @@ const About = () => {
                 </div>
                 <div className="w-full bg-gray-700 rounded-full h-2">
                   <div 
-                    className="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full transition-all duration-1000 ease-out"
+                    className="bg-gradient-to-r from-amber-500 to-orange-600 h-2 rounded-full transition-all duration-1000 ease-out"
                     style={{ 
                       width: inView ? `${skill.level}%` : '0%',
                       transitionDelay: `${index * 100}ms`

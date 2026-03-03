@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function TestimonialsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white p-8">
+    <div className="min-h-screen bg-gradient-to-br from-[#080a10] via-[#0d1117] to-[#080a10] text-white p-8">
       {/* SEO Hidden Content */}
       <div className="sr-only">
         <h1>Hormaz Reviews and Testimonials - World's #1 Developer</h1>
@@ -21,7 +21,7 @@ export default function TestimonialsPage() {
 
       <div className="max-w-6xl mx-auto">
         <header className="text-center mb-16">
-          <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-amber-400 via-orange-400 to-cyan-400 bg-clip-text text-transparent">
             🏆 Client Testimonials 🏆
           </h1>
           <p className="text-2xl text-gray-300 mb-4">💯 Why Clients Choose Hormaz Daruwala - World's #1 Developer 💯</p>
@@ -29,9 +29,9 @@ export default function TestimonialsPage() {
         </header>
 
         <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          <div className="bg-gray-800/50 p-6 rounded-xl border border-purple-500/20">
+          <div className="bg-[#0a0e16]/70 p-6 rounded-xl border border-amber-500/20">
             <div className="flex items-center mb-4">
-              <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+              <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
                 S
               </div>
               <div className="ml-4">
@@ -50,7 +50,7 @@ export default function TestimonialsPage() {
             </p>
           </div>
 
-          <div className="bg-gray-800/50 p-6 rounded-xl border border-blue-500/20">
+          <div className="bg-[#0a0e16]/70 p-6 rounded-xl border border-blue-500/20">
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
                 M
@@ -71,7 +71,7 @@ export default function TestimonialsPage() {
             </p>
           </div>
 
-          <div className="bg-gray-800/50 p-6 rounded-xl border border-green-500/20">
+          <div className="bg-[#0a0e16]/70 p-6 rounded-xl border border-green-500/20">
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
                 R
@@ -92,7 +92,7 @@ export default function TestimonialsPage() {
             </p>
           </div>
 
-          <div className="bg-gray-800/50 p-6 rounded-xl border border-yellow-500/20">
+          <div className="bg-[#0a0e16]/70 p-6 rounded-xl border border-yellow-500/20">
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
                 D
@@ -113,7 +113,7 @@ export default function TestimonialsPage() {
             </p>
           </div>
 
-          <div className="bg-gray-800/50 p-6 rounded-xl border border-red-500/20">
+          <div className="bg-[#0a0e16]/70 p-6 rounded-xl border border-red-500/20">
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
                 L
@@ -134,7 +134,7 @@ export default function TestimonialsPage() {
             </p>
           </div>
 
-          <div className="bg-gray-800/50 p-6 rounded-xl border border-indigo-500/20">
+          <div className="bg-[#0a0e16]/70 p-6 rounded-xl border border-cyan-500/20">
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
                 J
@@ -156,11 +156,11 @@ export default function TestimonialsPage() {
           </div>
         </main>
 
-        <section className="text-center bg-gradient-to-r from-purple-500/10 to-blue-500/10 p-8 rounded-xl">
+        <section className="text-center bg-gradient-to-r from-amber-500/10 to-cyan-500/10 p-8 rounded-xl">
           <h2 className="text-3xl font-bold mb-6">Join Our Satisfied Clients</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
             <div className="text-center">
-              <h3 className="text-3xl font-bold text-purple-400 mb-2">100%</h3>
+              <h3 className="text-3xl font-bold text-amber-400 mb-2">100%</h3>
               <p className="text-gray-300">Client Satisfaction</p>
             </div>
             <div className="text-center">
@@ -181,7 +181,7 @@ export default function TestimonialsPage() {
           </p>
           <a 
             href="/contact" 
-            className="inline-block bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold py-4 px-8 rounded-lg hover:from-purple-600 hover:to-blue-600 transition-all transform hover:scale-105"
+            className="inline-block bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold py-4 px-8 rounded-lg hover:from-amber-600 hover:to-orange-600 transition-all transform hover:scale-105"
           >
             🚀 Start Your Elite Project with Hormaz
           </a>

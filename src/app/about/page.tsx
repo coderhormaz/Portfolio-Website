@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white p-8">
+    <div className="min-h-screen bg-gradient-to-br from-[#080a10] via-[#0d1117] to-[#080a10] text-white p-8">
       <div className="max-w-4xl mx-auto">
         <header className="text-center mb-12">
           <h1 className="text-5xl font-bold mb-4">About Hormaz Daruwala</h1>
@@ -39,7 +39,7 @@ export default function AboutPage() {
             <h3 className="text-3xl font-bold mb-6">Why Choose Hormaz?</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <h4 className="text-xl font-semibold mb-3 text-purple-400">Technical Excellence</h4>
+                <h4 className="text-xl font-semibold mb-3 text-amber-400">Technical Excellence</h4>
                 <p className="text-gray-300">Hormaz masters cutting-edge technologies including React, Next.js, TypeScript, Node.js, and modern development frameworks.</p>
               </div>
               <div>
@@ -47,7 +47,7 @@ export default function AboutPage() {
                 <p className="text-gray-300">Hormaz combines technical skills with UI/UX design expertise to create visually stunning and user-friendly applications.</p>
               </div>
               <div>
-                <h4 className="text-xl font-semibold mb-3 text-purple-400">Performance Focus</h4>
+                <h4 className="text-xl font-semibold mb-3 text-amber-400">Performance Focus</h4>
                 <p className="text-gray-300">Every project by Hormaz is optimized for speed, SEO, and user experience, ensuring maximum performance and engagement.</p>
               </div>
               <div>

@@ -2,8 +2,7 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import MobileCenterPixelCard from "@/components/ui/MobileCenterPixelCard";
-import { useRevealAnimation } from "@/lib/animations";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
 import { Code, Server, CircuitBoard, Paintbrush, PaintBucket, Wrench, LockKeyhole, Globe, Download } from "lucide-react";
 import { ShineBorder } from "../magicui/shine-border";
 
@@ -23,19 +22,19 @@ const skills: Skill[] = [
 	{
 		title: "Frontend Development",
 		description: " React, Next.js, HTML5, CSS3, JavaScript",
-		icon: <Code className="w-8 h-8 text-purple-400" />,
+		icon: <Code className="w-8 h-8 text-amber-400" />,
 		variant: "purple",
 	},
 	{
 		title: "Backend & Languages",
 		description: "Node.js, Java, Python, Firebase",
-		icon: <Server className="w-8 h-8 text-blue-400" />,
+		icon: <Server className="w-8 h-8 text-cyan-400" />,
 		variant: "blue",
 	},
 	{
 		title: "Blockchain & Web3",
 		description: "Solidity, Smart Contracts, DApps, Ethereum, Solana",
-		icon: <CircuitBoard className="w-8 h-8 text-green-400" />,
+		icon: <CircuitBoard className="w-8 h-8 text-emerald-400" />,
 		variant: "emerald",
 	},
 	{
@@ -47,7 +46,7 @@ const skills: Skill[] = [
 	{
 		title: "Design & Tools",
 		description: "Figma, Framer, Webflow",
-		icon: <PaintBucket className="w-8 h-8 text-pink-400" />,
+		icon: <PaintBucket className="w-8 h-8 text-rose-400" />,
 		variant: "pink",
 	},
 	{
@@ -71,56 +70,60 @@ const skills: Skill[] = [
 ];
 
 const AboutSection = () => {
-	const titleRef = useRevealAnimation(200);
-	const descriptionRef = useRevealAnimation(400);
-
 	return (
 		<section className="py-16 sm:py-20 relative w-full overflow-hidden">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6">
 				{/* Section Header */}
 				<div className="text-center mb-12 sm:mb-16">
-					<h2
-						ref={titleRef as React.RefObject<HTMLHeadingElement>}
-						className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
-					>
-						About Me
-					</h2>
-					<p
-						ref={descriptionRef as React.RefObject<HTMLParagraphElement>}
-						className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4"
-					>
-						I&apos;m a passionate Information Technology student and aspiring developer currently pursuing my diploma at Vidyalankar Polytechnic. 
-						As a cybersecurity intern at Secure Cyber Future and team leader of Code Snipers (selected for Smart India Hackathon 2024), 
-						I love creating innovative digital solutions that blend cutting-edge technology with practical applications.
-					</p>
+					<ScrollReveal>
+						<div className="flex items-center gap-3 justify-center mb-4">
+							<span className="h-px w-8 bg-gradient-to-r from-transparent to-amber-400/60" />
+							<span className="text-xs font-medium tracking-[0.2em] uppercase text-amber-400/70">Who I Am</span>
+							<span className="h-px w-8 bg-gradient-to-l from-transparent to-amber-400/60" />
+						</div>
+						<h2
+							className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-white"
+						>
+							About Me
+						</h2>
+					</ScrollReveal>
+					<ScrollReveal delay={0.15}>
+						<p
+							className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed px-4"
+						>
+							I&apos;m a passionate Information Technology student and aspiring developer currently pursuing my diploma at Vidyalankar Polytechnic. 
+							As a cybersecurity intern at Secure Cyber Future and team leader of Code Snipers (selected for Smart India Hackathon 2024), 
+							I love creating innovative digital solutions that blend cutting-edge technology with practical applications.
+						</p>
+					</ScrollReveal>
 				</div>
 
 				{/* Skills Grid */}
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 mb-16">
+				<StaggerContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mb-16" staggerDelay={0.06}>
 					{skills.map((skill) => (
-						<MobileCenterPixelCard 
-							key={skill.title}
-							variant={skill.variant}
-							className="h-full min-h-[300px]"
-						>
-							<div className="flex flex-col items-center text-center space-y-3 sm:space-y-4 p-4 sm:p-6 h-full justify-center">
-								<div className="mb-2">{skill.icon}</div>
-								<h3 className="text-lg sm:text-xl font-semibold text-white">
+						<StaggerItem key={skill.title} className="h-full">
+							<div className="group h-full rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] hover:border-white/[0.1] transition-all duration-300 p-4 sm:p-5 flex flex-col items-center text-center gap-3">
+								<div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+									{skill.icon}
+								</div>
+								<h3 className="text-sm sm:text-base font-semibold text-white leading-tight">
 									{skill.title}
 								</h3>
-								<p className="text-white-400 text-sm leading-relaxed">
+								<p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
 									{skill.description}
 								</p>
 							</div>
-						</MobileCenterPixelCard>
+						</StaggerItem>
 					))}
-				</div>
+				</StaggerContainer>
 
 				{/* Experience Timeline */}
 				<div className="mt-16 sm:mt-20" id="experience">
-					<h3 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-white">
-						Experience & Journey
-					</h3>
+					<ScrollReveal>
+						<h3 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-white">
+							Experience & Journey
+						</h3>
+					</ScrollReveal>
 
 					<div className="max-w-4xl mx-auto">
 						
@@ -177,26 +180,28 @@ const AboutSection = () => {
 										"Completed secondary education from Maharashtra State Board with 76% marks, building a strong foundation in academics and technical subjects.",
 								},
 							].map((experience, index) => (
-								<Card key={index} className="glass-card border-white/10">
-									<CardContent className="p-4 sm:p-6">
-										<div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
-											<div className="sm:w-32 text-purple-400 font-semibold text-sm sm:text-base">
-												{experience.year}
+								<ScrollReveal key={index} delay={index * 0.08} direction={index % 2 === 0 ? "left" : "right"}>
+									<Card className="glass-card border-white/[0.06] hover:border-white/[0.1] transition-colors duration-500">
+										<CardContent className="p-4 sm:p-6">
+											<div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+												<div className="sm:w-32 text-amber-400 font-semibold text-sm sm:text-base">
+													{experience.year}
+												</div>
+												<div className="flex-1"> <ShineBorder shineColor={["#F59E0B", "#22D3EE", "#F97316"]} />
+													<h4 className="text-lg sm:text-xl font-semibold text-white mb-1">
+														{experience.title}
+													</h4>
+													<p className="text-amber-300/70 mb-2 text-sm sm:text-base">
+														{experience.company}
+													</p>
+													<p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+														{experience.description}
+													</p>
+												</div>
 											</div>
-											<div className="flex-1"> <ShineBorder shineColor={["#A07CFE", "#FE8FB5", "#FFBE7B"]} />
-												<h4 className="text-lg sm:text-xl font-semibold text-white mb-1">
-													{experience.title}
-												</h4>
-												<p className="text-purple-300 mb-2 text-sm sm:text-base">
-													{experience.company}
-												</p>
-												<p className="text-gray-400 text-sm sm:text-base leading-relaxed">
-													{experience.description}
-												</p>
-											</div>
-										</div>
-									</CardContent>
-								</Card>
+										</CardContent>
+									</Card>
+								</ScrollReveal>
 							))}
 						</div>
 					</div>
@@ -204,35 +209,37 @@ const AboutSection = () => {
 
 				{/* Professional Experience & Education */}
 				<div className="mt-8 sm:mt-12" id="professional-experience">
-					<div className="max-w-4xl mx-auto">
-						<Card className="glass-card border-white/10">
-							<CardContent className="p-4 sm:p-6 text-center">
-								<div className="mb-4">
-									<h4 className="text-xl sm:text-2xl font-semibold text-white mb-3">
-										Download My Resume
-									</h4>
-									<p className="text-gray-400 mb-4 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-										Get a comprehensive overview of my professional experience, education, technical skills, and achievements. 
-										My resume includes detailed information about my projects, internships, and academic background.
-									</p>
-									<Button 
-										className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-										onClick={() => {
-											const link = document.createElement('a');
-											link.href = '/Hormaz_Resume.pdf';
-											link.download = 'Hormaz_Resume.pdf';
-											link.click();
-										}}
-									>
-										<Download className="w-5 h-5 mr-2" />
-										Download Resume
-									</Button>
-								</div>
-								
-								
-							</CardContent>
-						</Card>
-					</div>
+					<ScrollReveal>
+						<div className="max-w-4xl mx-auto">
+							<Card className="glass-card border-white/[0.06]">
+								<CardContent className="p-4 sm:p-6 text-center">
+									<div className="mb-4">
+										<h4 className="text-xl sm:text-2xl font-semibold text-white mb-3">
+											Download My Resume
+										</h4>
+										<p className="text-slate-400 mb-4 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+											Get a comprehensive overview of my professional experience, education, technical skills, and achievements. 
+											My resume includes detailed information about my projects, internships, and academic background.
+										</p>
+										<Button 
+											className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-[1.03] hover:-translate-y-0.5 shadow-[0_4px_20px_rgba(245,158,11,0.15)]"
+											onClick={() => {
+												const link = document.createElement('a');
+												link.href = '/Hormaz_Resume.pdf';
+												link.download = 'Hormaz_Resume.pdf';
+												link.click();
+											}}
+										>
+											<Download className="w-5 h-5 mr-2" />
+											Download Resume
+										</Button>
+									</div>
+									
+									
+								</CardContent>
+							</Card>
+						</div>
+					</ScrollReveal>
 				</div>
 			</div>
 		</section>

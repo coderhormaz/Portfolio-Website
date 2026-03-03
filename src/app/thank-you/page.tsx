@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function ThankYouPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#080a10] via-[#0d1117] to-[#080a10] text-white flex items-center justify-center px-4">
       <div className="max-w-md w-full text-center">
         <div className="mb-8">
           <div className="w-20 h-20 mx-auto mb-6 bg-green-500 rounded-full flex items-center justify-center">
@@ -49,7 +49,7 @@ export default function ThankYouPage() {
         <div className="space-y-4">
           <Link 
             href="/"
-            className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
+            className="inline-block bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
           >
             Back to Portfolio
           </Link>
@@ -58,7 +58,7 @@ export default function ThankYouPage() {
             You can also reach me directly at{' '}
             <a 
               href="mailto:hormazdaruwala86@gmail.com"
-              className="text-purple-400 hover:text-purple-300 transition-colors"
+              className="text-amber-400 hover:text-amber-300 transition-colors"
             >
               hormazdaruwala86@gmail.com
             </a>

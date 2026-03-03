@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import SEOStructuredData from "@/components/SEOStructuredData";
@@ -7,7 +7,7 @@ import PerformanceMonitoring from "@/components/PerformanceMonitoring";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const inter = Inter({ subsets: ["latin"] });
+const outfit = Outfit({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hormaz.tech'),
@@ -122,14 +122,14 @@ export const metadata: Metadata = {
       {
         rel: 'mask-icon',
         url: '/logo.png',
-        color: '#8B5CF6'
+        color: '#F59E0B'
       }
     ]
   },
   manifest: '/manifest.json',
   other: {
-    'msapplication-TileColor': '#8B5CF6',
-    'theme-color': '#8B5CF6',
+    'msapplication-TileColor': '#F59E0B',
+    'theme-color': '#080a10',
     'mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
@@ -239,12 +239,12 @@ export default function RootLayout({
         <link rel="icon" href="/android-chrome-512x512.png" sizes="512x512" />
         <link rel="icon" href="/logo.png" sizes="512x512" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
-        <link rel="mask-icon" href="/logo.png" color="#8B5CF6" />
+        <link rel="mask-icon" href="/logo.png" color="#F59E0B" />
         <link rel="shortcut icon" href="/favicon.ico" />
-        <meta name="msapplication-TileColor" content="#8B5CF6" />
-        <meta name="theme-color" content="#8B5CF6" />
+        <meta name="msapplication-TileColor" content="#F59E0B" />
+        <meta name="theme-color" content="#080a10" />
       </head>
-      <body className={inter.className}>
+      <body className={outfit.className}>
         <PerformanceMonitoring />
         {children}
         <Toaster />

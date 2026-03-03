@@ -17,7 +17,7 @@ export default async function Icon() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%)',
+          background: 'linear-gradient(135deg, #F59E0B 0%, #F97316 100%)',
           borderRadius: '6px',
           fontFamily: 'Inter, sans-serif',
         }}

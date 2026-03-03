@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useRevealAnimation } from "@/lib/animations";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Linkedin, Instagram, Github, Mail, SendHorizonal, CheckCircle, AlertCircle } from "lucide-react";
 import { toast } from "sonner";
 import { portfolioAnalytics } from "@/lib/analytics";
@@ -24,9 +24,6 @@ const ContactSection = () => {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-
-  const titleRef = useRevealAnimation(200);
-  const formRef = useRevealAnimation(400);
 
   const validateForm = (data: typeof formData): string[] => {
     const errors: string[] = [];
@@ -125,21 +122,29 @@ const ContactSection = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <h2 
-            ref={titleRef as React.RefObject<HTMLHeadingElement>}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
-          >
-            Let&apos;s Connect
-          </h2>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed px-4">
-            Ready to bring your ideas to life? Let&apos;s discuss your next project 
-            and create something amazing together.
-          </p>
+          <ScrollReveal>
+            <div className="flex items-center gap-3 justify-center mb-4">
+              <span className="h-px w-8 bg-gradient-to-r from-transparent to-amber-400/60" />
+              <span className="text-xs font-medium tracking-[0.2em] uppercase text-amber-400/70">Contact</span>
+              <span className="h-px w-8 bg-gradient-to-l from-transparent to-amber-400/60" />
+            </div>
+            <h2 
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-white"
+            >
+              Let&apos;s Connect
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.15}>
+            <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed px-4">
+              Ready to bring your ideas to life? Let&apos;s discuss your next project 
+              and create something amazing together.
+            </p>
+          </ScrollReveal>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Contact Info */}
-          <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
+          <ScrollReveal direction="left" className="space-y-6 sm:space-y-8 order-2 lg:order-1">
             <div>
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Get In Touch</h3>
               <div className="space-y-4 sm:space-y-6">
@@ -147,12 +152,12 @@ const ContactSection = () => {
                   href="mailto:hormazdaruwala86@gmail.com" 
                   className="flex items-center space-x-3 sm:space-x-4 group transition-transform hover:translate-x-1"
                 >
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-600 rounded-lg flex items-center justify-center group-hover:bg-purple-700 transition-colors">
-                    <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors duration-300">
+                    <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-amber-400" />
                   </div>
                   <div>
-                    <p className="text-gray-400 text-xs sm:text-sm">Email</p>
-                    <p className="text-white text-sm sm:text-base group-hover:text-purple-400 transition-colors">hormazdaruwala86@gmail.com</p>
+                    <p className="text-slate-500 text-xs sm:text-sm">Email</p>
+                    <p className="text-white text-sm sm:text-base group-hover:text-amber-400 transition-colors duration-300">hormazdaruwala86@gmail.com</p>
                   </div>
                 </a>
                 
@@ -162,12 +167,12 @@ const ContactSection = () => {
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 sm:space-x-4 group transition-transform hover:translate-x-1"
                 >
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-600 rounded-lg flex items-center justify-center group-hover:bg-purple-700 transition-colors">
-                    <Linkedin className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors duration-300">
+                    <Linkedin className="w-5 h-5 sm:w-6 sm:h-6 text-amber-400" />
                   </div>
                   <div>
-                    <p className="text-gray-400 text-xs sm:text-sm">LinkedIn</p>
-                    <p className="text-white text-sm sm:text-base group-hover:text-purple-400 transition-colors">hormazdaruwala</p>
+                    <p className="text-slate-500 text-xs sm:text-sm">LinkedIn</p>
+                    <p className="text-white text-sm sm:text-base group-hover:text-amber-400 transition-colors duration-300">hormazdaruwala</p>
                   </div>
                 </a>
                 
@@ -177,12 +182,12 @@ const ContactSection = () => {
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 sm:space-x-4 group transition-transform hover:translate-x-1"
                 >
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-600 rounded-lg flex items-center justify-center group-hover:bg-purple-700 transition-colors">
-                    <Instagram className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors duration-300">
+                    <Instagram className="w-5 h-5 sm:w-6 sm:h-6 text-amber-400" />
                   </div>
                   <div>
-                    <p className="text-gray-400 text-xs sm:text-sm">Instagram</p>
-                    <p className="text-white text-sm sm:text-base group-hover:text-purple-400 transition-colors">@horma_z</p>
+                    <p className="text-slate-500 text-xs sm:text-sm">Instagram</p>
+                    <p className="text-white text-sm sm:text-base group-hover:text-amber-400 transition-colors duration-300">@horma_z</p>
                   </div>
                 </a>
               </div>
@@ -202,7 +207,7 @@ const ContactSection = () => {
                     key={social.name}
                     variant="outline"
                     size="sm"
-                    className="border-white/20 text-white hover:bg-white/10 transition-all duration-300 text-xs sm:text-sm px-3 sm:px-4 py-2"
+                    className="border-white/[0.1] text-white hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300 text-xs sm:text-sm px-3 sm:px-4 py-2"
                     onClick={() => {
                       portfolioAnalytics.trackSocialClick(social.name);
                       window.open(social.url, '_blank');
@@ -214,12 +219,12 @@ const ContactSection = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Contact Form */}
-          <Card 
-            ref={formRef as React.RefObject<HTMLDivElement>}
-            className="glass-card border-white/10 order-1 lg:order-2"
+          <ScrollReveal direction="right">
+            <Card 
+              className="glass-card border-white/[0.06] order-1 lg:order-2"
           >
             <CardContent className="p-4 sm:p-6 lg:p-8">
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
@@ -245,7 +250,7 @@ const ContactSection = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="mt-1 sm:mt-2 bg-white/5 border-white/20 text-white placeholder:text-gray-400 text-sm sm:text-base h-10 sm:h-12 focus:border-purple-500 focus:ring-purple-500/20"
+                    className="mt-1 sm:mt-2 bg-white/[0.04] border-white/[0.1] text-white placeholder:text-slate-500 text-sm sm:text-base h-10 sm:h-12 focus:border-amber-500 focus:ring-amber-500/20"
                     placeholder="Your full name"
                     required
                     disabled={isSubmitting}
@@ -262,7 +267,7 @@ const ContactSection = () => {
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="mt-1 sm:mt-2 bg-white/5 border-white/20 text-white placeholder:text-gray-400 text-sm sm:text-base h-10 sm:h-12 focus:border-purple-500 focus:ring-purple-500/20"
+                    className="mt-1 sm:mt-2 bg-white/[0.04] border-white/[0.1] text-white placeholder:text-slate-500 text-sm sm:text-base h-10 sm:h-12 focus:border-amber-500 focus:ring-amber-500/20"
                     placeholder="your.email@example.com"
                     required
                     disabled={isSubmitting}
@@ -278,14 +283,14 @@ const ContactSection = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
-                    className="mt-1 sm:mt-2 w-full px-3 py-2 bg-white/5 border border-white/20 rounded-md text-white placeholder:text-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm sm:text-base focus:border-purple-500"
+                    className="mt-1 sm:mt-2 w-full px-3 py-2 bg-white/[0.04] border border-white/[0.1] rounded-md text-white placeholder:text-slate-500 resize-none focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm sm:text-base focus:border-amber-500"
                     placeholder="Tell me about your project, timeline, budget, or any questions you have..."
                     required
                     disabled={isSubmitting}
                     minLength={10}
                     maxLength={1000}
                   />
-                  <p className="text-xs text-gray-400 mt-1">
+                  <p className="text-xs text-slate-500 mt-1">
                     {formData.message.length}/1000 characters
                   </p>
                 </div>
@@ -301,7 +306,7 @@ const ContactSection = () => {
                 <Button 
                   type="submit"
                   disabled={isSubmitting || !formData.name.trim() || !formData.email.trim() || !formData.message.trim()}
-                  className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-4 sm:py-6 text-base sm:text-lg rounded-xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                  className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white py-4 sm:py-6 text-base sm:text-lg rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-[0_4px_20px_rgba(245,158,11,0.15)]"
                 >
                   {isSubmitting ? (
                     <>
@@ -316,12 +321,13 @@ const ContactSection = () => {
                   )}
                 </Button>
                 
-                <p className="text-xs text-gray-400 text-center">
+                <p className="text-xs text-slate-500 text-center">
                   Your information is secure and will only be used to contact you about your inquiry.
                 </p>
               </form>
             </CardContent>
           </Card>
+          </ScrollReveal>
         </div>
       </div>
     </section>

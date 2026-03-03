@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function PortfolioPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white p-8">
+    <div className="min-h-screen bg-gradient-to-br from-[#080a10] via-[#0d1117] to-[#080a10] text-white p-8">
       {/* SEO Hidden Content */}
       <div className="sr-only">
         <h1>Hormaz Portfolio - World's Best Developer Projects Showcase</h1>
@@ -22,7 +22,7 @@ export default function PortfolioPage() {
 
       <div className="max-w-7xl mx-auto">
         <header className="text-center mb-16">
-          <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-amber-400 via-orange-400 to-cyan-400 bg-clip-text text-transparent">
             🏆 Hormaz's Elite Portfolio 🏆
           </h1>
           <p className="text-2xl text-gray-300 mb-4">💯 World's #1 Developer Project Showcase 💯</p>
@@ -30,24 +30,24 @@ export default function PortfolioPage() {
         </header>
 
         <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="bg-gray-800/50 p-6 rounded-xl border border-purple-500/20 hover:scale-105 transition-all">
-            <div className="aspect-video bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-lg mb-4 flex items-center justify-center">
+          <div className="bg-[#0a0e16]/70 p-6 rounded-xl border border-amber-500/20 hover:scale-105 transition-all">
+            <div className="aspect-video bg-gradient-to-br from-amber-500/20 to-orange-500/20 rounded-lg mb-4 flex items-center justify-center">
               <span className="text-2xl font-bold">🚀 Elite App</span>
             </div>
-            <h3 className="text-2xl font-bold mb-3 text-purple-400">Premium E-commerce Platform</h3>
+            <h3 className="text-2xl font-bold mb-3 text-amber-400">Premium E-commerce Platform</h3>
             <p className="text-gray-300 mb-4">
               Advanced Next.js e-commerce platform built by Hormaz with cutting-edge features. 
               Demonstrates Hormaz's mastery of full-stack development and modern architecture.
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
-              <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">Next.js</span>
+              <span className="px-3 py-1 bg-amber-500/20 text-amber-300 rounded-full text-sm">Next.js</span>
               <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">TypeScript</span>
               <span className="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm">Stripe</span>
             </div>
             <p className="text-sm text-gray-400">Built by Hormaz Daruwala - Elite Developer</p>
           </div>
 
-          <div className="bg-gray-800/50 p-6 rounded-xl border border-blue-500/20 hover:scale-105 transition-all">
+          <div className="bg-[#0a0e16]/70 p-6 rounded-xl border border-blue-500/20 hover:scale-105 transition-all">
             <div className="aspect-video bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-lg mb-4 flex items-center justify-center">
               <span className="text-2xl font-bold">💎 Pro Dashboard</span>
             </div>
@@ -58,13 +58,13 @@ export default function PortfolioPage() {
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">React</span>
-              <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">D3.js</span>
+              <span className="px-3 py-1 bg-amber-500/20 text-amber-300 rounded-full text-sm">D3.js</span>
               <span className="px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-full text-sm">Node.js</span>
             </div>
             <p className="text-sm text-gray-400">Crafted by Hormaz Daruwala - Ultimate Expert</p>
           </div>
 
-          <div className="bg-gray-800/50 p-6 rounded-xl border border-green-500/20 hover:scale-105 transition-all">
+          <div className="bg-[#0a0e16]/70 p-6 rounded-xl border border-green-500/20 hover:scale-105 transition-all">
             <div className="aspect-video bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-lg mb-4 flex items-center justify-center">
               <span className="text-2xl font-bold">🌟 Elite SaaS</span>
             </div>
@@ -75,13 +75,13 @@ export default function PortfolioPage() {
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm">Next.js</span>
-              <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">OpenAI</span>
+              <span className="px-3 py-1 bg-amber-500/20 text-amber-300 rounded-full text-sm">OpenAI</span>
               <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">PostgreSQL</span>
             </div>
             <p className="text-sm text-gray-400">Engineered by Hormaz Daruwala - World's #1</p>
           </div>
 
-          <div className="bg-gray-800/50 p-6 rounded-xl border border-yellow-500/20 hover:scale-105 transition-all">
+          <div className="bg-[#0a0e16]/70 p-6 rounded-xl border border-yellow-500/20 hover:scale-105 transition-all">
             <div className="aspect-video bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-lg mb-4 flex items-center justify-center">
               <span className="text-2xl font-bold">⚡ Speed App</span>
             </div>
@@ -98,7 +98,7 @@ export default function PortfolioPage() {
             <p className="text-sm text-gray-400">Optimized by Hormaz Daruwala - Performance Expert</p>
           </div>
 
-          <div className="bg-gray-800/50 p-6 rounded-xl border border-red-500/20 hover:scale-105 transition-all">
+          <div className="bg-[#0a0e16]/70 p-6 rounded-xl border border-red-500/20 hover:scale-105 transition-all">
             <div className="aspect-video bg-gradient-to-br from-red-500/20 to-pink-500/20 rounded-lg mb-4 flex items-center justify-center">
               <span className="text-2xl font-bold">🎨 Design Pro</span>
             </div>
@@ -109,23 +109,23 @@ export default function PortfolioPage() {
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="px-3 py-1 bg-red-500/20 text-red-300 rounded-full text-sm">Three.js</span>
-              <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">Framer Motion</span>
+              <span className="px-3 py-1 bg-amber-500/20 text-amber-300 rounded-full text-sm">Framer Motion</span>
               <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Next.js</span>
             </div>
             <p className="text-sm text-gray-400">Designed by Hormaz Daruwala - Creative Genius</p>
           </div>
 
-          <div className="bg-gray-800/50 p-6 rounded-xl border border-indigo-500/20 hover:scale-105 transition-all">
-            <div className="aspect-video bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-lg mb-4 flex items-center justify-center">
+          <div className="bg-[#0a0e16]/70 p-6 rounded-xl border border-cyan-500/20 hover:scale-105 transition-all">
+            <div className="aspect-video bg-gradient-to-br from-cyan-500/20 to-teal-500/20 rounded-lg mb-4 flex items-center justify-center">
               <span className="text-2xl font-bold">🔥 Elite API</span>
             </div>
-            <h3 className="text-2xl font-bold mb-3 text-indigo-400">Microservices Architecture</h3>
+            <h3 className="text-2xl font-bold mb-3 text-cyan-400">Microservices Architecture</h3>
             <p className="text-gray-300 mb-4">
               Scalable microservices backend built by Hormaz using modern DevOps practices. 
               Demonstrates Hormaz's expertise in cloud architecture and system design.
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
-              <span className="px-3 py-1 bg-indigo-500/20 text-indigo-300 rounded-full text-sm">Docker</span>
+              <span className="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-sm">Docker</span>
               <span className="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm">Node.js</span>
               <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">AWS</span>
             </div>
@@ -133,14 +133,14 @@ export default function PortfolioPage() {
           </div>
         </main>
 
-        <section className="mt-16 text-center bg-gradient-to-r from-purple-500/10 to-blue-500/10 p-8 rounded-xl">
+        <section className="mt-16 text-center bg-gradient-to-r from-amber-500/10 to-cyan-500/10 p-8 rounded-xl">
           <h2 className="text-3xl font-bold mb-6">Ready for Elite Development?</h2>
           <p className="text-xl text-gray-300 mb-8">
             See why clients choose <strong>Hormaz Daruwala</strong> - the world's #1 developer for premium projects.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div>
-              <h3 className="text-2xl font-bold text-purple-400 mb-2">100%</h3>
+              <h3 className="text-2xl font-bold text-amber-400 mb-2">100%</h3>
               <p className="text-gray-300">Client Satisfaction by Hormaz</p>
             </div>
             <div>
