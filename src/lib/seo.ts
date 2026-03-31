@@ -12,42 +12,31 @@ export interface SEOProps {
 
 // Primary target keywords for Hormaz Daruwala
 export const PRIMARY_KEYWORDS = [
-  'Hormaz',
-  'Hormaz Daruwala', 
-  'Hormaz Coder',
-  'coder hormaz',
+  'Hormaz Daruwala',
   'coderhormaz',
-  'Developer Hormaz',
-  'Hormaz Developer',
-  'Hormaz Full Stack Developer',
-  'Hormaz Frontend Developer',
-  'Hormaz Backend Developer',
-  'Hormaz React Developer',
-  'Hormaz Next.js Developer',
-  'Hormaz TypeScript Developer'
+  'full-stack developer',
+  'React developer',
+  'Next.js developer',
+  'TypeScript developer',
+  'web developer India'
 ];
 
 export const SECONDARY_KEYWORDS = [
-  'Full-Stack Developer',
-  'React Developer',
-  'Next.js Expert',
-  'TypeScript Specialist',
-  'Frontend Engineer',
-  'Backend Engineer',
-  'UI/UX Designer',
-  'Web Development',
-  'Software Engineering',
-  'JavaScript Developer',
-  'Node.js Developer',
-  'Modern Web Technologies',
-  'Responsive Design',
-  'Performance Optimization'
+  'frontend developer',
+  'backend developer',
+  'UI/UX designer',
+  'JavaScript developer',
+  'Node.js developer',
+  'web development',
+  'software engineer',
+  'responsive design',
+  'performance optimization'
 ];
 
 export const SITE_CONFIG = {
-  name: 'Hormaz Daruwala Portfolio',
+  name: 'Hormaz Daruwala',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://hormaz.tech',
-  description: 'Hormaz Daruwala (coderhormaz) - Professional Full-Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies. Expert Frontend & Backend Developer creating exceptional digital experiences.',
+  description: 'Hormaz Daruwala is a full-stack developer specializing in React, Next.js, TypeScript, and modern web technologies.',
   author: 'Hormaz Daruwala',
   creator: 'Hormaz Daruwala',
   keywords: [...PRIMARY_KEYWORDS, ...SECONDARY_KEYWORDS],
@@ -70,8 +59,8 @@ export function generateSEO({
   noIndex = false
 }: SEOProps = {}): Metadata {
   const fullTitle = title 
-    ? `${title} | ${SITE_CONFIG.author} - Full Stack Developer`
-    : `${SITE_CONFIG.author} | Full-Stack Developer & UI/UX Designer | coderhormaz`;
+    ? `${title} | ${SITE_CONFIG.author}`
+    : `${SITE_CONFIG.author} - Full-Stack Developer & UI/UX Designer`;
 
   const allKeywords = [...PRIMARY_KEYWORDS, ...SECONDARY_KEYWORDS, ...keywords];
   const canonicalUrl = canonical || SITE_CONFIG.url;

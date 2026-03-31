@@ -91,7 +91,7 @@ const AboutSection = () => {
 						<p
 							className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed px-4"
 						>
-							I&apos;m a passionate Information Technology student and aspiring developer currently pursuing my diploma at Vidyalankar Polytechnic. 
+							I&apos;m a passionate Information Technology student and aspiring developer currently pursuing my diploma at <a href="https://techshala.vpt.edu.in/developer" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 underline underline-offset-2">Vidyalankar Polytechnic</a>. 
 							As a cybersecurity intern at Secure Cyber Future and team leader of Code Snipers (selected for Smart India Hackathon 2024), 
 							I love creating innovative digital solutions that blend cutting-edge technology with practical applications.
 						</p>

@@ -1,36 +1,32 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "🏆 Contact Hormaz | Hormaz Daruwala - Hire World's #1 Developer | Elite Expert Contact 🏆",
-  description: "💯 Contact Hormaz Daruwala - THE world's #1 elite developer for premium projects. Hire Hormaz for guaranteed excellence. Get expert consultation from ultimate full-stack developer Hormaz. Best developer contact in India. 💯",
+  title: "Contact - Hire Hormaz Daruwala for Web Development",
+  description: "Get in touch with Hormaz Daruwala for your next web development project. Available for React, Next.js, and full-stack development work.",
   keywords: [
-    "Contact Hormaz", "Hire Hormaz", "Hormaz Contact", "Hormaz Developer Contact", "Contact Hormaz Daruwala",
-    "Hire Hormaz Daruwala", "Best Developer Contact", "Top Developer Hire", "Elite Developer Contact",
-    "Premium Developer Hire", "Expert Developer Contact", "Professional Developer Hire", "Ultimate Developer Contact",
-    "Hormaz Consultation", "Hormaz Project", "Hormaz Services Contact", "Developer Contact India", "Hire Developer India"
+    "contact developer", "hire web developer", "hire React developer",
+    "freelance developer India", "web development inquiry"
   ],
+  alternates: {
+    canonical: "https://hormaz.tech/contact",
+  },
 };
 
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#080a10] via-[#0d1117] to-[#080a10] text-white">
-      {/* SEO Hidden Content */}
-      <div className="sr-only">
-        <h1>Contact Hormaz - Hire World's #1 Elite Developer</h1>
-        <p>Contact Hormaz Daruwala for premium development projects. Hire Hormaz for guaranteed excellence. Best developer contact in India. Expert consultation by ultimate full-stack developer. Professional developer hire for elite projects. Contact top-rated Hormaz for premium services. Hire world-class developer Hormaz Daruwala.</p>
-        <h2>Hormaz Contact Information</h2>
-        <p>Email Hormaz: hormazdaruwala86@gmail.com. Hormaz LinkedIn: linkedin.com/in/hormazdaruwala. Hormaz GitHub: github.com/coderhormaz. Contact professional developer Hormaz. Hire expert Hormaz for projects.</p>
-      </div>
-
       <div className="max-w-6xl mx-auto px-6 py-20">
+        <nav className="mb-8">
+          <Link href="/" className="text-amber-400 hover:text-amber-300 transition-colors">&larr; Back to Home</Link>
+        </nav>
         <header className="text-center mb-16">
-          <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-amber-400 via-orange-400 to-cyan-400 bg-clip-text text-transparent">
-            🏆 Contact Hormaz Daruwala 🏆
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-amber-400 via-orange-400 to-cyan-400 bg-clip-text text-transparent">
+            Get In Touch
           </h1>
-          <p className="text-2xl text-gray-300 mb-4">💯 Hire the World's #1 Elite Developer 💯</p>
+          <p className="text-xl text-gray-300 mb-4">Let&apos;s Work Together</p>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-            Ready to work with <strong>the ultimate expert</strong>? Contact Hormaz for premium development services 
-            and experience the difference that working with the world's #1 developer makes.
+            Have a project in mind? Reach out and let&apos;s discuss how I can help bring your ideas to life.
           </p>
         </header>
 
@@ -38,15 +34,14 @@ export default function ContactPage() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div className="bg-[#0a0e16]/70 p-8 rounded-xl border border-amber-500/20">
-              <h2 className="text-3xl font-bold mb-6 text-amber-400">Get in Touch with Hormaz</h2>
+              <h2 className="text-3xl font-bold mb-6 text-amber-400">Contact Information</h2>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center">
                     <span className="text-2xl">📧</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Email Hormaz Directly</h3>
-                    <p className="text-gray-300 mb-2">Get premium consultation from the world's #1 developer</p>
+                    <h3 className="text-xl font-semibold mb-2">Email</h3>
                     <a href="mailto:hormazdaruwala86@gmail.com" className="text-amber-400 hover:text-amber-300 transition-colors">
                       hormazdaruwala86@gmail.com
                     </a>
@@ -58,8 +53,7 @@ export default function ContactPage() {
                     <span className="text-2xl">💼</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Connect with Hormaz on LinkedIn</h3>
-                    <p className="text-gray-300 mb-2">Professional networking with elite developer Hormaz</p>
+                    <h3 className="text-xl font-semibold mb-2">LinkedIn</h3>
                     <a href="https://www.linkedin.com/in/hormazdaruwala/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors">
                       linkedin.com/in/hormazdaruwala
                     </a>
@@ -71,8 +65,7 @@ export default function ContactPage() {
                     <span className="text-2xl">💻</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">View Hormaz's Code on GitHub</h3>
-                    <p className="text-gray-300 mb-2">See premium code examples by ultimate expert Hormaz</p>
+                    <h3 className="text-xl font-semibold mb-2">GitHub</h3>
                     <a href="https://github.com/coderhormaz" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-300 transition-colors">
                       github.com/coderhormaz
                     </a>
@@ -84,8 +77,7 @@ export default function ContactPage() {
                     <span className="text-2xl">📱</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Follow Hormaz on Instagram</h3>
-                    <p className="text-gray-300 mb-2">Behind the scenes with world-class developer Hormaz</p>
+                    <h3 className="text-xl font-semibold mb-2">Instagram</h3>
                     <a href="https://www.instagram.com/horma_z/" target="_blank" rel="noopener noreferrer" className="text-pink-400 hover:text-pink-300 transition-colors">
                       instagram.com/horma_z
                     </a>
@@ -93,37 +85,11 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-
-            <div className="bg-[#0a0e16]/70 p-8 rounded-xl border border-green-500/20">
-              <h3 className="text-2xl font-bold mb-4 text-green-400">Why Hire Hormaz?</h3>
-              <ul className="space-y-3 text-gray-300">
-                <li className="flex items-center space-x-3">
-                  <span className="text-green-400">✅</span>
-                  <span><strong>Hormaz</strong> guarantees 100% client satisfaction</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <span className="text-green-400">✅</span>
-                  <span><strong>Hormaz</strong> delivers projects on time, every time</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <span className="text-green-400">✅</span>
-                  <span><strong>Hormaz</strong> provides premium quality code</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <span className="text-green-400">✅</span>
-                  <span><strong>Hormaz</strong> offers competitive pricing for elite services</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <span className="text-green-400">✅</span>
-                  <span><strong>Hormaz</strong> provides ongoing support and maintenance</span>
-                </li>
-              </ul>
-            </div>
           </div>
 
           {/* Contact Form */}
           <div className="bg-[#0a0e16]/70 p-8 rounded-xl border border-cyan-500/20">
-            <h2 className="text-3xl font-bold mb-6 text-blue-400">Start Your Premium Project with Hormaz</h2>
+            <h2 className="text-3xl font-bold mb-6 text-blue-400">Send a Message</h2>
             <form className="space-y-6" action="mailto:hormazdaruwala86@gmail.com" method="post" encType="text/plain">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
@@ -164,32 +130,13 @@ export default function ContactPage() {
                   className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white"
                 >
                   <option value="">Select project type</option>
-                  <option value="Full-Stack Development">Full-Stack Development by Hormaz</option>
-                  <option value="Frontend Development">Frontend Development by Hormaz</option>
-                  <option value="Backend Development">Backend Development by Hormaz</option>
-                  <option value="UI/UX Design">UI/UX Design by Hormaz</option>
-                  <option value="E-commerce">E-commerce Solutions by Hormaz</option>
-                  <option value="Custom Application">Custom Application by Hormaz</option>
-                  <option value="Consultation">Expert Consultation with Hormaz</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="budget" className="block text-sm font-medium text-gray-300 mb-2">
-                  Budget Range
-                </label>
-                <select
-                  id="budget"
-                  name="budget"
-                  required
-                  className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white"
-                >
-                  <option value="">Select budget range</option>
-                  <option value="$1,000 - $5,000">$1,000 - $5,000</option>
-                  <option value="$5,000 - $10,000">$5,000 - $10,000</option>
-                  <option value="$10,000 - $25,000">$10,000 - $25,000</option>
-                  <option value="$25,000+">$25,000+</option>
-                  <option value="Discuss with Hormaz">Discuss with Hormaz</option>
+                  <option value="Full-Stack Development">Full-Stack Development</option>
+                  <option value="Frontend Development">Frontend Development</option>
+                  <option value="Backend Development">Backend Development</option>
+                  <option value="Blockchain / Web3">Blockchain / Web3</option>
+                  <option value="UI/UX Design">UI/UX Design</option>
+                  <option value="E-commerce">E-commerce</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
 
@@ -203,39 +150,17 @@ export default function ContactPage() {
                   rows={5}
                   required
                   className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-gray-400 resize-none"
-                  placeholder="Tell Hormaz about your project requirements, goals, and timeline..."
+                  placeholder="Tell me about your project..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300"
               >
-                🚀 Hire Hormaz - Start Elite Project
+                Send Message
               </button>
             </form>
-          </div>
-        </div>
-
-        <div className="mt-16 text-center bg-gradient-to-r from-amber-500/10 to-cyan-500/10 p-8 rounded-xl">
-          <h2 className="text-3xl font-bold mb-6">Ready to Experience Elite Development?</h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Don't settle for ordinary developers. <strong>Hire Hormaz Daruwala</strong> - the world's #1 elite developer 
-            who guarantees exceptional results and premium quality for your project.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div>
-              <h3 className="text-2xl font-bold text-amber-400 mb-2">24/7</h3>
-              <p className="text-gray-300">Premium Support by Hormaz</p>
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold text-blue-400 mb-2">100%</h3>
-              <p className="text-gray-300">Satisfaction Guaranteed by Hormaz</p>
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold text-green-400 mb-2">Elite</h3>
-              <p className="text-gray-300">World-Class Quality by Hormaz</p>
-            </div>
           </div>
         </div>
       </div>
