@@ -82,17 +82,92 @@ body {
   overflow-x: hidden;
 }
 
-/* Glassmorphism utilities */
+/* ───── Glassmorphism Design System ───── */
+
+/* Base glass surface */
 .glass {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+    0 4px 24px rgba(0, 0, 0, 0.12);
 }
 
+/* Card-level glass — slightly more opaque for readability */
 .glass-card {
-  background: rgba(10, 14, 22, 0.6);
-  backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(10, 14, 22, 0.55);
+  backdrop-filter: blur(24px) saturate(1.5);
+  -webkit-backdrop-filter: blur(24px) saturate(1.5);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+    0 8px 32px rgba(0, 0, 0, 0.18),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Elevated glass card for hover / important elements */
+.glass-card-elevated {
+  background: rgba(10, 14, 22, 0.5);
+  backdrop-filter: blur(32px) saturate(1.6);
+  -webkit-backdrop-filter: blur(32px) saturate(1.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset,
+    0 0 60px rgba(245, 158, 11, 0.03),
+    0 12px 40px rgba(0, 0, 0, 0.24),
+    0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Glass input fields */
+.glass-input {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.08), 0 0 20px rgba(245, 158, 11, 0.06);
+}
+
+/* Glass nav bar */
+.glass-nav {
+  background: rgba(8, 10, 16, 0.6);
+  backdrop-filter: blur(20px) saturate(1.6);
+  -webkit-backdrop-filter: blur(20px) saturate(1.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.03) inset,
+    0 4px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Glass footer */
+.glass-footer {
+  background: rgba(8, 10, 16, 0.5);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Subtle top-light shine on glass surfaces */
+.glass-shine {
+  position: relative;
+}
+.glass-shine::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0) 40%
+  );
+  pointer-events: none;
 }
 
 /* Dot grid background */

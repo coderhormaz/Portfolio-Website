@@ -32,7 +32,7 @@ const HeroSection = () => {
             className="flex items-center gap-3 justify-center lg:justify-start"
           >
             <span className="h-px w-8 bg-gradient-to-r from-amber-400/80 to-transparent" />
-            <span className="text-xs sm:text-sm font-medium tracking-[0.2em] uppercase text-amber-400/80">
+            <span className="text-xs sm:text-sm font-medium tracking-[0.2em] uppercase text-amber-400/80 glass px-3 py-1 rounded-full">
               Full-Stack Developer
             </span>
           </motion.div>
@@ -82,7 +82,7 @@ const HeroSection = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-white/[0.12] text-white hover:bg-white/[0.06] hover:border-white/20 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-xl transition-all duration-300 w-full sm:w-auto"
+              className="border-white/[0.12] text-white hover:bg-white/[0.06] hover:border-white/20 px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-xl transition-all duration-300 w-full sm:w-auto backdrop-blur-xl bg-white/[0.04]"
               onClick={() => {
                 const contactSection = document.getElementById('contact');
                 contactSection?.scrollIntoView({ behavior: 'smooth' });
@@ -119,7 +119,7 @@ const HeroSection = () => {
           aboutSection?.scrollIntoView({ behavior: 'smooth' });
         }}
       >
-        <div className="w-6 h-10 border-2 border-white/20 rounded-full p-1 hover:border-amber-500/40 transition-colors duration-500">
+        <div className="w-6 h-10 border-2 border-white/20 rounded-full p-1 hover:border-amber-500/40 transition-colors duration-500 backdrop-blur-md bg-white/[0.03]">
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}

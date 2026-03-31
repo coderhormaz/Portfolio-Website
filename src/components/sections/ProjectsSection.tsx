@@ -106,7 +106,7 @@ const ProjectsSection = () => {
         <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10" staggerDelay={0.12}>
           {projects.map((project) => (
             <StaggerItem key={project.title} className="relative group">
-              <CardSpotlight className="relative overflow-hidden rounded-xl border border-white/[0.06] hover:border-white/[0.1] bg-[#0a0e16]/60 hover:bg-[#0a0e16]/80 transition-all duration-500 z-0">
+              <CardSpotlight className="relative overflow-hidden rounded-xl border border-white/[0.06] hover:border-white/[0.12] bg-[#0a0e16]/50 hover:bg-[#0a0e16]/65 backdrop-blur-2xl transition-all duration-500 z-0 glass-shine shadow-[0_8px_32px_rgba(0,0,0,0.16)] hover:shadow-[0_16px_48px_rgba(0,0,0,0.24),0_0_60px_rgba(245,158,11,0.03)]">
                 {/* Project Image or Video */}
                 <div className="relative h-48 sm:h-56 md:h-64 mb-4 sm:mb-6 overflow-hidden rounded-lg z-10 border border-white/[0.04] mx-2 my-2">
                   {project.isVideo ? (
@@ -206,7 +206,7 @@ const ProjectsSection = () => {
                     {project.tech.map((tech) => (
                       <span 
                         key={tech}
-                        className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-cyan-500/10 text-cyan-300 rounded-full border border-cyan-500/20"
+                        className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-cyan-500/10 text-cyan-300 rounded-full border border-cyan-500/20 backdrop-blur-md"
                       >
                         {tech}
                       </span>

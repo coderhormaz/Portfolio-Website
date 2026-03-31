@@ -16,11 +16,11 @@ export const CardSpotlight = ({
   return (
     <div
       className={cn(
-        "group relative rounded-2xl border border-white/10 bg-black/20 p-8 backdrop-blur-xl",
+        "group relative rounded-2xl border border-white/[0.08] bg-white/[0.02] p-8 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.16),0_0_0_1px_rgba(255,255,255,0.04)_inset] hover:bg-white/[0.04] hover:border-white/[0.12] hover:shadow-[0_12px_40px_rgba(0,0,0,0.22),0_0_60px_rgba(245,158,11,0.03)] transition-all duration-500",
         className
       )}
     >
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/[0.06] via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
       <div className="relative z-10">{children}</div>
       
       {/* Spotlight effect */}

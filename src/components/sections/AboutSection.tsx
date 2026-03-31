@@ -102,8 +102,8 @@ const AboutSection = () => {
 				<StaggerContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mb-16" staggerDelay={0.06}>
 					{skills.map((skill) => (
 						<StaggerItem key={skill.title} className="h-full">
-							<div className="group h-full rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] hover:border-white/[0.1] transition-all duration-300 p-4 sm:p-5 flex flex-col items-center text-center gap-3">
-								<div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+							<div className="group h-full rounded-xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-xl hover:bg-white/[0.05] hover:border-white/[0.12] hover:shadow-[0_8px_32px_rgba(0,0,0,0.16),0_0_40px_rgba(245,158,11,0.03)] transition-all duration-300 p-4 sm:p-5 flex flex-col items-center text-center gap-3 glass-shine">
+								<div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-white/[0.06] backdrop-blur-md border border-white/[0.08] flex items-center justify-center group-hover:scale-105 group-hover:bg-white/[0.1] transition-all duration-300">
 									{skill.icon}
 								</div>
 								<h3 className="text-sm sm:text-base font-semibold text-white leading-tight">
@@ -181,7 +181,7 @@ const AboutSection = () => {
 								},
 							].map((experience, index) => (
 								<ScrollReveal key={index} delay={index * 0.08} direction={index % 2 === 0 ? "left" : "right"}>
-									<Card className="glass-card border-white/[0.06] hover:border-white/[0.1] transition-colors duration-500">
+									<Card className="glass-card glass-shine border-white/[0.06] hover:border-white/[0.1] transition-colors duration-500">
 										<CardContent className="p-4 sm:p-6">
 											<div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
 												<div className="sm:w-32 text-amber-400 font-semibold text-sm sm:text-base">
@@ -211,7 +211,7 @@ const AboutSection = () => {
 				<div className="mt-8 sm:mt-12" id="professional-experience">
 					<ScrollReveal>
 						<div className="max-w-4xl mx-auto">
-							<Card className="glass-card border-white/[0.06]">
+							<Card className="glass-card glass-shine border-white/[0.06]">
 								<CardContent className="p-4 sm:p-6 text-center">
 									<div className="mb-4">
 										<h4 className="text-xl sm:text-2xl font-semibold text-white mb-3">

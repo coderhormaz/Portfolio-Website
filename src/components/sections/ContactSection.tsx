@@ -152,7 +152,7 @@ const ContactSection = () => {
                   href="mailto:hormazdaruwala86@gmail.com" 
                   className="flex items-center space-x-3 sm:space-x-4 group transition-transform hover:translate-x-1"
                 >
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors duration-300">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-amber-500/10 backdrop-blur-md border border-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/20 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.1)] transition-all duration-300">
                     <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-amber-400" />
                   </div>
                   <div>
@@ -167,7 +167,7 @@ const ContactSection = () => {
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 sm:space-x-4 group transition-transform hover:translate-x-1"
                 >
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors duration-300">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-amber-500/10 backdrop-blur-md border border-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/20 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.1)] transition-all duration-300">
                     <Linkedin className="w-5 h-5 sm:w-6 sm:h-6 text-amber-400" />
                   </div>
                   <div>
@@ -182,7 +182,7 @@ const ContactSection = () => {
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 sm:space-x-4 group transition-transform hover:translate-x-1"
                 >
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors duration-300">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-amber-500/10 backdrop-blur-md border border-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/20 group-hover:shadow-[0_0_20px_rgba(245,158,11,0.1)] transition-all duration-300">
                     <Instagram className="w-5 h-5 sm:w-6 sm:h-6 text-amber-400" />
                   </div>
                   <div>
@@ -207,7 +207,7 @@ const ContactSection = () => {
                     key={social.name}
                     variant="outline"
                     size="sm"
-                    className="border-white/[0.1] text-white hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300 text-xs sm:text-sm px-3 sm:px-4 py-2"
+                    className="border-white/[0.1] text-white hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300 text-xs sm:text-sm px-3 sm:px-4 py-2 backdrop-blur-xl"
                     onClick={() => {
                       portfolioAnalytics.trackSocialClick(social.name);
                       window.open(social.url, '_blank');
@@ -224,7 +224,7 @@ const ContactSection = () => {
           {/* Contact Form */}
           <ScrollReveal direction="right">
             <Card 
-              className="glass-card border-white/[0.06] order-1 lg:order-2"
+              className="glass-card glass-shine border-white/[0.06] order-1 lg:order-2"
           >
             <CardContent className="p-4 sm:p-6 lg:p-8">
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
@@ -250,7 +250,7 @@ const ContactSection = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="mt-1 sm:mt-2 bg-white/[0.04] border-white/[0.1] text-white placeholder:text-slate-500 text-sm sm:text-base h-10 sm:h-12 focus:border-amber-500 focus:ring-amber-500/20"
+                    className="mt-1 sm:mt-2 bg-white/[0.04] border-white/[0.1] text-white placeholder:text-slate-500 text-sm sm:text-base h-10 sm:h-12 focus:border-amber-500 focus:ring-amber-500/20 backdrop-blur-md"
                     placeholder="Your full name"
                     required
                     disabled={isSubmitting}
@@ -267,7 +267,7 @@ const ContactSection = () => {
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="mt-1 sm:mt-2 bg-white/[0.04] border-white/[0.1] text-white placeholder:text-slate-500 text-sm sm:text-base h-10 sm:h-12 focus:border-amber-500 focus:ring-amber-500/20"
+                    className="mt-1 sm:mt-2 bg-white/[0.04] border-white/[0.1] text-white placeholder:text-slate-500 text-sm sm:text-base h-10 sm:h-12 focus:border-amber-500 focus:ring-amber-500/20 backdrop-blur-md"
                     placeholder="your.email@example.com"
                     required
                     disabled={isSubmitting}
@@ -283,7 +283,7 @@ const ContactSection = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
-                    className="mt-1 sm:mt-2 w-full px-3 py-2 bg-white/[0.04] border border-white/[0.1] rounded-md text-white placeholder:text-slate-500 resize-none focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm sm:text-base focus:border-amber-500"
+                    className="mt-1 sm:mt-2 w-full px-3 py-2 bg-white/[0.04] border border-white/[0.1] rounded-md text-white placeholder:text-slate-500 resize-none focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm sm:text-base focus:border-amber-500 backdrop-blur-md"
                     placeholder="Tell me about your project, timeline, budget, or any questions you have..."
                     required
                     disabled={isSubmitting}

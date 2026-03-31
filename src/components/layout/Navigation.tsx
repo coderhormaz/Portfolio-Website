@@ -57,7 +57,7 @@ const Navigation = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500 w-full",
         isScrolled
-          ? "bg-[#080a10]/85 backdrop-blur-2xl border-b border-white/[0.06] shadow-[0_1px_20px_rgba(0,0,0,0.3)]"
+          ? "glass-nav"
           : "bg-transparent"
       )}
     >
@@ -138,7 +138,7 @@ const Navigation = () => {
               transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="lg:hidden overflow-hidden w-full"
             >
-              <div className="py-4 space-y-3 px-2">
+              <div className="py-4 space-y-3 px-2 glass-card rounded-b-2xl mx-2 mb-2">
                 {navItems.map((item, i) => (
                   <motion.button
                     key={item.name}

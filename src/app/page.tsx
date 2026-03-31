@@ -177,7 +177,7 @@ export default function Home() {
         </div>
       
       {/* Footer */}
-      <footer className="py-8 sm:py-10 px-4 sm:px-6 border-t border-white/[0.06] relative z-10">
+      <footer className="py-8 sm:py-10 px-4 sm:px-6 glass-footer relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Top row: Brand | Links | Socials */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-4 mb-6 sm:mb-8">
@@ -213,7 +213,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.name}
-                  className="p-2 rounded-lg text-slate-500 hover:text-white hover:bg-white/[0.04] transition-all duration-300"
+                  className="p-2 rounded-lg text-slate-500 hover:text-white hover:bg-white/[0.06] backdrop-blur-md transition-all duration-300"
                   onClick={() => portfolioAnalytics.trackSocialClick(social.name)}
                 >
                   {social.icon}
