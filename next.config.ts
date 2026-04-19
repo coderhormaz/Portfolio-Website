@@ -79,6 +79,19 @@ const nextConfig: NextConfig = {
             value: 'text/plain'
           }
         ]
+      },
+      {
+        source: '/Hormaz_Resume.pdf',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/pdf'
+          },
+          {
+            key: 'Content-Disposition',
+            value: 'attachment; filename="Hormaz_Resume.pdf"'
+          }
+        ]
       }
     ]
   },

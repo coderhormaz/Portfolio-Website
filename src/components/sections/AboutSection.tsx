@@ -221,18 +221,23 @@ const AboutSection = () => {
 											Get a comprehensive overview of my professional experience, education, technical skills, and achievements. 
 											My resume includes detailed information about my projects, internships, and academic background.
 										</p>
-										<Button 
-											className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-[1.03] hover:-translate-y-0.5 shadow-[0_4px_20px_rgba(245,158,11,0.15)]"
-											onClick={() => {
+										<a
+											href="/Hormaz_Resume.pdf"
+											download="Hormaz_Resume.pdf"
+											onClick={(e) => {
+												e.preventDefault();
 												const link = document.createElement('a');
 												link.href = '/Hormaz_Resume.pdf';
 												link.download = 'Hormaz_Resume.pdf';
+												document.body.appendChild(link);
 												link.click();
+												document.body.removeChild(link);
 											}}
+											className="inline-flex items-center justify-center bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-[1.03] hover:-translate-y-0.5 shadow-[0_4px_20px_rgba(245,158,11,0.15)]"
 										>
 											<Download className="w-5 h-5 mr-2" />
 											Download Resume
-										</Button>
+										</a>
 									</div>
 									
 									
