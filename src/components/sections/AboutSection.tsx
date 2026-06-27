@@ -3,7 +3,7 @@ import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
-import { Code, Server, CircuitBoard, Paintbrush, PaintBucket, Wrench, LockKeyhole, Globe, Download } from "lucide-react";
+import { Code, Server, CircuitBoard, Paintbrush, PaintBucket, Wrench, LockKeyhole, Globe, Download, Sparkles, Smartphone } from "lucide-react";
 import { ShineBorder } from "../magicui/shine-border";
 
 
@@ -20,50 +20,50 @@ interface Skill {
 
 const skills: Skill[] = [
 	{
-		title: "Frontend Development",
-		description: " React, Next.js, HTML5, CSS3, JavaScript",
+		title: "Frontend & Mobile",
+		description: "Next.js, React, React Native, Expo, TypeScript, Tailwind CSS",
 		icon: <Code className="w-8 h-8 text-amber-400" />,
 		variant: "purple",
 	},
 	{
-		title: "Backend & Languages",
-		description: "Node.js, Java, Python, Firebase",
+		title: "Backend & Infrastructure",
+		description: "PostgreSQL, Python, VPS/DevOps, Nginx, REST APIs, Authentication",
 		icon: <Server className="w-8 h-8 text-cyan-400" />,
 		variant: "blue",
 	},
 	{
-		title: "Blockchain & Web3",
-		description: "Solidity, Smart Contracts, DApps, Ethereum, Solana",
+		title: "Web3 & Blockchain",
+		description: "Solidity, Ethereum, Smart Contracts, DeFi, NFTs, EVM Chains",
 		icon: <CircuitBoard className="w-8 h-8 text-emerald-400" />,
 		variant: "emerald",
 	},
 	{
-		title: "Frameworks & Libraries",
-		description: "Bootstrap, Tailwind CSS, jQuery, Sass",
-		icon: <Paintbrush className="w-8 h-8 text-orange-400" />,
-		variant: "amber",
+		title: "AI & Agents",
+		description: "Generative AI, AI Agents, NLP, Gemini, OpenCV, Pyth Oracle",
+		icon: <Sparkles className="w-8 h-8 text-violet-400" />,
+		variant: "purple",
 	},
 	{
-		title: "Design & Tools",
-		description: "Figma, Framer, Webflow",
+		title: "Design & Creative",
+		description: "Figma, Framer, Webflow, Adobe XD, Photoshop, Premiere Pro",
 		icon: <PaintBucket className="w-8 h-8 text-rose-400" />,
 		variant: "pink",
 	},
 	{
-		title: "Development Tools",
-		description: "Git, GitHub, VS Code, Webpack, NPM",
-		icon: <Wrench className="w-8 h-8 text-yellow-400" />,
-		variant: "yellow",
-	},
-	{
-		title: "Web Technologies",
-		description: "Three.js, GSAP, Framer Motion",
+		title: "Animation & 3D",
+		description: "Three.js, GSAP, Framer Motion, CSS Animations",
 		icon: <Globe className="w-8 h-8 text-teal-400" />,
 		variant: "cyan",
 	},
 	{
-		title: "Security & Testing",
-		description: "Ethical Hacking, Cybersecurity, Penetration Testing",
+		title: "Dev Tools",
+		description: "Git, GitHub, VS Code, Bootstrap, jQuery, Webpack",
+		icon: <Wrench className="w-8 h-8 text-yellow-400" />,
+		variant: "yellow",
+	},
+	{
+		title: "Security & Hacking",
+		description: "Ethical Hacking, Penetration Testing, SQL Injection, XSS, Google Dorking",
 		icon: <LockKeyhole className="w-8 h-8 text-red-400" />,
 		variant: "default",
 	},
@@ -91,9 +91,11 @@ const AboutSection = () => {
 						<p
 							className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed px-4"
 						>
-							I&apos;m a passionate Information Technology student and aspiring developer currently pursuing my diploma at <a href="https://techshala.vpt.edu.in/developer" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 underline underline-offset-2">Vidyalankar Polytechnic</a>. 
-							As a cybersecurity intern at Secure Cyber Future and team leader of Code Snipers (selected for Smart India Hackathon 2024), 
-							I love creating innovative digital solutions that blend cutting-edge technology with practical applications.
+							Versatile Full Stack Developer, UI/UX Designer, and Web3 Engineer with 3+ years of experience building high-impact web applications, scalable admin platforms, and blockchain-powered systems. Contributed to{" "}
+							<a href="https://aiskool.com" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 underline underline-offset-2">AISkool.com</a>{" "}
+							by architecting authentication systems and migrating infrastructure to self-hosted PostgreSQL. IT Department Head at{" "}
+							<a href="https://techshala.vpt.edu.in" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 underline underline-offset-2">Techshala</a>,{" "}
+							published mobile app developer (<em>Parsi Calendar</em> on Google Play), and active hackathon competitor with <strong className="text-white">15+ hackathons</strong> and <strong className="text-amber-400">2 first-place wins</strong>.
 						</p>
 					</ScrollReveal>
 				</div>
@@ -131,53 +133,76 @@ const AboutSection = () => {
 							
 							{[
 								{
-									year: "September 26-28, 2025",
-									title: "ETHGlobal New Delhi Participant",
+									year: "2026",
+									badge: "🥇 1st Place",
+									title: "ETH Mumbai 2026 — AI Trading Agent",
+									company: "ETH Mumbai Hackathon",
+									description:
+										"Won first place building a conversational blockchain trading agent. Implemented natural language trade execution, multi-chain swaps, real-time market analytics via Pyth Oracle, and secure private key management.",
+								},
+								{
+									year: "2026",
+									badge: "🥇 1st Place",
+									title: "Industrial Hackathon 2026",
+									company: "Industrial Hackathon",
+									description:
+										"Won first place at the Industrial Hackathon 2026, delivering an innovative solution that outperformed competing teams across all judging criteria.",
+								},
+								{
+									year: "2025 – Present",
+									title: "Full Stack Developer",
+									company: "AISkool.com — AI & Robotics EdTech",
+									description:
+										"Redesigned admin panel, architected a complete authentication system with RBAC, built backend APIs from scratch, and led full database migration from Supabase to self-hosted PostgreSQL on a dedicated VPS with zero data loss. Managed Nginx, SSL, and security hardening.",
+								},
+								{
+									year: "2025 – Present",
+									title: "IT Department Head",
+									company: "Techshala — Vidyalankar Polytechnic",
+									description:
+										"Led the college's student IT body. Architected and delivered techshala.vpt.edu.in — a 10-module admin platform covering events management, leaderboards, a freelance module, VAC learning tracks, and role-based access control.",
+								},
+								{
+									year: "September 2025",
+									title: "ETHGlobal New Delhi — Participant",
 									company: "ETHGlobal Hackathon",
 									description:
-										"Selected as a participant in ETHGlobal New Delhi, the world's most prestigious Blockchain hackathons. Collaborated with top developers, founders, and ecosystem leaders to design and build innovative decentralized applications, pushing the boundaries of scalability, security, and real-world adoption in the Ethereum ecosystem.",
+										"Built an AI-powered blockchain trading assistant for the Ethereum ecosystem. Implemented natural language blockchain operations, multi-chain asset management, and real-time analytics.",
 								},
 								{
-									year: "August 22-23, 2025",
-									title: "BNB Hack Bombay Participant",
-									company: "BNB Chain Hackathon",
+									year: "2025",
+									title: "ETHOnline 2025 — Global Payment System",
+									company: "ETHOnline Hackathon",
 									description:
-										"Selected participant in BNB Hack Bombay, a prestigious Web3 hackathon focused on AI, DeSoc, DeSci, and DePIN technologies. Collaborated with industry leaders to build innovative decentralized solutions on BNB Chain.",
+										"Created a UPI-style blockchain payment platform enabling instant global transfers with low fees using PYUSD on Arbitrum.",
 								},
 								{
-									year: "August 16-17, 2025",
-									title: "Avalanche Hackathon Participant",
-									company: "Avalanche Mumbai Hackathon",
-									description:
-										"Selected for the prestigious Avalanche hackathon in Mumbai, working with cutting-edge blockchain technology including Avalanche Interchain Messaging (ICM) and Encrypted EVM Runtime Compiler (EERC). Built innovative Web3 solutions with industry experts.",
-								},
-								{
-									year: "June 2025 - August 2025",
-									title: "Cyber Security Intern",
+									year: "2025",
+									title: "Ethical Hacking Intern",
 									company: "Secure Cyber Future",
 									description:
-										"Currently pursuing a 3-month cybersecurity internship, gaining hands-on experience in security protocols, threat analysis, and protection strategies.",
+										"Trained in offensive security: SQL Injection, XSS, Google Dorking, Brute Force, and Vulnerability Assessment. Conducted structured penetration testing exercises with remediation-focused reporting.",
 								},
 								{
 									year: "November 2024",
-									title: "Team Leader - Code Snipers",
+									title: "Team Leader — Code Snipers",
 									company: "Smart India Hackathon (SIH)",
 									description:
-										"Led the 'Code Snipers' team and successfully got selected for the prestigious Smart India Hackathon 2024, demonstrating leadership and innovative problem-solving skills.",
+										"Led the Code Snipers team to selection for the prestigious Smart India Hackathon 2024, demonstrating technical leadership and innovative problem-solving.",
 								},
 								{
-									year: "July 2023 - Present",
+									year: "2023 – Present",
 									title: "Diploma in Information Technology",
 									company: "Vidyalankar Polytechnic",
 									description:
-										"Pursuing a 3-year diploma in Information Technology, focusing on modern programming languages, web development, and emerging technologies.",
+										"Pursuing a 3-year Diploma in Information Technology with a focus on full stack development, web3, and modern software engineering.",
 								},
 								{
-									year: "2017 - 2023",
-									title: "SSC (Secondary School Certificate)",
-									company: "Sharda Mandir",
+									year: "2016 – 2023",
+									title: "Higher Secondary Certificate (HSC)",
+									company: "Sharda Mandir High School",
 									description:
-										"Completed secondary education from Maharashtra State Board with 76% marks, building a strong foundation in academics and technical subjects.",
+										"Completed secondary and higher secondary education, building a strong foundation in mathematics, science, and computer studies.",
 								},
 							].map((experience, index) => (
 								<ScrollReveal key={index} delay={index * 0.08} direction={index % 2 === 0 ? "left" : "right"}>
@@ -188,9 +213,16 @@ const AboutSection = () => {
 													{experience.year}
 												</div>
 												<div className="flex-1"> <ShineBorder shineColor={["#F59E0B", "#22D3EE", "#F97316"]} />
-													<h4 className="text-lg sm:text-xl font-semibold text-white mb-1">
-														{experience.title}
-													</h4>
+													<div className="flex items-center gap-2 mb-1 flex-wrap">
+														<h4 className="text-lg sm:text-xl font-semibold text-white">
+															{experience.title}
+														</h4>
+														{"badge" in experience && experience.badge && (
+															<span className="text-xs font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">
+																{experience.badge}
+															</span>
+														)}
+													</div>
 													<p className="text-amber-300/70 mb-2 text-sm sm:text-base">
 														{experience.company}
 													</p>

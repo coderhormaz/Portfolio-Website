@@ -4,74 +4,83 @@ import { CardSpotlight } from "@/components/ui/card-spotlight";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
 import Image from "next/image";
-import { ExternalLink, Github, Palette, Rocket, Layers, Layout, LayoutGrid } from "lucide-react";
+import { ExternalLink, Github, Palette, Rocket, Layers, Layout, LayoutGrid, Trophy, Building2, Smartphone, Music2, Briefcase } from "lucide-react";
 import { portfolioAnalytics } from "@/lib/analytics";
 
 const projects = [
   {
+    title: "ETH Mumbai 2026 — AI Trading Agent",
+    badge: "🥇 1st Place",
+    description: "Won first place at ETH Mumbai 2026. Built a conversational blockchain trading agent with natural language trade execution, multi-chain swaps, real-time market analytics via Pyth Oracle, and enterprise-grade secure private key management.",
+    tech: ["Python", "Ethereum", "AI Agents", "Pyth Oracle", "TypeScript", "Web3"],
+    image: "",
+    isVideo: false,
+    demoUrl: "#",
+    codeUrl: "https://github.com/coderhormaz",
+  },
+  {
+    title: "AISkool.com — EdTech Admin Platform",
+    description: "Full-stack work for an AI & Robotics EdTech platform: redesigned admin panel, built a complete auth system with RBAC, replaced Supabase with self-hosted PostgreSQL on a VPS, and managed Nginx/SSL/security hardening.",
+    tech: ["Next.js", "PostgreSQL", "VPS", "Authentication", "Nginx", "SEO"],
+    image: "",
+    isVideo: false,
+    demoUrl: "https://aiskool.com",
+    codeUrl: "#",
+  },
+  {
     title: "AI DeFi Trading Assistant",
-    description: "An intelligent blockchain trading agent leveraging Gemini AI for natural language command processing on Polygon network. Provides automated token swaps, wallet generation, real-time price feeds, and seamless Uniswap V3 integration with premium user experience.",
-    tech: ["TypeScript", "React", "Polygon", "Gemini AI", "Uniswap V3", "Supabase", "ethers.js"],
+    description: "An intelligent blockchain trading agent leveraging Gemini AI for natural language command processing on Polygon network. Provides automated token swaps, wallet generation, real-time price feeds, and seamless Uniswap V3 integration.",
+    tech: ["TypeScript", "React", "Polygon", "Gemini AI", "Uniswap V3", "ethers.js"],
     image: "/ai-trading-agent.png",
     isVideo: false,
-    demoUrl: "https://eth-global-2025-beige.vercel.app/dashboard", // Add your demo URL here
-    codeUrl: "https://github.com/coderhormaz/ETHGlobal_2025", // Add your GitHub repo URL here
+    demoUrl: "https://eth-global-2025-beige.vercel.app/dashboard",
+    codeUrl: "https://github.com/coderhormaz/ETHGlobal_2025",
+  },
+  {
+    title: "Parsi Calendar — Google Play",
+    description: "Published mobile app for the Parsi/Zoroastrian community. Features event reminders, Parsi & Gregorian dual calendar support, monthly/weekly/agenda views, and a clean, intuitive UI. Available on the Google Play Store.",
+    tech: ["React Native", "Expo", "TypeScript", "Mobile", "Google Play"],
+    image: "",
+    isVideo: false,
+    demoUrl: "https://play.google.com/store",
+    codeUrl: "https://github.com/coderhormaz",
+  },
+  {
+    title: "Tarannum Khan — Dermatology Platform",
+    description: "Full-featured skincare platform with online consultation booking, eCommerce for skincare products, cart & order management, stock alerts, revenue & analytics dashboard, and admin controls.",
+    tech: ["Next.js", "PostgreSQL", "eCommerce", "Booking System", "Admin Panel"],
+    image: "",
+    isVideo: false,
+    demoUrl: "https://tarannumkhan.in",
+    codeUrl: "#",
+  },
+  {
+    title: "VibeTune — AI Mood Music Player",
+    description: "AI-powered music player that detects your facial emotion via OpenCV, accepts voice commands, plays Spotify previews, visualises a mood timeline, and dynamically themes the UI based on your emotional state.",
+    tech: ["OpenCV", "Python", "Spotify API", "Web Speech API", "TypeScript"],
+    image: "",
+    isVideo: false,
+    demoUrl: "#",
+    codeUrl: "https://github.com/coderhormaz",
   },
   {
     title: "opBNB AI Assistant",
     description: "A premium AI-powered assistant built on opBNB with ultra-low gas fees and 4,000+ TPS. Features secure authentication, auto wallet generation, and intelligent blockchain query assistance with glassmorphic UI.",
-    tech: ["TypeScript", "React", "opBNB", "Supabase", "ethers.js", "Framer Motion", "Zustand"],
-    image: "/bnbai.mp4", // You can replace this with a specific video/image for the opBNB project
+    tech: ["TypeScript", "React", "opBNB", "ethers.js", "Framer Motion", "Zustand"],
+    image: "/bnbai.mp4",
     isVideo: true,
     demoUrl: "https://bnb-hackathon-bombay.vercel.app/",
     codeUrl: "https://github.com/coderhormaz/BNB_Hackathon",
-  },  
-  {
-    title: "Avalanche AI Blockchain Assistant",
-    description: "A powerful AI-powered blockchain assistant for the Avalanche network. Chat with AI to send AVAX, create tokens, mint NFTs, and perform blockchain operations using natural language commands.",
-    tech: ["TypeScript", "React", "Avalanche", "AI Integration", "IPFS", "Web3", "TailwindCSS"],
-    image: "/avaxai.mp4", // You can replace this with a specific video/image for the Avalanche project
-    isVideo: true,
-    demoUrl: "https://avax-ai.vercel.app/",
-    codeUrl: "https://github.com/coderhormaz/AVAX_Team1_hackathon",
   },
-  
   {
     title: "Token Plus NFT Launcher",
-    description: "A comprehensive for creating and deploying both NFTs and tokens on the Base blockchain, featuring a drawing board, customizable token parameters, and Web3 wallet integration.",
+    description: "A comprehensive platform for creating and deploying both NFTs and tokens on the Base blockchain, featuring a drawing board, customizable token parameters, and Web3 wallet integration.",
     tech: ["Web3.js", "React", "Solidity", "Base Chain", "MetaMask", "ERC-20/721"],
     image: "/basenft.mp4",
     isVideo: true,
     demoUrl: "https://kingsdontquit.netlify.app/",
     codeUrl: "https://github.com/coderhormaz/TokenPlusNFTlauncher",
   },
-  {
-    title: "Lightship Clone",
-    description: "A pixel-perfect clone of the Niantic Lightship website with advanced animations, parallax effects, and interactive elements that showcase front-end development expertise.",
-    tech: ["JavaScript", "CSS3", "HTML5", "GSAP", "ScrollTrigger", "Responsive Design"],
-    image: "/Lightship.mp4",
-    isVideo: true,
-    demoUrl: "https://hormaz-lightship.netlify.app/",
-    codeUrl: "https://github.com/coderhormaz/lightship-clone",
-  },
-  {
-    title: "Selemen Clone",
-    description: "A meticulously crafted clone of the Selemen website featuring modern design elements, smooth animations, and fully responsive layout with attention to detail.",
-    tech: ["CSS3", "HTML5", "JavaScript", "Animation", "Flexbox/Grid", "Responsive Design"],
-    image: "/selemen.mp4",
-    isVideo: true,
-    demoUrl: "https://hormaz-selemen.netlify.app/",
-    codeUrl: "https://github.com/coderhormaz/selemen-clone",
-  },
-  {
-    title: "Moqo Clone",
-    description: "A precise recreation of the Moqo website with clean CSS implementation, responsive design, and interactive elements for an optimal user experience across all devices.",
-    tech: ["CSS3", "HTML5", "JavaScript", "Grid Layout", "Responsive Design", "Animations"],
-    image: "/moqo.mp4",
-    isVideo: true,
-    demoUrl: "https://hormaz-moqo.netlify.app/",
-    codeUrl: "https://github.com/coderhormaz/moqo-clone",
-  }
 ];
 
 const ProjectsSection = () => {
@@ -150,14 +159,18 @@ const ProjectsSection = () => {
                     </div>
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-amber-500/20 to-cyan-500/20 flex items-center justify-center">
-                      {project.title.includes("NFT") || project.title.includes("Token") ? (
+                      {"badge" in project && project.badge ? (
+                        <Trophy className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-amber-400 opacity-60" />
+                      ) : project.title.includes("AISkool") ? (
+                        <Building2 className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-cyan-400 opacity-50" />
+                      ) : project.title.includes("NFT") || project.title.includes("Token") ? (
                         <Palette className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-amber-400 opacity-50" />
-                      ) : project.title.includes("Lightship") ? (
-                        <Layers className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-cyan-400 opacity-50" />
-                      ) : project.title.includes("Selemen") ? (
-                        <Layout className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-pink-400 opacity-50" />
-                      ) : project.title.includes("Moqo") ? (
-                        <LayoutGrid className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-teal-400 opacity-50" />
+                      ) : project.title.includes("Parsi") ? (
+                        <Smartphone className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-green-400 opacity-50" />
+                      ) : project.title.includes("VibeTune") ? (
+                        <Music2 className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-pink-400 opacity-50" />
+                      ) : project.title.includes("Tarannum") ? (
+                        <Briefcase className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-rose-400 opacity-50" />
                       ) : (
                         <Rocket className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-blue-400 opacity-50" />
                       )}
@@ -194,9 +207,16 @@ const ProjectsSection = () => {
 
                 {/* Project Content */}
                 <div className="space-y-3 sm:space-y-4 p-5 sm:p-7 relative z-20">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-amber-300 transition-colors duration-300">
-                    {project.title}
-                  </h3>
+                  <div className="flex items-start gap-2 flex-wrap">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-amber-300 transition-colors duration-300">
+                      {project.title}
+                    </h3>
+                    {"badge" in project && project.badge && (
+                      <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 mt-1">
+                        {project.badge}
+                      </span>
+                    )}
+                  </div>
                   
                   <p className="text-slate-400 leading-relaxed text-sm sm:text-base">
                     {project.description}

@@ -1,8 +1,8 @@
 "use client";
-import React, { Suspense } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Spotlight } from "@/components/ui/spotlight";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import dynamic from "next/dynamic";
 
 const Hero3D = dynamic(() => import("@/components/3d/Hero3D"), {
@@ -10,7 +10,18 @@ const Hero3D = dynamic(() => import("@/components/3d/Hero3D"), {
   loading: () => <div className="w-full h-full bg-gradient-to-r from-amber-500/10 to-cyan-500/10 rounded-lg animate-pulse" />
 });
 
+const roles = ["Full Stack Developer", "UI/UX Designer", "Web3 Engineer", "Mobile App Developer"];
+
 const HeroSection = () => {
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRoleIndex((prev) => (prev + 1) % roles.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden px-4 sm:px-6">
       {/* Background Effects */}
@@ -32,9 +43,18 @@ const HeroSection = () => {
             className="flex items-center gap-3 justify-center lg:justify-start"
           >
             <span className="h-px w-8 bg-gradient-to-r from-amber-400/80 to-transparent" />
-            <span className="text-xs sm:text-sm font-medium tracking-[0.2em] uppercase text-amber-400/80 glass px-3 py-1 rounded-full">
-              Full-Stack Developer
-            </span>
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={roleIndex}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.35 }}
+                className="text-xs sm:text-sm font-medium tracking-[0.2em] uppercase text-amber-400/80 glass px-3 py-1 rounded-full"
+              >
+                {roles[roleIndex]}
+              </motion.span>
+            </AnimatePresence>
           </motion.div>
 
           {/* Name */}
@@ -58,7 +78,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="text-base sm:text-lg md:text-xl text-slate-400 max-w-md mx-auto lg:mx-0 leading-relaxed"
           >
-            Building polished web experiences with modern frameworks, blockchain integrations, and thoughtful design.
+            3+ years building high-impact web apps, blockchain systems, and mobile experiences. 15+ hackathons, 2 first-place wins, published on Google Play.
           </motion.p>
           
           <motion.div
