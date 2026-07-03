@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function HormazDeveloperPage() {
   return (
-    <div className="min-h-screen bg-[#080a10] text-white">
+    <div className="min-h-screen text-white">
       <div className="container mx-auto px-4 py-20">
         <nav className="mb-8">
           <Link href="/" className="text-amber-400 hover:text-amber-300 transition-colors">&larr; Back to Home</Link>

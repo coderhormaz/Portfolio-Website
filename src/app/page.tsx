@@ -5,7 +5,6 @@ import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import ContactSection from "@/components/sections/ContactSection";
-import ClientOnlyDotGrid from "@/components/ui/ClientOnlyDotGrid";
 import Preloader from "@/components/ui/Preloader";
 import { Linkedin, Instagram, Github, Mail } from "lucide-react";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
@@ -49,27 +48,13 @@ export default function Home() {
       {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
       
       <main 
-        className="min-h-screen bg-gradient-to-br from-[#080a10] via-[#0d1117] to-[#080a10] text-white relative overflow-x-hidden w-full animate-in fade-in duration-1000"
+        className="min-h-screen text-white relative overflow-x-hidden w-full animate-in fade-in duration-1000"
         itemScope 
         itemType="https://schema.org/WebPage"
       >
         
-        {/* Enhanced Interactive Background */}
+        {/* Smooth custom cursor */}
         <SmoothCursor />
-        <div className="fixed inset-0 z-0 w-full h-full" aria-hidden="true">
-          <ClientOnlyDotGrid
-            dotSize={5}
-            gap={20}
-            baseColor="#ffffff"
-            activeColor="#F59E0B"
-            proximity={120}
-            shockRadius={250}
-            shockStrength={5}
-            resistance={750}
-            returnDuration={1.5}
-            className="opacity-40 w-full h-full"
-          />
-        </div>
         
         {/* Skip to main content for accessibility */}
         <a 

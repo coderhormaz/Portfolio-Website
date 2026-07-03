@@ -75,15 +75,77 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(circle at top, rgba(245, 158, 11, 0.08) 0%, transparent 28%),
-    radial-gradient(circle at 80% 120%, rgba(34, 211, 238, 0.05) 0%, transparent 32%),
-    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(180deg, #05060a 0%, #080c12 38%, #06080d 100%);
-  background-size: auto, auto, 88px 88px, 88px 88px, auto;
-  background-position: center top, center bottom, 0 0, 0 0, center;
+  background-color: #020204;
   overflow-x: hidden;
+}
+
+/* ───── Premium Obsidian Background ───── */
+
+.premium-aurora {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(120px);
+  will-change: transform;
+}
+
+.amber-glow {
+  top: -15%;
+  left: -10%;
+  width: 65vw;
+  height: 65vw;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, transparent 70%);
+  animation: aurora-drift-1 28s ease-in-out infinite alternate;
+}
+
+.cyan-glow {
+  bottom: -20%;
+  right: -10%;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.12) 0%, transparent 70%);
+  animation: aurora-drift-2 32s ease-in-out infinite alternate;
+}
+
+.amber-glow-secondary {
+  top: 45%;
+  right: 15%;
+  width: 35vw;
+  height: 35vw;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.10) 0%, transparent 70%);
+  animation: aurora-drift-3 24s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-drift-1 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(12vw, 8vh, 0) scale(1.15);
+  }
+}
+
+@keyframes aurora-drift-2 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(-10vw, -6vh, 0) scale(1.1);
+  }
+}
+
+@keyframes aurora-drift-3 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(-6vw, 10vh, 0) scale(1.2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .premium-aurora {
+    animation: none;
+  }
 }
 
 /* ───── Glassmorphism Design System ───── */

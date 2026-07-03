@@ -84,7 +84,7 @@ const titleColorMap: Record<string, string> = {
 
 export default function PortfolioPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#080a10] via-[#0d1117] to-[#080a10] text-white p-8">
+    <div className="min-h-screen text-white p-8">
       <nav className="max-w-7xl mx-auto mb-8">
         <Link href="/" className="text-amber-400 hover:text-amber-300 transition-colors">&larr; Back to Home</Link>
       </nav>

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#080a10] via-[#0d1117] to-[#080a10] text-white p-8">
+    <div className="min-h-screen text-white p-8">
       <div className="max-w-6xl mx-auto">
         <nav className="mb-8">
           <Link href="/" className="text-amber-400 hover:text-amber-300 transition-colors">&larr; Back to Home</Link>

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function ThankYouPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#080a10] via-[#0d1117] to-[#080a10] text-white flex items-center justify-center px-4">
+    <div className="min-h-screen text-white flex items-center justify-center px-4">
       <div className="max-w-md w-full text-center">
         <div className="mb-8">
           <div className="w-20 h-20 mx-auto mb-6 bg-green-500 rounded-full flex items-center justify-center">
