@@ -15,6 +15,28 @@ export const metadata: Metadata = {
 
 const projects = [
   {
+    title: "Vibe Tune AI",
+    description: "AI-powered music experience with an interactive frontend and a polished landing flow.",
+    tech: ["Next.js", "AI", "TypeScript", "Frontend"],
+    demoUrl: "https://vibe-tune-ai.vercel.app",
+    codeUrl: "https://github.com/coderhormaz/vibe-tune-ai",
+    color: "cyan",
+  },
+  {
+    title: "Tarannum Khan",
+    description: "Professional website for Tarannum Khan with a clean showcase layout and smooth media presentation.",
+    tech: ["Next.js", "UI/UX", "TypeScript", "Responsive Design"],
+    demoUrl: "https://www.tarannumkhan.in/",
+    color: "rose",
+  },
+  {
+    title: "AISkool",
+    description: "EdTech platform landing experience with a strong visual identity and product-focused presentation.",
+    tech: ["Next.js", "EdTech", "TypeScript", "Web Design"],
+    demoUrl: "https://aiskool.com/",
+    color: "green",
+  },
+  {
     title: "AI DeFi Trading Assistant",
     description: "An intelligent blockchain trading agent using Gemini AI for natural language command processing on Polygon. Features automated token swaps, wallet generation, real-time price feeds, and Uniswap V3 integration.",
     tech: ["TypeScript", "React", "Polygon", "Gemini AI", "Uniswap V3", "Supabase"],
@@ -64,6 +86,15 @@ const projects = [
   },
 ];
 
+type PortfolioProject = {
+  title: string;
+  description: string;
+  tech: string[];
+  demoUrl: string;
+  codeUrl?: string;
+  color: string;
+};
+
 const colorMap: Record<string, string> = {
   amber: "border-amber-500/20 hover:border-amber-500/40",
   blue: "border-blue-500/20 hover:border-blue-500/40",
@@ -71,6 +102,7 @@ const colorMap: Record<string, string> = {
   yellow: "border-yellow-500/20 hover:border-yellow-500/40",
   cyan: "border-cyan-500/20 hover:border-cyan-500/40",
   red: "border-red-500/20 hover:border-red-500/40",
+  rose: "border-rose-500/20 hover:border-rose-500/40",
 };
 
 const titleColorMap: Record<string, string> = {
@@ -80,6 +112,7 @@ const titleColorMap: Record<string, string> = {
   yellow: "text-yellow-400",
   cyan: "text-cyan-400",
   red: "text-red-400",
+  rose: "text-rose-400",
 };
 
 export default function PortfolioPage() {
@@ -100,7 +133,10 @@ export default function PortfolioPage() {
         </header>
 
         <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
+          {projects.map((project: PortfolioProject) => {
+            const hasCodeUrl = Boolean(project.codeUrl && project.codeUrl.trim() !== "#");
+
+            return (
             <article key={project.title} className={`bg-[#0a0e16]/70 p-6 rounded-xl ${colorMap[project.color]} transition-all hover:bg-[#0a0e16]/90`}>
               <h2 className={`text-2xl font-bold mb-3 ${titleColorMap[project.color]}`}>{project.title}</h2>
               <p className="text-gray-300 mb-4">{project.description}</p>
@@ -113,17 +149,20 @@ export default function PortfolioPage() {
                 <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 transition-colors">
                   Live Demo &rarr;
                 </a>
-                <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-300 transition-colors">
-                  View Code &rarr;
-                </a>
+                {hasCodeUrl && (
+                  <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-300 transition-colors">
+                    View Code &rarr;
+                  </a>
+                )}
               </div>
             </article>
-          ))}
+          );
+          })}
         </main>
 
         <section className="mt-16 text-center">
           <h2 className="text-2xl font-bold mb-4">Interested in working together?</h2>
-          <p className="text-gray-400 mb-6">Check out the source code on GitHub or get in touch to discuss a project.</p>
+          <p className="text-gray-400 mb-6">Check out the source code on GitHub when available or get in touch to discuss a project.</p>
           <div className="flex justify-center gap-6">
             <a href="https://github.com/coderhormaz" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 transition-colors font-medium">
               GitHub Profile &rarr;
