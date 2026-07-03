@@ -9,6 +9,16 @@ import { portfolioAnalytics } from "@/lib/analytics";
 
 const projects = [
   {
+    title: "Decentralised AI Agent Marketplace",
+    badge: "ETH Mumbai",
+    description: "Built at ETH Mumbai, this decentralised AI agent marketplace enables pay-per-query micropayments in USDC on Base via x402, with ENS-powered discovery, no KYC, and no subscriptions.",
+    tech: ["Base", "USDC", "x402", "ENS", "TypeScript", "Next.js"],
+    image: "/decentralised-ai-agent-marketplace.png",
+    isVideo: false,
+    demoUrl: "https://decentralised-ai-agent-marketplace.vercel.app/",
+    codeUrl: "https://github.com/coderhormaz/Decentralised-AI-Agent-Marketplace",
+  },
+  {
     title: "ETH Mumbai 2026 — AI Trading Agent",
     badge: "🏅 Bounty",
     description: "Won a bounty at ETH Mumbai 2026. Built a conversational blockchain trading agent with natural language trade execution, multi-chain swaps, real-time market analytics via Pyth Oracle, and enterprise-grade secure private key management.",

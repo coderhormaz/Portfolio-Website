@@ -15,6 +15,14 @@ export const metadata: Metadata = {
 
 const projects = [
   {
+    title: "Decentralised AI Agent Marketplace",
+    description: "Built at ETH Mumbai, this decentralised AI agent marketplace enables pay-per-query micropayments in USDC on Base via x402, with ENS-powered discovery, no KYC, and no subscriptions.",
+    tech: ["Base", "USDC", "x402", "ENS", "Next.js", "TypeScript"],
+    demoUrl: "https://decentralised-ai-agent-marketplace.vercel.app/",
+    codeUrl: "https://github.com/coderhormaz/Decentralised-AI-Agent-Marketplace",
+    color: "cyan",
+  },
+  {
     title: "Vibe Tune AI",
     description: "AI-powered music experience with an interactive frontend and a polished landing flow.",
     tech: ["Next.js", "AI", "TypeScript", "Frontend"],
