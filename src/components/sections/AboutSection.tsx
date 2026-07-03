@@ -133,15 +133,15 @@ const AboutSection = () => {
 							
 							{[
 								{
-									year: "2026",
+									year: "March 2026",
 									badge: "🏅 Bounty",
-									title: "ETH Mumbai 2026 — AI Trading Agent",
+									title: "Decentralised AI Agent Marketplace",
 									company: "ETH Mumbai Hackathon",
 									description:
-										"Won a bounty at ETH Mumbai 2026 building a conversational blockchain trading agent. Implemented natural language trade execution, multi-chain swaps, real-time market analytics via Pyth Oracle, and secure private key management.",
+										"Built at ETH Mumbai and won a bounty for a decentralised AI agent marketplace with pay-per-query micropayments in USDC on Base via x402, ENS-powered discovery, no KYC, and no subscriptions.",
 								},
 								{
-									year: "2026",
+									year: "March 2026",
 									badge: "🥇 1st Place",
 									title: "Industrial Hackathon 2026",
 									company: "Industrial Hackathon at Vidyalankar Polytechnic",
@@ -170,14 +170,14 @@ const AboutSection = () => {
 										"Built an AI-powered blockchain trading assistant for the Ethereum ecosystem. Implemented natural language blockchain operations, multi-chain asset management, and real-time analytics.",
 								},
 								{
-									year: "2025",
+									year: "October 2025",
 									title: "ETHOnline 2025 — Global Payment System",
 									company: "ETHOnline Hackathon",
 									description:
 										"Created a UPI-style blockchain payment platform enabling instant global transfers with low fees using PYUSD on Arbitrum.",
 								},
 								{
-									year: "2025",
+									year: "June 2025 – August 2025",
 									title: "Ethical Hacking Intern",
 									company: "Secure Cyber Future",
 									description:
