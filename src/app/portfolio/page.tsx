@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const projects = [
   {
     title: "Decentralised AI Agent Marketplace",
-    description: "Built at ETH Mumbai, this decentralised AI agent marketplace enables pay-per-query micropayments in USDC on Base via x402, with ENS-powered discovery, no KYC, and no subscriptions.",
+    description: "Built at ETH Mumbai, this decentralised AI agent marketplace won a bounty and enables pay-per-query micropayments in USDC on Base via x402, with ENS-powered discovery, no KYC, and no subscriptions.",
     tech: ["Base", "USDC", "x402", "ENS", "Next.js", "TypeScript"],
     demoUrl: "https://decentralised-ai-agent-marketplace.vercel.app/",
     codeUrl: "https://github.com/coderhormaz/Decentralised-AI-Agent-Marketplace",
@@ -43,14 +43,6 @@ const projects = [
     tech: ["Next.js", "EdTech", "TypeScript", "Web Design"],
     demoUrl: "https://aiskool.com/",
     color: "green",
-  },
-  {
-    title: "AI DeFi Trading Assistant",
-    description: "An intelligent blockchain trading agent using Gemini AI for natural language command processing on Polygon. Features automated token swaps, wallet generation, real-time price feeds, and Uniswap V3 integration.",
-    tech: ["TypeScript", "React", "Polygon", "Gemini AI", "Uniswap V3", "Supabase"],
-    demoUrl: "https://eth-global-2025-beige.vercel.app/dashboard",
-    codeUrl: "https://github.com/coderhormaz/ETHGlobal_2025",
-    color: "amber",
   },
   {
     title: "opBNB AI Assistant",
