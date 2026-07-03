@@ -91,11 +91,11 @@ const AboutSection = () => {
 						<p
 							className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed px-4"
 						>
-							Versatile Full Stack Developer, UI/UX Designer, and Web3 Engineer with 3+ years of experience building high-impact web applications, scalable admin platforms, and blockchain-powered systems. Contributed to{" "}
+							Versatile Full Stack Developer, UI/UX Designer, and Web3 Engineer with 3+ years of experience building high-impact web applications, scalable admin platforms, and blockchain-powered systems. Completed work on{" "}
 							<a href="https://aiskool.com" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 underline underline-offset-2">AISkool.com</a>{" "}
-							by architecting authentication systems and migrating infrastructure to self-hosted PostgreSQL. IT Department Head at{" "}
-							<a href="https://techshala.vpt.edu.in" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 underline underline-offset-2">Techshala</a>,{" "}
-							published mobile app developer (<em>Parsi Calendar</em> on Google Play), and active hackathon competitor with <strong className="text-white">15+ hackathons</strong> and <strong className="text-amber-400">2 first-place wins</strong>.
+							by architecting authentication systems and migrating infrastructure to self-hosted PostgreSQL. IT Head at{" "}
+							<a href="https://techshala.vpt.edu.in" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 underline underline-offset-2">Techshala</a>{" "}
+							from July 2025 to April 2026, published mobile app developer (<em>Parsi Calendar</em> on Google Play), and active hackathon competitor with <strong className="text-white">15+ hackathons</strong>, <strong className="text-amber-400">1 first-place win</strong>, and an <strong className="text-amber-400">ETH Mumbai bounty</strong>.
 						</p>
 					</ScrollReveal>
 				</div>
@@ -134,33 +134,33 @@ const AboutSection = () => {
 							{[
 								{
 									year: "2026",
-									badge: "🥇 1st Place",
+									badge: "🏅 Bounty",
 									title: "ETH Mumbai 2026 — AI Trading Agent",
 									company: "ETH Mumbai Hackathon",
 									description:
-										"Won first place building a conversational blockchain trading agent. Implemented natural language trade execution, multi-chain swaps, real-time market analytics via Pyth Oracle, and secure private key management.",
+										"Won a bounty at ETH Mumbai 2026 building a conversational blockchain trading agent. Implemented natural language trade execution, multi-chain swaps, real-time market analytics via Pyth Oracle, and secure private key management.",
 								},
 								{
 									year: "2026",
 									badge: "🥇 1st Place",
 									title: "Industrial Hackathon 2026",
-									company: "Industrial Hackathon",
+									company: "Industrial Hackathon at Vidyalankar Polytechnic",
 									description:
-										"Won first place at the Industrial Hackathon 2026, delivering an innovative solution that outperformed competing teams across all judging criteria.",
+										"Won first place at the Industrial Hackathon hosted by Vidyalankar Polytechnic, delivering an innovative solution that outperformed competing teams across all judging criteria.",
 								},
 								{
-									year: "2025 – Present",
+									year: "April 2026 – July 2026",
 									title: "Full Stack Developer",
 									company: "AISkool.com — AI & Robotics EdTech",
 									description:
-										"Redesigned admin panel, architected a complete authentication system with RBAC, built backend APIs from scratch, and led full database migration from Supabase to self-hosted PostgreSQL on a dedicated VPS with zero data loss. Managed Nginx, SSL, and security hardening.",
+										"Completed full-stack work for AISkool.com from April 2026 to July 2026, redesigned the admin panel, architected a complete authentication system with RBAC, built backend APIs from scratch, and led full database migration from Supabase to self-hosted PostgreSQL on a dedicated VPS with zero data loss. Managed Nginx, SSL, and security hardening.",
 								},
 								{
-									year: "2025 – Present",
-									title: "IT Department Head",
+									year: "July 2025 – April 2026",
+									title: "IT Head",
 									company: "Techshala — Vidyalankar Polytechnic",
 									description:
-										"Led the college's student IT body. Architected and delivered techshala.vpt.edu.in — a 10-module admin platform covering events management, leaderboards, a freelance module, VAC learning tracks, and role-based access control.",
+										"Led the college's student IT body from July 2025 to April 2026. Architected and delivered techshala.vpt.edu.in — a 10-module admin platform covering events management, leaderboards, a freelance module, VAC learning tracks, and role-based access control.",
 								},
 								{
 									year: "September 2025",

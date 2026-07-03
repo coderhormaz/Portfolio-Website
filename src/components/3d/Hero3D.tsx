@@ -1,5 +1,5 @@
 "use client";
-import React, { Suspense, useRef } from "react";
+import React, { Suspense, memo, useMemo, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial, Environment } from "@react-three/drei";
 import * as THREE from "three";
@@ -44,6 +44,19 @@ const AnimatedSphere = () => {
 
 const FloatingParticles = () => {
   const particlesRef = useRef<THREE.Group>(null);
+  const particlePositions = useMemo(() => {
+    return Array.from({ length: 24 }, (_, index) => {
+      const angle = (index / 24) * Math.PI * 2;
+      const radius = 3.5 + (index % 3) * 0.9;
+      const height = ((index % 6) - 2.5) * 0.75;
+
+      return [
+        Math.cos(angle) * radius,
+        height,
+        Math.sin(angle) * radius,
+      ] as [number, number, number];
+    });
+  }, []);
 
   useFrame((state) => {
     if (particlesRef.current) {
@@ -53,14 +66,10 @@ const FloatingParticles = () => {
 
   return (
     <group ref={particlesRef}>
-      {Array.from({ length: 20 }).map((_, i) => (
+      {particlePositions.map((position, i) => (
         <mesh
           key={i}
-          position={[
-            (Math.random() - 0.5) * 10,
-            (Math.random() - 0.5) * 10,
-            (Math.random() - 0.5) * 10,
-          ]}
+          position={position}
         >
           <sphereGeometry args={[0.02, 8, 8]} />
           <meshBasicMaterial color="#F59E0B" />
@@ -72,9 +81,10 @@ const FloatingParticles = () => {
 
 const Hero3D = () => {
   return (
-    <div className="h-full w-full">
+    <div className="relative h-full w-full overflow-visible">
       <Canvas
-        camera={{ position: [0, 0, 5], fov: 75 }}
+        className="absolute inset-0"
+        camera={{ position: [0, 0, 6], fov: 65 }}
         gl={{ antialias: true, alpha: true }}
         dpr={[1, 2]}
         onCreated={({ gl }) => {
@@ -109,4 +119,4 @@ const Hero3D = () => {
   );
 };
 
-export default Hero3D;
+export default memo(Hero3D);

@@ -78,7 +78,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="text-base sm:text-lg md:text-xl text-slate-400 max-w-md mx-auto lg:mx-0 leading-relaxed"
           >
-            3+ years building high-impact web apps, blockchain systems, and mobile experiences. 15+ hackathons, 2 first-place wins, published on Google Play.
+            3+ years building high-impact web apps, blockchain systems, and mobile experiences. 15+ hackathons, 1 first-place win, ETH Mumbai bounty, published on Google Play.
           </motion.p>
           
           <motion.div

@@ -10,8 +10,8 @@ import { portfolioAnalytics } from "@/lib/analytics";
 const projects = [
   {
     title: "ETH Mumbai 2026 — AI Trading Agent",
-    badge: "🥇 1st Place",
-    description: "Won first place at ETH Mumbai 2026. Built a conversational blockchain trading agent with natural language trade execution, multi-chain swaps, real-time market analytics via Pyth Oracle, and enterprise-grade secure private key management.",
+    badge: "🏅 Bounty",
+    description: "Won a bounty at ETH Mumbai 2026. Built a conversational blockchain trading agent with natural language trade execution, multi-chain swaps, real-time market analytics via Pyth Oracle, and enterprise-grade secure private key management.",
     tech: ["Python", "Ethereum", "AI Agents", "Pyth Oracle", "TypeScript", "Web3"],
     image: "",
     isVideo: false,
