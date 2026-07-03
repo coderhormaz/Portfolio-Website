@@ -152,7 +152,7 @@ export default function Home() {
             <div className="flex items-center gap-3">
               {[
                 { name: "LinkedIn", icon: <Linkedin className="w-4 h-4" />, url: "https://www.linkedin.com/in/hormazdaruwala/" },
-                { name: "Instagram", icon: <Instagram className="w-4 h-4" />, url: "https://www.instagram.com/horma_z/" },
+                { name: "Instagram", icon: <Instagram className="w-4 h-4" />, url: "https://www.instagram.com/hormaz_/" },
                 { name: "GitHub", icon: <Github className="w-4 h-4" />, url: "https://github.com/coderhormaz" },
                 { name: "Email", icon: <Mail className="w-4 h-4" />, url: "mailto:hormazdaruwala86@gmail.com" }
               ].map((social) => (

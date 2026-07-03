@@ -45,7 +45,7 @@ export const SITE_CONFIG = {
     twitter: 'https://twitter.com/hormaz_dev',
     linkedin: 'https://www.linkedin.com/in/hormazdaruwala/',
     github: 'https://github.com/coderhormaz',
-    instagram: 'https://www.instagram.com/horma_z/',
+    instagram: 'https://www.instagram.com/hormaz_/',
     email: 'hormazdaruwala86@gmail.com'
   }
 };

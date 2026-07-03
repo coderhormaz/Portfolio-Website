@@ -21,7 +21,7 @@ export const createPersonSchema = (): WithContext<Person> => ({
   sameAs: [
     "https://github.com/coderhormaz",
     "https://www.linkedin.com/in/hormazdaruwala/",
-    "https://www.instagram.com/horma_z/",
+    "https://www.instagram.com/hormaz_/",
     "https://techshala.vpt.edu.in/developer"
   ],
   jobTitle: "Full-Stack Developer",
@@ -106,7 +106,7 @@ export const createOrganizationSchema = () => ({
     sameAs: [
       "https://github.com/coderhormaz",
       "https://www.linkedin.com/in/hormazdaruwala/",
-      "https://www.instagram.com/horma_z/"
+      "https://www.instagram.com/hormaz_/"
     ]
   },
   contactPoint: {
@@ -118,7 +118,7 @@ export const createOrganizationSchema = () => ({
   sameAs: [
     "https://github.com/coderhormaz",
     "https://www.linkedin.com/in/hormazdaruwala/",
-    "https://www.instagram.com/horma_z/"
+    "https://www.instagram.com/hormaz_/"
   ]
 });
 

@@ -177,7 +177,7 @@ const ContactSection = () => {
                 </a>
                 
                 <a 
-                  href="https://www.instagram.com/horma_z/" 
+                  href="https://www.instagram.com/hormaz_/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 sm:space-x-4 group transition-transform hover:translate-x-1"
@@ -187,7 +187,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <p className="text-slate-500 text-xs sm:text-sm">Instagram</p>
-                    <p className="text-white text-sm sm:text-base group-hover:text-amber-400 transition-colors duration-300">@horma_z</p>
+                    <p className="text-white text-sm sm:text-base group-hover:text-amber-400 transition-colors duration-300">@hormaz_</p>
                   </div>
                 </a>
               </div>
@@ -199,7 +199,7 @@ const ContactSection = () => {
               <div className="flex flex-wrap gap-3 sm:space-x-4">
                 {[
                   { name: "LinkedIn", icon: <Linkedin className="w-4 h-4" />, url: "https://www.linkedin.com/in/hormazdaruwala/" },
-                  { name: "Instagram", icon: <Instagram className="w-4 h-4" />, url: "https://www.instagram.com/horma_z/" },
+                  { name: "Instagram", icon: <Instagram className="w-4 h-4" />, url: "https://www.instagram.com/hormaz_/" },
                   { name: "GitHub", icon: <Github className="w-4 h-4" />, url: "https://github.com/coderhormaz" },
                   { name: "Email", icon: <Mail className="w-4 h-4" />, url: "mailto:hormazdaruwala86@gmail.com" },
                 ].map((social) => (
