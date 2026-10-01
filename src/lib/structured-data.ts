@@ -56,16 +56,29 @@ export const createPersonSchema = (): WithContext<Person> => ({
       "UI/UX Design"
     ]
   },
-  alumniOf: {
-    "@type": "EducationalOrganization",
-    name: "Vidyalankar Polytechnic",
-    url: "https://www.vpt.edu.in",
-    department: {
-      "@type": "Organization",
-      name: "Techshala",
-      url: "https://techshala.vpt.edu.in"
+  alumniOf: [
+    {
+      "@type": "EducationalOrganization",
+      name: "Shah and Anchor Kutchhi Engineering College",
+      alternateName: "SAKEC",
+      url: "https://www.sakec.ac.in",
+      department: {
+        "@type": "Organization",
+        name: "Information Technology",
+        url: "https://www.sakec.ac.in/it/"
+      }
+    },
+    {
+      "@type": "EducationalOrganization",
+      name: "Vidyalankar Polytechnic",
+      url: "https://www.vpt.edu.in",
+      department: {
+        "@type": "Organization",
+        name: "Techshala",
+        url: "https://techshala.vpt.edu.in"
+      }
     }
-  },
+  ],
   address: {
     "@type": "PostalAddress",
     addressCountry: "IN"

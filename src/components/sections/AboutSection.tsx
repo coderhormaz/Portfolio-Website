@@ -91,7 +91,7 @@ const AboutSection = () => {
 						<p
 							className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed px-4"
 						>
-							Versatile Full Stack Developer, UI/UX Designer, and Web3 Engineer with 3+ years of experience building high-impact web applications, scalable admin platforms, and blockchain-powered systems. Completed work on{" "}
+							Versatile Full Stack Developer, UI/UX Designer, and Web3 Engineer with 5+ years of experience building high-impact web applications, scalable admin platforms, and blockchain-powered systems. Completed work on{" "}
 							<a href="https://aiskool.com" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 underline underline-offset-2">AISkool.com</a>{" "}
 							by architecting authentication systems and migrating infrastructure to self-hosted PostgreSQL. IT Head at{" "}
 							<a href="https://techshala.vpt.edu.in" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 underline underline-offset-2">Techshala</a>{" "}
@@ -132,6 +132,14 @@ const AboutSection = () => {
 						<div className="space-y-6 sm:space-y-8">
 							
 							{[
+								{
+									year: "2026 – Present",
+									badge: "🎓 Current",
+									title: "B.Tech in Information Technology",
+									company: "Shah and Anchor Kutchhi Engineering College (SAKEC), Mumbai",
+									description:
+										"Currently pursuing B.Tech in Information Technology at SAKEC — an Autonomous Institute affiliated to University of Mumbai (Estd. 1985, NBA-accredited IT department since 1999). Building on my Diploma foundation with advanced software engineering, AI, and full-stack development.",
+								},
 								{
 									year: "March 2026",
 									badge: "🏅 Bounty",
@@ -191,11 +199,11 @@ const AboutSection = () => {
 										"Led the Code Snipers team to selection for the prestigious Smart India Hackathon 2024, demonstrating technical leadership and innovative problem-solving.",
 								},
 								{
-									year: "2023 – Present",
+									year: "2023 – 2026",
 									title: "Diploma in Information Technology",
 									company: "Vidyalankar Polytechnic",
 									description:
-										"Pursuing a 3-year Diploma in Information Technology with a focus on full stack development, web3, and modern software engineering.",
+										"Completed 3-year Diploma in Information Technology (2023–2026) with a focus on full stack development, web3, and modern software engineering. Served as IT Head at Techshala and won 1st place at the Industrial Hackathon.",
 								},
 								{
 									year: "2016 – 2023",

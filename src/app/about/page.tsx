@@ -36,8 +36,8 @@ export default function AboutPage() {
             </p>
             <p className="text-gray-300 leading-relaxed mb-4">
               My journey started with a curiosity about how things work on the web. Today, I combine technical skills 
-              with design thinking to build scalable, high-performance web applications. I&apos;m currently pursuing my 
-              diploma in Information Technology at <a href="https://techshala.vpt.edu.in/developer" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 underline underline-offset-2">Vidyalankar Polytechnic</a> and interning in cybersecurity at Secure Cyber Future.
+              with design thinking to build scalable, high-performance web applications. With 5+ years of experience, I completed my 
+              diploma in Information Technology at <a href="https://techshala.vpt.edu.in/developer" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 underline underline-offset-2">Vidyalankar Polytechnic</a> (2023–2026) and am now pursuing B.Tech in Information Technology at <a href="https://www.sakec.ac.in/it/" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-amber-300 underline underline-offset-2">Shah and Anchor Kutchhi Engineering College (SAKEC), Mumbai</a> (2026–Present).
             </p>
           </section>
 
